@@ -36,7 +36,12 @@ I'm particularly interested in ethical hacking, vulnerability assessment, digita
 ## Projects & Technical Learning
 
 ### Digital Forensics & Metadata Analysis
-Practiced examining file metadata, interpreting timestamps, identifying geolocation information, and extracting video frames using ExifTool and FFmpeg.
+
+Practiced examining video metadata, analyzing timestamps,
+interpreting GPS coordinates, and extracting video frames
+using ExifTool and FFmpeg in Kali Linux.
+
+[View Technical Documentation](Digital-Forensics/README.md)
 
 ### Network Analysis & Subnetting
 Applied IP addressing, CIDR notation, network range calculations, and routing concepts using Kali Linux networking tools.
