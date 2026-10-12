@@ -44,7 +44,12 @@ using ExifTool and FFmpeg in Kali Linux.
 [View Technical Documentation](Digital-Forensics/README.md)
 
 ### Network Analysis & Subnetting
-Applied IP addressing, CIDR notation, network range calculations, and routing concepts using Kali Linux networking tools.
+
+Practiced IPv4 addressing, CIDR notation, subnet calculations,
+host ranges, broadcast addresses, and autonomous system research
+using Kali Linux and publicly available networking tools.
+
+[View Technical Documentation](Network-Analysis/README.md)
 
 ### Cybersecurity Competition & Skills Development
 Participating in the National Cyber League (NCL), developing practical skills in OSINT, cryptography, network analysis, digital forensics, and cybersecurity problem-solving.
