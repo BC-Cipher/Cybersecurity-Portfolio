@@ -98,9 +98,6 @@ From the defensive side, Wireshark showed how packet-level analysis can reveal a
 
 The exercise reinforced the importance of encrypted communications, secure session management, network monitoring, and packet analysis when protecting systems from session hijacking.
 
-## Ethical Use
-
-All activities documented in this project were performed in an authorized cybersecurity training environment using designated lab systems. No testing was performed against external or unauthorized systems.
 
 ## Ethical Use
 
