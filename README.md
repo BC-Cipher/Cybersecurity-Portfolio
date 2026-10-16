@@ -85,6 +85,16 @@ Hands-on security project covering Azure tenant reconnaissance, Docker image vul
 
 [View Project](labs/cloud-container-cryptographic-security/)
 
+### Network Scanning, Enumeration & Evasion Lab
+
+Hands-on network assessment project covering service discovery, controlled Nmap decoy scanning, SNMP enumeration, and automated network enumeration in an isolated training environment.
+
+**Tools:** Nmap, SnmpWalk, ShellGPT, Parrot Security
+
+**Skills Demonstrated:** Network reconnaissance, service detection, scan interpretation, IDS/firewall evasion assessment, SNMP enumeration, attack-surface mapping, automation, and defensive remediation analysis.
+
+[View Project](labs/network-scanning-enumeration-evasion/)
+
 ### More Technical Labs
 
 Additional supporting labs covering reconnaissance, OSINT, networking, systems, cloud, and other technical coursework are organized in the full lab index.
