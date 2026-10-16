@@ -55,6 +55,16 @@ Hands-on web security project covering reconnaissance, service enumeration, atta
 
 [View Project](labs/web-server-application-security/)
 
+### Vulnerability Research & Assessment Lab
+
+Hands-on vulnerability assessment project covering software weakness research, network vulnerability scanning, severity analysis, web-server assessment, and remediation-focused interpretation.
+
+**Tools:** MITRE CWE, Greenbone/OpenVAS, Nikto, Parrot Security
+
+**Skills Demonstrated:** Vulnerability research, CWE interpretation, vulnerability scanning, severity and detection-confidence analysis, service exposure review, HTTP security-header analysis, finding validation, remediation prioritization, and evidence handling.
+
+[View Project](labs/vulnerability-research-assessment/)
+
 ### SQL Injection & Wireless Security Assessment Lab
 
 Hands-on security assessment project combining web application SQL injection testing with wireless network analysis and WPA2 credential-strength validation.
