@@ -45,6 +45,16 @@ Hands-on offensive and defensive security lab covering session hijacking, HTTP t
 
 [View Project](labs/session-hijacking-analysis/)
 
+### Web Server & Application Penetration Testing Lab
+
+Hands-on web security project covering reconnaissance, service enumeration, attack-surface mapping, vulnerability assessment, credential testing, WordPress security analysis, and controlled remote code execution validation.
+
+**Tools:** Nmap, NSE, Netcat, Telnet, THC Hydra, OWASP ZAP, SmartScanner, WPScan, Wapiti, ShellGPT, WAFW00F
+
+**Skills Demonstrated:** Web reconnaissance, banner grabbing, WAF detection, credential security testing, vulnerability assessment, application spidering, WordPress security testing, Log4j exploitation validation, and web application analysis.
+
+[View Project](labs/web-server-application-security/)
+
 ### Digital Forensics & Metadata Analysis
 
 Practiced examining video metadata, analyzing timestamps,
