@@ -16,6 +16,11 @@ SQL injection testing and OS command execution validation combined with IEEE 802
 ### [Network Scanning, Enumeration & Evasion Lab](network-scanning-enumeration-evasion/)
 Nmap service discovery, controlled decoy scanning, SNMP enumeration, automated network enumeration, and defensive analysis.
 
+## Vulnerability Assessment
+
+### [Vulnerability Research & Assessment Lab](vulnerability-research-assessment/)
+MITRE CWE research, OpenVAS/Greenbone scanning, severity interpretation, Nikto web assessment, finding validation, and remediation analysis.
+
 ## Mobile, IoT & OT Security
 
 ### [Mobile, IoT & OT Security Assessment Lab](mobile-iot-ot-security/)
