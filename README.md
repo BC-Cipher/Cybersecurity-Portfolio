@@ -35,6 +35,16 @@ I'm particularly interested in ethical hacking, vulnerability assessment, digita
 
 ## Projects & Technical Learning
 
+### Network Attack, Detection & Evasion Lab
+
+Hands-on offensive and defensive security lab covering session hijacking, HTTP traffic interception, ARP analysis, intrusion detection, honeypot monitoring, and controlled Windows BITS file transfer.
+
+**Tools:** Wireshark, Snort, Cowrie, Caido, Hetty, Bettercap, Nmap, BITSAdmin
+
+**Skills Demonstrated:** Packet analysis, HTTP analysis, intrusion detection, network reconnaissance, ARP analysis, honeypot monitoring, traffic interception, and attacker/defender analysis.
+
+[View Project](labs/session-hijacking-analysis/)
+
 ### Digital Forensics & Metadata Analysis
 
 Practiced examining video metadata, analyzing timestamps,
