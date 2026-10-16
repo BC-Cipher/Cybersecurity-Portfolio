@@ -13,6 +13,9 @@ Web reconnaissance, service enumeration, application attack-surface mapping, vul
 ### [SQL Injection & Wireless Security Assessment Lab](sql-injection-wireless-security/)
 SQL injection testing and OS command execution validation combined with IEEE 802.11 analysis and WPA2 credential-strength testing.
 
+### [Network Scanning, Enumeration & Evasion Lab](network-scanning-enumeration-evasion/)
+Nmap service discovery, controlled decoy scanning, SNMP enumeration, automated network enumeration, and defensive analysis.
+
 ## Mobile, IoT & OT Security
 
 ### [Mobile, IoT & OT Security Assessment Lab](mobile-iot-ot-security/)
