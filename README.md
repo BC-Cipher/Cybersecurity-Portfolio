@@ -75,6 +75,16 @@ Hands-on security project covering Android ADB exposure, controlled remote-acces
 
 [View Project](labs/mobile-iot-ot-security/)
 
+### Cloud, Container & Cryptographic Security Lab
+
+Hands-on security project covering Azure tenant reconnaissance, Docker image vulnerability scanning, layered hashing, HTTPS certificate deployment, AES disk encryption, and AI-assisted cryptographic operations.
+
+**Tools:** AADInternals, PowerShell, Trivy, Docker, CyberChef, IIS, VeraCrypt, ShellGPT
+
+**Skills Demonstrated:** Cloud identity reconnaissance, container vulnerability assessment, CVE analysis, hashing and HMAC, TLS certificate configuration, data-at-rest encryption, checksum validation, and security automation.
+
+[View Project](labs/cloud-container-cryptographic-security/)
+
 ### Digital Forensics & Metadata Analysis
 
 Practiced examining video metadata, analyzing timestamps,
