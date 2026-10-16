@@ -4,6 +4,10 @@ This directory contains hands-on cybersecurity labs and technical exercises. The
 
 ## Offensive Security
 
+### [Windows System Exploitation & Privilege Escalation Lab](windows-system-exploitation-privilege-escalation/)
+NTLMv2 credential auditing, Meterpreter reverse-shell validation, buffer-overflow analysis, and controlled Windows privilege escalation to SYSTEM.
+
+
 ### [Network Attack, Detection & Evasion Lab](session-hijacking-analysis/)
 Session hijacking, HTTP interception, ARP analysis, Snort IDS monitoring, Cowrie honeypots, and controlled Windows BITS file transfer.
 
