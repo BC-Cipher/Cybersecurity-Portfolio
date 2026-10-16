@@ -95,15 +95,15 @@ Hands-on security project covering Azure tenant reconnaissance, Docker image vul
 
 [View Project](labs/cloud-container-cryptographic-security/)
 
-### Network Scanning, Enumeration & Evasion Lab
+### Windows System Exploitation & Privilege Escalation Lab
 
-Hands-on network assessment project covering service discovery, controlled Nmap decoy scanning, SNMP enumeration, and automated network enumeration in an isolated training environment.
+Hands-on Windows exploitation project covering NTLMv2 credential auditing, Meterpreter reverse-shell validation, buffer-overflow analysis with Immunity Debugger and Mona, and controlled privilege escalation to SYSTEM.
 
-**Tools:** Nmap, SnmpWalk, ShellGPT, Parrot Security
+**Tools:** Responder, John the Ripper, Metasploit, Meterpreter, Immunity Debugger, Mona, Vulnserver
 
-**Skills Demonstrated:** Network reconnaissance, service detection, scan interpretation, IDS/firewall evasion assessment, SNMP enumeration, attack-surface mapping, automation, and defensive remediation analysis.
+**Skills Demonstrated:** Credential security testing, reverse-shell validation, Windows post-exploitation, memory-protection analysis, buffer-overflow exploit development, privilege escalation, SYSTEM-context validation, and defensive remediation analysis.
 
-[View Project](labs/network-scanning-enumeration-evasion/)
+[View Project](labs/windows-system-exploitation-privilege-escalation/)
 
 ### More Technical Labs
 
