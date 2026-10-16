@@ -65,6 +65,16 @@ Hands-on security assessment project combining web application SQL injection tes
 
 [View Project](labs/sql-injection-wireless-security/)
 
+### Mobile, IoT & OT Security Assessment Lab
+
+Hands-on security project covering Android ADB exposure, controlled remote-access validation, mobile malware detection, MQTT protocol analysis, and CAN bus replay testing in simulated environments.
+
+**Tools:** PhoneSploit-Pro, ADB, AndroRAT, AVG AntiVirus, Wireshark, MQTT, ICSim, can-utils, candump, canplayer
+
+**Skills Demonstrated:** Mobile device enumeration, remote-access impact validation, malware detection, MQTT packet analysis, IoT communication analysis, CAN traffic capture, replay-attack validation, and defensive remediation planning.
+
+[View Project](labs/mobile-iot-ot-security/)
+
 ### Digital Forensics & Metadata Analysis
 
 Practiced examining video metadata, analyzing timestamps,
