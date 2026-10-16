@@ -105,6 +105,16 @@ Hands-on Windows exploitation project covering NTLMv2 credential auditing, Meter
 
 [View Project](labs/windows-system-exploitation-privilege-escalation/)
 
+### Malware Analysis & Network Threat Detection Lab
+
+Hands-on threat-analysis project covering multi-engine malware detection, ELF static analysis, malware disassembly, ARP anomaly detection, promiscuous-mode sniffer detection, and plaintext HTTP credential exposure.
+
+**Tools:** Hybrid Analysis, OPSWAT MetaDefender, Detect It Easy, OllyDbg, Wireshark, Nmap NSE
+
+**Skills Demonstrated:** Static malware analysis, executable analysis, entropy interpretation, reverse engineering, packet analysis, ARP anomaly detection, sniffer detection, HTTP traffic analysis, sensitive-data redaction, and defensive remediation planning.
+
+[View Project](labs/malware-analysis-network-threat-detection/)
+
 ### More Technical Labs
 
 Additional supporting labs covering reconnaissance, OSINT, networking, systems, cloud, and other technical coursework are organized in the full lab index.
