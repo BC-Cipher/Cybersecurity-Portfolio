@@ -85,6 +85,12 @@ Hands-on security project covering Azure tenant reconnaissance, Docker image vul
 
 [View Project](labs/cloud-container-cryptographic-security/)
 
+### More Technical Labs
+
+Additional supporting labs covering reconnaissance, OSINT, networking, systems, cloud, and other technical coursework are organized in the full lab index.
+
+[Browse All Technical Labs](labs/)
+
 ### Digital Forensics & Metadata Analysis
 
 Practiced examining video metadata, analyzing timestamps,
