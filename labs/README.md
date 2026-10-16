@@ -20,6 +20,11 @@ SQL injection testing and OS command execution validation combined with IEEE 802
 ### [Network Scanning, Enumeration & Evasion Lab](network-scanning-enumeration-evasion/)
 Nmap service discovery, controlled decoy scanning, SNMP enumeration, automated network enumeration, and defensive analysis.
 
+## Threat Analysis & Detection
+
+### [Malware Analysis & Network Threat Detection Lab](malware-analysis-network-threat-detection/)
+Static malware analysis with Hybrid Analysis, Detect It Easy, and OllyDbg combined with Wireshark/Nmap analysis of ARP anomalies, sniffers, and insecure HTTP traffic.
+
 ## Vulnerability Assessment
 
 ### [Vulnerability Research & Assessment Lab](vulnerability-research-assessment/)
