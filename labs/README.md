@@ -20,10 +20,20 @@ SQL injection testing and OS command execution validation combined with IEEE 802
 ### [Network Scanning, Enumeration & Evasion Lab](network-scanning-enumeration-evasion/)
 Nmap service discovery, controlled decoy scanning, SNMP enumeration, automated network enumeration, and defensive analysis.
 
+## Social Engineering
+
+### [Phishing Simulation & Social Engineering Defense Lab](phishing-social-engineering-defense/)
+Authorized credential-harvesting simulation with SET combined with phishing detection and browser-based defense using Netcraft.
+
 ## Threat Analysis & Detection
 
 ### [Malware Analysis & Network Threat Detection Lab](malware-analysis-network-threat-detection/)
 Static malware analysis with Hybrid Analysis, Detect It Easy, and OllyDbg combined with Wireshark/Nmap analysis of ARP anomalies, sniffers, and insecure HTTP traffic.
+
+## Availability & Resilience
+
+### [DoS/DDoS Detection & Mitigation Lab](dos-ddos-detection-mitigation/)
+Defensive monitoring of high-volume traffic, resource-impact analysis, and mitigation workflow using Anti DDoS Guardian and Windows Resource Monitor.
 
 ## Vulnerability Assessment
 
