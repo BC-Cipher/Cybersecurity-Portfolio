@@ -55,6 +55,16 @@ Hands-on web security project covering reconnaissance, service enumeration, atta
 
 [View Project](labs/web-server-application-security/)
 
+### SQL Injection & Wireless Security Assessment Lab
+
+Hands-on security assessment project combining web application SQL injection testing with wireless network analysis and WPA2 credential-strength validation.
+
+**Tools:** sqlmap, OWASP ZAP, Wireshark, Aircrack-ng, Microsoft SQL Server, Parrot Security
+
+**Skills Demonstrated:** SQL injection detection and exploitation, database enumeration, OS command execution validation, IEEE 802.11 packet analysis, WPA2 handshake analysis, offline dictionary testing, and security remediation analysis.
+
+[View Project](labs/sql-injection-wireless-security/)
+
 ### Digital Forensics & Metadata Analysis
 
 Practiced examining video metadata, analyzing timestamps,
