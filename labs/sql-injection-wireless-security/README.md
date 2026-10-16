@@ -38,7 +38,7 @@ After sqlmap identified the injection point, its OS shell capability was used in
 
 The screenshot below shows the controlled shell returning the target hostname and executing `TASKLIST`, demonstrating that the issue extended beyond database disclosure to operating-system command execution.
 
-![sqlmap OS shell validation](screenshots/sqlmap-os-shell.jpg)
+![sqlmap OS shell validation](screenshots/sqlmap-os-shell.png)
 
 *sqlmap OS shell validating command execution on the authorized Windows Server lab target.*
 
@@ -56,7 +56,7 @@ OWASP ZAP was used to perform an automated security assessment of the MovieScope
 
 The scanner identified a **High** risk SQL Injection finding and provided supporting information including the affected URL, parameter, attack input, confidence level, CWE ID, and WASC ID.
 
-![OWASP ZAP SQL injection finding](screenshots/owasp-zap-sqli-finding.jpg)
+![OWASP ZAP SQL injection finding](screenshots/owasp-zap-sqli-finding.png)
 
 *OWASP ZAP identifying a high-risk SQL injection vulnerability in the authorized lab application.*
 
@@ -70,7 +70,7 @@ Wireshark was used to analyze a provided WPA2 packet capture from the training e
 
 The capture contained IEEE 802.11 management and control traffic, allowing examination of frame types, MAC addresses, broadcast traffic, and other wireless protocol information.
 
-![Wireshark 802.11 analysis](screenshots/wireshark-80211-analysis.jpg)
+![Wireshark 802.11 analysis](screenshots/wireshark-80211-analysis.png)
 
 *IEEE 802.11 wireless traffic examined in Wireshark from the provided training capture.*
 
@@ -84,7 +84,7 @@ Aircrack-ng was used against the provided WPA2 capture and lab wordlist to evalu
 
 The test successfully recovered the deliberately weak lab key, demonstrating how password strength directly affects the resistance of WPA2-PSK networks to offline dictionary attacks when a valid handshake is available.
 
-![Aircrack-ng WPA2 key recovery](screenshots/aircrack-wpa2-recovery.jpg)
+![Aircrack-ng WPA2 key recovery](screenshots/aircrack-wpa2-recovery.png)
 
 *Aircrack-ng validating the weakness of the deliberately configured WPA2-PSK lab credential.*
 
