@@ -1,14 +1,14 @@
 # Web Server & Application Penetration Testing Lab
 
-**Reconnaissance | Enumeration | Vulnerability Scanning | Exploitation | Validation**
+**Reconnaissance | Enumeration | Vulnerability Assessment | Exploitation | Validation**
 
 ## Overview
 
-This project documents a series of hands-on web server and web application security exercises completed in an authorized virtual lab environment.
+This project documents hands-on web server and web application security testing performed in an authorized virtual lab environment.
 
-The exercises followed a structured penetration testing workflow that included reconnaissance, service enumeration, vulnerability discovery, authentication testing, exploitation, and validation.
+The exercises followed a structured penetration testing workflow that included reconnaissance, service enumeration, attack surface mapping, vulnerability discovery, authentication testing, exploitation, and validation.
 
-I used multiple security tools to identify exposed services, analyze web technologies, map application attack surfaces, test authentication controls, identify vulnerabilities, and validate selected findings in a controlled environment.
+I used multiple security tools to gather information about web infrastructure, identify exposed services and application weaknesses, investigate vulnerabilities, and validate selected findings in a controlled environment.
 
 ## Tools & Technologies
 
@@ -18,137 +18,146 @@ I used multiple security tools to identify exposed services, analyze web technol
 - Telnet
 - THC Hydra
 - OWASP ZAP
-- Burp Suite
 - SmartScanner
+- Burp Suite
 - WPScan
 - Wapiti
 - ShellGPT
+- WAFW00F
 - Docker
 - Apache Tomcat
+- WordPress
 - FTP
 - HTTP
 - Linux / Parrot Security
 - Ubuntu
 - Windows Server
-- WordPress
 
 ---
 
-## 1. Web Server Reconnaissance & Enumeration
+## 1. Web Server Reconnaissance
 
-I used Netcat, Telnet, Nmap, and the Nmap Scripting Engine to gather information about target web servers.
+### Banner Grabbing with Telnet
 
-The exercises included identifying open ports and services, reviewing HTTP response headers, performing banner grabbing, enumerating web server information, and examining technologies exposed by the target.
+Telnet was used to connect directly to the target web server over HTTP and inspect the server response.
 
-![Web server banner grabbing](screenshots/telnet-banner-grab.png)
+The returned HTTP headers provided information about the underlying web server technology, demonstrating how banner grabbing can reveal useful infrastructure details during reconnaissance.
 
-*HTTP response headers and web server information collected during controlled banner-grabbing analysis.*
+![Telnet banner grabbing](screenshots/telnet-banner-grab.png)
 
-### Nmap & NSE
-
-Nmap and NSE were used to identify running services and gather additional information about the web infrastructure.
-
-The exercises demonstrated how enumeration can identify exposed services and information that may influence later security testing.
-
-![Nmap NSE enumeration](screenshots/nmap-nse-enumeration.png)
-
-*Nmap Scripting Engine output used during web server enumeration.*
+*HTTP response headers collected during controlled web server reconnaissance.*
 
 ---
 
-## 2. Credential Security Testing
+## 2. Web Application Firewall Detection with Nmap NSE
+
+Nmap and the Nmap Scripting Engine were used to examine the target web server and test whether a web application firewall or similar security control was present.
+
+The `http-waf-detect` NSE script generated test traffic and analyzed the server response for indicators of filtering or inspection.
+
+![Nmap WAF detection](screenshots/nmap-waf-detection.png)
+
+*Nmap NSE output used to investigate web application firewall protection in the lab environment.*
+
+---
+
+## 3. Credential Security Testing
 
 A controlled dictionary attack was performed against an FTP service using THC Hydra and lab-provided wordlists.
 
-The exercise demonstrated how weak or predictable credentials can expose remotely accessible services. Successful access was validated within the authorized lab environment.
+After valid credentials were identified, authorized access to the FTP service was validated by remotely creating a directory on the target system.
 
 ![FTP access validation](screenshots/ftp-access-validation.png)
 
-*Validation of remote FTP access after controlled credential testing.*
+*Remote directory creation on the lab FTP server used to validate successful authorized access.*
+
+This exercise demonstrated how weak or predictable credentials can expose remotely accessible services.
 
 ---
 
-## 3. Log4j Remote Code Execution Validation
+## 4. Log4j Remote Code Execution Validation
 
-A deliberately vulnerable web server was deployed in the lab to examine the security impact of the Log4j vulnerability associated with CVE-2021-44228.
+A deliberately vulnerable Apache Tomcat application was deployed in the lab to examine the impact of the Log4j vulnerability associated with CVE-2021-44228.
 
-Nmap was first used to identify the exposed web service. The vulnerable application was then tested in the isolated environment to demonstrate how successful exploitation could result in remote command execution.
+The vulnerable application was tested from a separate security-testing system. Successful exploitation resulted in a reverse shell within the isolated lab environment.
+
+The execution context was validated by checking the current working directory and user account.
 
 ![Log4j RCE validation](screenshots/log4j-rce-validation.png)
 
-*Remote shell access obtained during the authorized Log4j vulnerability exercise.*
+*Reverse shell used to validate remote code execution against the deliberately vulnerable lab application.*
 
-This exercise reinforced the importance of patch management, dependency management, vulnerability scanning, and timely remediation of critical server-side vulnerabilities.
+This exercise reinforced the importance of patch management, dependency management, vulnerability identification, and rapid remediation of critical server-side vulnerabilities.
 
 ---
 
-## 4. Web Application Reconnaissance & Attack Surface Mapping
+## 5. Web Application Attack Surface Mapping
 
-Nmap and Telnet were used to identify server technologies, ports, services, and HTTP response information associated with the target web application.
+OWASP ZAP was used to spider the target web application and enumerate accessible URLs and application resources.
 
-OWASP ZAP was then used to spider the application and identify URLs, resources, and functionality exposed by the site.
+This demonstrated how automated crawling can help map an application's attack surface and identify areas that may require additional security testing.
 
 ![OWASP ZAP spidering](screenshots/owasp-zap-spider.png)
 
-*OWASP ZAP spider results used to map the web application's accessible content and attack surface.*
+*OWASP ZAP spider results used to map accessible application resources.*
 
 ---
 
-## 5. Web Application Vulnerability Scanning
+## 6. Web Application Vulnerability Assessment
 
-SmartScanner was used to examine the target application for security weaknesses.
+SmartScanner was used to analyze the target application for security weaknesses.
 
-The scan identified issues involving insecure HTTP communication and missing security headers. The exercise also included reviewing vulnerability descriptions and recommended remediation rather than relying only on automated scan results.
+The assessment identified multiple security-related findings, including missing HTTP security headers. Individual findings were reviewed along with their descriptions and recommended remediation.
 
 ![SmartScanner findings](screenshots/smartscanner-findings.png)
 
-*Web application findings reviewed during vulnerability scanning.*
+*SmartScanner finding showing a missing X-Content-Type-Options security header and recommended remediation.*
 
-Wapiti was also used to perform black-box web application vulnerability scanning and review common application security weaknesses.
-
-![Wapiti scan](screenshots/wapiti-scan.png)
-
-*Black-box web application security assessment performed with Wapiti.*
+Wapiti was also used during the lab to perform black-box web application vulnerability testing and review common web application weaknesses.
 
 ---
 
-## 6. Authentication & Application Security Testing
+## 7. WordPress Security Assessment
 
-Burp Suite was used to intercept and analyze HTTP requests during controlled authentication testing against a WordPress application.
+WPScan was used to enumerate a WordPress application and investigate information related to the installed web server and application components.
 
-The exercise demonstrated how intercepted application requests can be examined and manipulated during an authorized web application security assessment.
+The exercise demonstrated how specialized security tools can identify information that may be useful when assessing WordPress installations for vulnerable components.
 
-WPScan was also used to identify a vulnerable WordPress component. The finding was validated within the lab environment by testing the associated remote code execution vulnerability.
+![WPScan WordPress assessment](screenshots/wpscan-wordpress-scan.png)
 
-![WPScan vulnerability validation](screenshots/wpscan-rce-validation.png)
+*WPScan performing enumeration against an authorized WordPress lab application.*
 
-*WPScan output used while investigating and validating a vulnerable WordPress component.*
+Findings from the WordPress assessment were further investigated and selected vulnerabilities were validated within the controlled environment.
 
 ---
 
-## 7. AI-Assisted Security Testing
+## 8. AI-Assisted Security Testing
 
-ShellGPT was used during selected reconnaissance and vulnerability-testing exercises to explore how AI-generated commands can assist with security workflows.
+ShellGPT was used during selected security-testing activities to examine how AI-generated commands can assist with reconnaissance and vulnerability assessment workflows.
 
-Generated commands and output were reviewed and validated rather than treated as automatically trustworthy.
+In this exercise, ShellGPT assisted with a web application firewall check that used WAFW00F to fingerprint the target's protection.
 
-This exercise demonstrated the importance of combining automation with analyst judgment and technical verification.
+![ShellGPT WAF detection](screenshots/shellgpt-waf-detection.png)
+
+*AI-assisted WAF fingerprinting with ShellGPT and WAFW00F.*
+
+Generated commands and results were reviewed and validated rather than treated as automatically trustworthy.
 
 ---
 
 ## Security Concepts Demonstrated
 
 - Web server reconnaissance
-- Service enumeration
 - Banner grabbing
+- Service enumeration
 - HTTP header analysis
 - Nmap Scripting Engine
+- Web application firewall detection
+- Credential security testing
 - Web application spidering
 - Attack surface mapping
 - Vulnerability scanning
-- Credential security testing
-- HTTP request analysis
-- Authentication testing
+- HTTP security headers
 - WordPress security assessment
 - Remote code execution
 - Log4j / CVE-2021-44228
@@ -160,11 +169,11 @@ This exercise demonstrated the importance of combining automation with analyst j
 
 ## Key Takeaways
 
-This project demonstrated how reconnaissance, enumeration, vulnerability scanning, exploitation, and validation fit together during a structured penetration testing process.
+This project demonstrated how reconnaissance, enumeration, vulnerability discovery, exploitation, and validation fit together within a structured penetration testing workflow.
 
-Using multiple tools also reinforced the importance of validating findings rather than relying on a single automated scanner. Reconnaissance tools provided information about the attack surface, vulnerability scanners identified potential weaknesses, and controlled exploitation demonstrated the potential impact of selected findings.
+Using multiple tools reinforced the importance of validating findings instead of relying on automated scanner output alone. Reconnaissance identified the attack surface, vulnerability assessment tools highlighted potential weaknesses, and controlled validation demonstrated the possible impact of selected findings.
 
-The exercises strengthened my understanding of both web server and web application security and the importance of translating technical findings into practical remediation priorities.
+The exercises strengthened my understanding of web server security, web application testing, vulnerability analysis, and the relationship between offensive testing and defensive remediation.
 
 ## Ethical Use
 
