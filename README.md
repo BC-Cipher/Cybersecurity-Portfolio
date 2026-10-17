@@ -49,7 +49,7 @@ My background spans offensive security, vulnerability assessment, Windows and Li
 This repository separates focused technical labs from larger multi-week projects.
 
 - **[Technical Labs](labs/):** hands-on exercises organized by security domain
-- **Projects:** larger infrastructure, cloud, networking, DevOps, data, AI, and systems projects will be added under `projects/` as they are documented
+- **[Projects](projects/):** larger infrastructure, cloud, networking, DevOps, data, AI, and systems projects will be added here as they are documented
 
 The homepage intentionally features only a small selection of the strongest work. The complete lab index contains additional evidence of technical breadth.
 
