@@ -11,6 +11,7 @@ I work across Windows and Linux systems, cloud infrastructure, identity manageme
 | Offensive Security | [Windows System Exploitation & Privilege Escalation](labs/windows-system-exploitation-privilege-escalation/) | NTLMv2 credential auditing, Meterpreter validation, buffer-overflow analysis, Windows privilege escalation |
 | Web Application Security | [Web Server & Application Penetration Testing](labs/web-server-application-security/) | Reconnaissance, service enumeration, vulnerability assessment, WordPress testing, controlled RCE validation |
 | Cloud Infrastructure & Security | [AWS Secure & Scalable Web Architecture](projects/cloud/aws-secure-scalable-web-architecture/) | IAM, multi-AZ VPC design, EC2, RDS, Application Load Balancing, Auto Scaling, CloudWatch |
+| Cloud Engineering & IaC | [Multi-Cloud Infrastructure as Code](projects/cloud/multicloud-infrastructure-as-code/) | AWS CloudFormation, Azure ARM/Bicep, Google Cloud, Git versioning, deployment troubleshooting |
 | Threat Analysis | [Malware Analysis & Network Threat Detection](labs/malware-analysis-network-threat-detection/) | Static malware analysis, executable inspection, ARP anomaly detection, sniffer detection, HTTP traffic analysis |
 | Vulnerability Management | [Vulnerability Research & Assessment](labs/vulnerability-research-assessment/) | MITRE CWE research, OpenVAS/Greenbone scanning, Nikto assessment, severity analysis, remediation |
 | Mobile, IoT & OT Security | [Mobile, IoT & OT Security Assessment](labs/mobile-iot-ot-security/) | Android ADB testing, mobile malware detection, MQTT analysis, CAN replay testing |
@@ -25,7 +26,7 @@ I work across Windows and Linux systems, cloud infrastructure, identity manageme
 
 **Systems & Identity:** Windows 10/11, Windows Server, Linux, Active Directory, Group Policy, Microsoft Entra ID, Intune, MFA, RBAC
 
-**Cloud & Virtualization:** AWS IAM, Amazon VPC, EC2, EBS, RDS, Elastic Load Balancing, Auto Scaling, CloudWatch, Microsoft Azure, Microsoft 365, Proxmox, virtual machines, container security
+**Cloud & Virtualization:** AWS IAM, VPC, EC2, EBS, RDS, CloudWatch, Auto Scaling, CloudFormation, Azure ARM, Bicep, Google Cloud, Microsoft 365, Proxmox, virtual machines, container security
 
 **Networking:** TCP/IP, DNS, DHCP, VLANs, routing, switching, Wireshark, pfSense, OPNsense, UniFi
 
