@@ -15,7 +15,7 @@ My background spans offensive security, vulnerability assessment, Windows and Li
 | Vulnerability Management | [Vulnerability Research & Assessment](labs/vulnerability-research-assessment/) | MITRE CWE research, OpenVAS/Greenbone scanning, Nikto assessment, severity analysis, remediation |
 | Mobile, IoT & OT Security | [Mobile, IoT & OT Security Assessment](labs/mobile-iot-ot-security/) | Android ADB testing, mobile malware detection, MQTT analysis, CAN replay testing |
 
-[Browse the complete Technical Lab Index](labs/) | [Browse Larger Projects](projects/) | [View the Cloud Portfolio](projects/cloud/) | [Cloud Labs and Screenshot Guide](projects/cloud/SCREENSHOT_PLACEMENT.md)
+[Browse the complete Technical Lab Index](labs/) | [Browse Larger Projects](projects/) | [View the Cloud Portfolio](projects/cloud/)
 
 ## Technical Domains
 
