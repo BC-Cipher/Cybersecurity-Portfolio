@@ -1,47 +1,32 @@
-# Cloud Infrastructure & Security Portfolio
+# Cloud Infrastructure and Security
 
-This section highlights hands-on cloud work with an emphasis on secure architecture, identity, networking, compute, database services, scalability, resilience, and monitoring.
+AWS coursework focused on practical infrastructure deployment, least-privilege access, network segmentation, storage protection, automation, and service availability.
 
-## Featured AWS Project
+## Featured Architecture Project
 
-### [AWS Secure & Scalable Web Architecture](aws-secure-scalable-web-architecture/)
-A portfolio synthesis of completed AWS coursework that connects identity and access management, multi-AZ VPC networking, EC2 compute, RDS database services, Application Load Balancing, Auto Scaling, and CloudWatch into one architecture narrative.
+### [AWS Secure and Scalable Web Architecture](aws-secure-scalable-web-architecture/)
+Multi-AZ VPC design, EC2 operations, RDS MySQL connectivity, application load balancing, CPU-based Auto Scaling, and CloudWatch monitoring. The architecture brings together components from separate AWS training labs.
 
-**Core services:** IAM, Amazon VPC, EC2, EBS, RDS for MySQL, Elastic Load Balancing, EC2 Auto Scaling, CloudWatch
+## Hands-On AWS Labs
 
-**Security focus:** least privilege, subnet isolation, security-group-based access control, private application tiers, database access restriction, operational safeguards, monitoring, and production hardening
+| Focus | Project | Services |
+|---|---|---|
+| Identity and security | [IAM Access Control and Authorization Testing](../../labs/aws-iam-access-control/) | IAM, EC2, S3 |
+| Networking | [VPC and EC2 Web Infrastructure](../../labs/aws-vpc-ec2-infrastructure/) | VPC, EC2, NAT, security groups |
+| Object storage | [S3 Storage and Versioning](../../labs/aws-s3-object-storage-versioning/) | S3, bucket policies |
+| Storage recovery | [EBS Snapshots and Recovery](../../labs/aws-ebs-snapshot-recovery/) | EC2, EBS |
+| Automation | [Lambda and EventBridge](../../labs/aws-lambda-eventbridge-automation/) | Lambda, EventBridge, Boto3 |
+| Databases | [RDS MySQL Connectivity](../../labs/aws-rds-mysql-connectivity/) | RDS, VPC |
+| Application platforms | [Elastic Beanstalk Deployment](../../labs/aws-elastic-beanstalk-monitoring/) | Elastic Beanstalk, EC2 |
 
-## Focused Cloud Security Lab
+## Areas of Experience
 
-### [AWS IAM Access Control & Policy Validation](../../labs/aws-iam-access-control/)
-Configured job-function access through IAM groups and policies, then validated allowed and denied actions across Amazon S3 and EC2.
+**Identity:** IAM users and groups, managed policies, inline policies and access verification.
 
-## AWS Skills Demonstrated
+**Infrastructure:** CIDR planning, two-Availability-Zone networking, EC2 provisioning, storage volumes and reusable machine images.
 
-| Domain | Hands-on experience |
-|---|---|
-| Identity & Access | IAM users, groups, managed policies, inline policies, permission testing |
-| Networking | VPC, CIDR planning, public/private subnets, route tables, Internet Gateway, NAT Gateway |
-| Compute | EC2, Amazon Linux 2023, AMIs, user data, EBS, launch templates |
-| Database | Amazon RDS for MySQL, DB subnet groups, Multi-AZ deployment, security groups |
-| Availability | Application Load Balancer, target groups, health checks, Auto Scaling groups |
-| Monitoring | EC2 status checks, system logs, CloudWatch metrics and alarms |
-| Security | least privilege, network segmentation, service-to-service access controls, production hardening analysis |
+**Security:** Public/private subnet separation, controlled inbound traffic, least privilege and database network restrictions.
 
-## Training
+**Operations:** Monitoring, instance protection, storage snapshots, database connections and autoscaling.
 
-- AWS Academy Cloud Foundations
-- AWS cloud coursework completed in controlled training environments
-
-## Portfolio Approach
-
-The public documentation is written as original project documentation rather than a copy of course lab guides. Account identifiers, credentials, restricted training materials, and other sensitive information are intentionally excluded.
-
-## Additional Cloud Labs and Practical
-
-- [S3 Object Storage, Permissions & Versioning](../../labs/aws-s3-object-storage-versioning/)
-- [EBS Snapshots & Volume Recovery](../../labs/aws-ebs-snapshot-recovery/)
-- [Lambda & EventBridge EC2 Automation](../../labs/aws-lambda-eventbridge-automation/)
-- [Elastic Beanstalk Deployment & Monitoring](../../labs/aws-elastic-beanstalk-monitoring/)
-- [RDS MySQL Provisioning & Connectivity](../../labs/aws-rds-mysql-connectivity/)
-
+All exercises were completed in AWS educational lab environments. Observed work is distinguished from recommendations for production security.
