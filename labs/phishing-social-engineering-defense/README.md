@@ -4,11 +4,11 @@
 
 ## Overview
 
-This project documents an authorized social-engineering assessment completed in a controlled cybersecurity training environment.
+I completed a controlled phishing simulation and then examined how browser-based defenses can help identify malicious sites.
 
 The lab combined an offensive phishing simulation with defensive phishing detection. The offensive portion used the Social-Engineer Toolkit (SET) to clone a training login page and demonstrate how credentials can be captured when a user submits information to a fraudulent site. The defensive portion used the Netcraft browser extension to inspect and identify a known phishing site.
 
-The portfolio version focuses on the security lessons from both sides of the exercise: how phishing succeeds, what evidence it produces, and how layered defenses can reduce risk.
+I compared the simulated attack with the controls used to recognize and block phishing.
 
 ## Tools & Technologies
 
@@ -74,7 +74,7 @@ Those activities are not all shown here because this public portfolio focuses on
 
 ---
 
-## Key Takeaways
+## Lessons Learned
 
 This project demonstrated how social-engineering attacks can bypass otherwise strong technical controls by targeting user behavior.
 
