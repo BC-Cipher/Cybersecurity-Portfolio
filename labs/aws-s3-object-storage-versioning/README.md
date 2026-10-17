@@ -6,7 +6,7 @@ In two AWS Cloud Foundations lab exercises, I created Amazon S3 buckets, uploade
 **Services:** Amazon S3  
 **Focus:** Object storage, access policies, version recovery, data protection
 
-## Work Completed
+## Work Performed
 - Created an S3 bucket and uploaded test objects.
 - Inspected object metadata and browser-based object access.
 - Tested access restrictions before changing permissions for the exercise.
@@ -20,8 +20,7 @@ In two AWS Cloud Foundations lab exercises, I created Amazon S3 buckets, uploade
 - Bucket versioning preserves previous object versions, helping recover from accidental overwrites or deletions, but increases retained storage.
 - Versioning is not equivalent to a complete backup and recovery strategy. Production controls can include default Block Public Access, IAM policy review, encryption, appropriate lifecycle rules, access logging, and recovery testing.
 
-
-## Key Takeaway
+## What I Learned
 The exercise connected object availability with policy enforcement and showed how versioning protects prior content while requiring deliberate storage governance.
 
 > Completed in an AWS training account. Public object access was used only to meet the lab's controlled learning objectives. No live buckets are exposed as part of this portfolio.
