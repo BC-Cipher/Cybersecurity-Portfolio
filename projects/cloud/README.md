@@ -46,4 +46,3 @@ The public documentation is written as original project documentation rather tha
 - [RDS MySQL Provisioning & Connectivity](../../labs/aws-rds-mysql-connectivity/)
 - [Cloud Foundations Practical Assessment](aws-cloud-foundations-practical/)
 
-[View the screenshot placement guide](SCREENSHOT_PLACEMENT.md)
