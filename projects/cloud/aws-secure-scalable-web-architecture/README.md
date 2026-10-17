@@ -192,3 +192,26 @@ AWS IAM, Amazon VPC, CIDR planning, public and private subnets, route tables, In
 - [AWS IAM Access Control & Policy Validation Lab](../../../labs/aws-iam-access-control/)
 
 > This project documents work completed in AWS training environments. It does not include account identifiers, passwords, access keys, or restricted course lab instructions.
+
+## Screenshots
+
+### Vpc Resource Map
+
+![Vpc Resource Map](screenshots/vpc-resource-map.png)
+
+### Ec2 Status Checks
+
+![Ec2 Status Checks](screenshots/ec2-status-checks.png)
+
+### Alb Routing
+
+![Alb Routing](screenshots/alb-routing.png)
+
+### Autoscaling Capacity
+
+![Autoscaling Capacity](screenshots/autoscaling-capacity.png)
+
+### Autoscaling Ec2 Instances
+
+![Autoscaling Ec2 Instances](screenshots/autoscaling-ec2-instances.png)
+
