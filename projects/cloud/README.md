@@ -1,6 +1,13 @@
 # Cloud Infrastructure and Security
 
-I used AWS training environments to build networks, manage access, deploy compute and database services, test storage recovery, and work with automation and monitoring.
+I worked with AWS, Azure and Google Cloud training environments to provision infrastructure, troubleshoot templates, manage access, and test storage, compute, networking and monitoring.
+
+## Multi-Cloud Infrastructure as Code
+
+### [Infrastructure as Code Across AWS, Azure & Google Cloud](multicloud-infrastructure-as-code/)
+Configured and validated cloud resources using AWS CloudFormation, Azure ARM and Bicep, and Google Cloud Deployment Manager. Includes template debugging, Git versioning and a separate high-availability AWS design.
+
+**Technical labs:** [CloudFormation](../../labs/aws-cloudformation-iac/) | [Azure ARM & Bicep](../../labs/azure-arm-bicep-iac/) | [Google Cloud Deployment Manager](../../labs/google-cloud-deployment-manager/)
 
 ## Featured Architecture Project
 
