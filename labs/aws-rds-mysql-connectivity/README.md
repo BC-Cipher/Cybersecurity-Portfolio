@@ -14,13 +14,8 @@ These RDS exercises covered database instance configuration, subnet-group select
 - Used MySQL Workbench to configure a client connection and documented a successful connection test in the introductory RDS exercise.
 
 ## Troubleshooting Record
-A separate “Build a Database Server” report explicitly records that the exercise's web-server address did not load in the browser. I investigated the console-side configuration, but I have not claimed that the address-book web application worked in that attempt. This distinction matters when interpreting the evidence.
+In the separate database server exercise, the web-server address did not load in the browser. I reviewed the AWS console configuration while troubleshooting. That attempt did not provide evidence of a successful address-book application connection.
 
-## Evidence to Add
-Save under [screenshots/](screenshots/):
-- `rds-db-subnet-group.png`: subnets across multiple Availability Zones.
-- `rds-connectivity.png`: RDS connectivity and endpoint configuration.
-- `mysql-connection-success.png`: successful MySQL Workbench connection test from the separate introductory RDS exercise.
 
 ## Security & Production Hardening
 - Keep databases in private subnets with no unnecessary public endpoint.
