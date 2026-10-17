@@ -21,11 +21,6 @@ These services support the major building blocks of a cloud-hosted application: 
 ## Verification
 The submitted report contains AWS console screenshots of the configured resources. Some screenshots show resources in an available or running state. They are documentation of configuration and do not, by themselves, prove end-to-end availability, disaster recovery, or successful production load testing.
 
-## Selected Evidence to Add
-Save under [screenshots/](screenshots/):
-- `final-auto-scaling-group.png`: final practical Auto Scaling group configuration.
-
-Other configuration evidence appears in the relevant focused labs and in the [AWS Secure & Scalable Web Architecture](../aws-secure-scalable-web-architecture/) flagship project. I intentionally avoid duplicating every image here.
 
 ## Security Reflection
 The practical reinforced the importance of correct network boundaries, tightly scoped security group rules, appropriate S3 access, sound database configuration, and monitoring before labeling a cloud deployment ready for production.
