@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project documents denial-of-service testing and defensive monitoring performed in an authorized virtual lab environment.
+I examined denial-of-service traffic in a controlled lab and used monitoring tools to investigate its impact on a Windows system.
 
 The lab examined how high-volume network traffic can affect system resources and how a defensive monitoring tool can identify suspicious flows. The portfolio version emphasizes detection, impact analysis, and mitigation rather than attack tooling.
 
@@ -71,7 +71,7 @@ Source blocking can be useful during a contained incident, but production DDoS r
 
 ---
 
-## Key Takeaways
+## Lessons Learned
 
 This project reinforced that availability attacks are best understood through both network telemetry and host-level resource monitoring.
 
