@@ -22,3 +22,14 @@ Snapshots are useful for recovery but require appropriate IAM permissions, encry
 
 ## Key Takeaway
 Creating a snapshot is only one part of recovery. Recreating storage and verifying accessible content are equally important.
+
+## Screenshots
+
+### Ebs Snapshot
+
+![Ebs Snapshot](screenshots/ebs-snapshot.png)
+
+### Ebs Restored Volumes
+
+![Ebs Restored Volumes](screenshots/ebs-restored-volumes.png)
+
