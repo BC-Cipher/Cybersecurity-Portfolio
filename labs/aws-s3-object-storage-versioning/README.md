@@ -25,3 +25,18 @@ In two AWS Cloud Foundations lab exercises, I created Amazon S3 buckets, uploade
 The exercise connected object availability with policy enforcement and showed how versioning protects prior content while requiring deliberate storage governance.
 
 > Completed in an AWS training account. Public object access was used only to meet the lab's controlled learning objectives. No live buckets are exposed as part of this portfolio.
+
+## Screenshots
+
+### S3 Uploaded Object
+
+![S3 Uploaded Object](screenshots/s3-uploaded-object.png)
+
+### S3 Versioning Enabled
+
+![S3 Versioning Enabled](screenshots/s3-versioning-enabled.png)
+
+### S3 Object Versions
+
+![S3 Object Versions](screenshots/s3-object-versions.png)
+
