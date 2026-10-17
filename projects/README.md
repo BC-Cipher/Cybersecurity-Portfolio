@@ -11,7 +11,8 @@ Portfolio synthesis of completed AWS labs covering IAM, VPC networking, EC2 depl
 
 [Browse the Cloud Portfolio](cloud/)
 
-### [AWS Cloud Foundations Practical Assessment](cloud/aws-cloud-foundations-practical/)\nA separate final assessment showing configured VPC, EC2, S3, RDS, security groups and Auto Scaling.\n\n## Project Standard
+
+## Project Standard
 
 Each project added here should demonstrate more than a single tool or task and should include:
 
