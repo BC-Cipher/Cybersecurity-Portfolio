@@ -1,7 +1,7 @@
 # AWS Lambda & EventBridge EC2 Automation
 
 ## Overview
-This lab explored scheduled cloud automation using an AWS Lambda function written in Python and an EventBridge (CloudWatch Events) schedule. The function used Boto3 to call the EC2 API to stop a designated training instance.
+I configured a scheduled EventBridge trigger for a Python Lambda function that uses Boto3 to request an EC2 instance stop.
 
 **Services:** AWS Lambda, Amazon EventBridge, Amazon EC2  
 **Technology:** Python, Boto3
@@ -15,26 +15,23 @@ This lab explored scheduled cloud automation using an AWS Lambda function writte
 - Saved the function update in the Lambda console.
 
 ## Validation Scope
-The report screenshots show the configured EventBridge trigger, the Boto3 function code, and confirmation that the function was updated. They do **not** independently establish that the scheduled event ran successfully or that the EC2 instance actually stopped.
+The screenshots confirm the scheduled trigger and the updated function code. They do not show a successful scheduled invocation or confirm that the instance stopped.
 
-
-## Security & Production Improvements
+## Security Considerations
 - Grant the Lambda execution role only the EC2 actions needed, scoped to the designated resources where supported.
 - Avoid embedding fixed instance IDs or account identifiers when tags or configuration parameters are more maintainable.
 - Use CloudWatch Logs and metrics to verify executions and inspect failures.
 - Configure appropriate scheduling, retry, and alerting behavior.
 - Use safe approval and exclusion rules before automating production instance shutdowns.
 
-## Skills Demonstrated
-Serverless event-driven automation, Lambda function configuration, Python, Boto3, EventBridge schedules, EC2 API operations, least-privilege planning.
 
 ## Screenshots
 
-### Lambda Eventbridge Trigger
+### EventBridge Scheduled Trigger
 
 ![Lambda Eventbridge Trigger](screenshots/lambda-eventbridge-trigger.png)
 
-### Lambda Boto3 Code
+### Lambda Python Code
 
 ![Lambda Boto3 Code](screenshots/lambda-boto3-code.png)
 
