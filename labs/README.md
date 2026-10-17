@@ -1,8 +1,6 @@
 # Technical Lab Index
 
-This directory contains hands-on cybersecurity labs and technical exercises. Labs are grouped by domain so the portfolio can continue to grow without becoming a long, unstructured list.
-
-The main repository page highlights only selected projects. This index provides the complete technical catalog.
+Hands-on labs from cybersecurity coursework and technical practice, organized by the kind of work performed. Open a lab to see the tools, methods, results, and screenshots.
 
 ## Offensive Security & Penetration Testing
 
@@ -82,9 +80,3 @@ Video metadata examination, timestamp analysis, GPS interpretation, frame extrac
 
 ### [Phishing Simulation & Social Engineering Defense Lab](phishing-social-engineering-defense/)
 Controlled credential-harvesting simulation, phishing detection, browser-based defense, evidence redaction, and security-awareness analysis.
-
----
-
-## Repository Growth
-
-Future coursework will be added to the appropriate domain instead of creating a new top-level folder for every class. Larger multi-week projects that combine several technologies are documented separately under `projects/`.
