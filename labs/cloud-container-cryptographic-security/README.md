@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project documents a series of hands-on security exercises completed in an authorized virtual training environment across cloud identity, container security, and cryptographic controls.
+I completed a series of security labs covering cloud identity, container vulnerability scanning, encryption, hashing, and HTTPS certificates.
 
 The work included Azure tenant reconnaissance with AADInternals, Docker image vulnerability assessment with Trivy, multi-layer hashing with CyberChef, self-signed HTTPS certificate deployment in IIS, AES-encrypted volume management with VeraCrypt, and AI-assisted cryptographic command generation with ShellGPT.
 
@@ -118,7 +118,7 @@ Encryption at rest helps protect sensitive data if storage media or a device is 
 
 ShellGPT was used to generate shell commands for several cryptographic and encoding tasks, including MD5 hashing, chained MD5 and SHA-1 hashing, CRC32 checksum calculation, and Base64 encoding.
 
-The generated commands were reviewed before execution, reinforcing that AI-assisted administration should support rather than replace technical validation.
+I reviewed generated shell commands before running them and checked their output.
 
 ![ShellGPT cryptographic automation](screenshots/shellgpt-cryptographic-automation.png)
 
@@ -149,7 +149,7 @@ AI can accelerate repetitive technical workflows, but generated commands and cry
 
 ---
 
-## Key Takeaways
+## Lessons Learned
 
 This project demonstrated how assessment and protection techniques apply across cloud, container, and cryptographic security.
 
