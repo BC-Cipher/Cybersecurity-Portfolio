@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project documents a multi-part ethical hacking lab completed in an authorized virtual training environment across mobile, IoT, and operational technology systems.
+I tested security issues affecting Android devices, IoT messaging, and simulated vehicle networks in a controlled lab.
 
 The exercises covered Android device assessment through ADB, controlled remote-access testing with AndroRAT, mobile malware detection, MQTT protocol analysis, and a Controller Area Network (CAN) replay attack using ICSim.
 
@@ -134,7 +134,7 @@ Because the results included information about a real third-party public host, t
 
 ---
 
-## Key Takeaways
+## Lessons Learned
 
 This project demonstrated how security weaknesses differ across mobile, IoT, and OT environments while still sharing common defensive themes.
 
