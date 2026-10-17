@@ -1,11 +1,11 @@
 # Cloud Infrastructure and Security
 
-AWS coursework focused on practical infrastructure deployment, least-privilege access, network segmentation, storage protection, automation, and service availability.
+I used AWS training environments to build networks, manage access, deploy compute and database services, test storage recovery, and work with automation and monitoring.
 
 ## Featured Architecture Project
 
 ### [AWS Secure and Scalable Web Architecture](aws-secure-scalable-web-architecture/)
-Multi-AZ VPC design, EC2 operations, RDS MySQL connectivity, application load balancing, CPU-based Auto Scaling, and CloudWatch monitoring. The architecture brings together components from separate AWS training labs.
+Multi-AZ VPC design, EC2 operations, RDS MySQL connectivity, application load balancing, CPU-based Auto Scaling, and CloudWatch monitoring. The diagram shows how these components fit together; the labs were completed separately.
 
 ## Hands-On AWS Labs
 
@@ -29,4 +29,4 @@ Multi-AZ VPC design, EC2 operations, RDS MySQL connectivity, application load ba
 
 **Operations:** Monitoring, instance protection, storage snapshots, database connections and autoscaling.
 
-All exercises were completed in AWS educational lab environments. Observed work is distinguished from recommendations for production security.
+Work completed in AWS training environments. Production security recommendations are identified separately.
