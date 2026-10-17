@@ -4,11 +4,11 @@
 
 ## Overview
 
-This project documents a structured reconnaissance and footprinting workflow completed in an authorized cybersecurity training environment.
+I used a structured reconnaissance workflow to collect and compare DNS, WHOIS, subdomain, and network-path information in an authorized lab.
 
 The lab combined passive and active information-gathering techniques to build a technical profile of a designated training target. Activities included subdomain discovery, WHOIS analysis, DNS enumeration, network tracerouting, automated host discovery with Recon-ng, and report generation.
 
-The emphasis of this portfolio version is on techniques that directly demonstrate practical reconnaissance, network analysis, and documentation skills.
+
 
 ## Tools & Technologies
 
@@ -126,7 +126,7 @@ Those activities are not all displayed here because several were either redundan
 
 ---
 
-## Key Takeaways
+## Lessons Learned
 
 This project reinforced that reconnaissance is most useful when individual data points are combined into a structured view of the target environment.
 
