@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project documents hands-on security testing performed in an authorized virtual lab environment across two attack surfaces: a database-driven web application and a WPA2 wireless network capture.
+I tested SQL injection in a training web application and analyzed a WPA2 wireless capture to assess credential security.
 
 The web application portion focused on identifying and validating SQL injection weaknesses using sqlmap and OWASP ZAP. The wireless portion focused on analyzing IEEE 802.11 traffic with Wireshark and testing the strength of a WPA2 pre-shared key with Aircrack-ng against a provided capture file.
 
@@ -118,7 +118,7 @@ The exercise reinforced several wireless security practices:
 
 ---
 
-## Key Takeaways
+## Lessons Learned
 
 This project demonstrated how security testing moves from discovery to validation.
 
