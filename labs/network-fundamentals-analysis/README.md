@@ -63,7 +63,7 @@ Routing data can help identify which autonomous system originates a route, altho
 
 These skills support network administration, firewall configuration, security operations, network reconnaissance, vulnerability assessment, incident response, and network segmentation.
 
-## Key Takeaways
+## Lessons Learned
 
 Subnetting is fundamental to understanding how networks are organized and secured.
 
