@@ -44,5 +44,4 @@ The public documentation is written as original project documentation rather tha
 - [Lambda & EventBridge EC2 Automation](../../labs/aws-lambda-eventbridge-automation/)
 - [Elastic Beanstalk Deployment & Monitoring](../../labs/aws-elastic-beanstalk-monitoring/)
 - [RDS MySQL Provisioning & Connectivity](../../labs/aws-rds-mysql-connectivity/)
-- [Cloud Foundations Practical Assessment](aws-cloud-foundations-practical/)
 
