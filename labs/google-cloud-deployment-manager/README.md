@@ -1,0 +1,31 @@
+# Google Cloud: Template-Based VPC & Storage Deployment
+
+## Overview
+
+I used Google Cloud Deployment Manager and Jinja templates to define a VPC network and Cloud Storage bucket. I prepared the templates in the cloud terminal, deployed the configuration and inspected the resources in Google Cloud.
+
+**Tools:** Google Cloud Deployment Manager, Cloud Shell, Jinja, YAML, VPC, Cloud Storage
+
+## Work Completed
+
+- Created `calab-vpc.jinja` for a Google Compute Engine network with automatic subnet creation.
+- Created `calab-bucket.jinja` for a Cloud Storage bucket in `us-central1`.
+- Prepared a YAML configuration referencing the templates.
+- Submitted the deployment through Deployment Manager.
+- Checked the VPC network and Cloud Storage bucket in the console.
+
+The VPC appeared with automatically created subnets. The bucket was visible in `us-central1`. The lab's deployment check passed with no failed checks.
+
+## Validation
+
+| Check | Result |
+|---|---|
+| Deployment Manager configuration | Deployment appeared in the console; validation passed |
+| Network | Created VPC visible in the project |
+| Storage | Bucket visible with its Region |
+
+## Security Considerations
+
+For production use, I would consider custom rather than automatic subnet configuration where segmentation is needed, restrict bucket access, apply least-privilege IAM, retain audit logs, and select an actively supported infrastructure management tool. This lab used Deployment Manager as provided by the training environment.
+
+[Infrastructure as Code project](../../projects/cloud/multicloud-infrastructure-as-code/)
