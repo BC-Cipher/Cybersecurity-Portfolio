@@ -26,3 +26,18 @@ In the separate database server exercise, the web-server address did not load in
 
 ## Key Takeaway
 Database access involves more than a running RDS instance. Network routing, security-group permissions, endpoints, authentication, and client connectivity all need validation.
+
+## Screenshots
+
+### Rds Db Subnet Group
+
+![Rds Db Subnet Group](screenshots/rds-db-subnet-group.png)
+
+### Rds Connectivity
+
+![Rds Connectivity](screenshots/rds-connectivity.png)
+
+### Mysql Connection Success
+
+![Mysql Connection Success](screenshots/mysql-connection-success.png)
+
