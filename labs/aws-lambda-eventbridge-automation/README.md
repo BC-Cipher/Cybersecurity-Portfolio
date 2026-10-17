@@ -17,10 +17,6 @@ This lab explored scheduled cloud automation using an AWS Lambda function writte
 ## Validation Scope
 The report screenshots show the configured EventBridge trigger, the Boto3 function code, and confirmation that the function was updated. They do **not** independently establish that the scheduled event ran successfully or that the EC2 instance actually stopped.
 
-## Evidence to Add
-Save under [screenshots/](screenshots/):
-- `lambda-eventbridge-trigger.png`: enabled EventBridge scheduled trigger.
-- `lambda-boto3-code.png`: Python function calling the EC2 stop API.
 
 ## Security & Production Improvements
 - Grant the Lambda execution role only the EC2 actions needed, scoped to the designated resources where supported.
