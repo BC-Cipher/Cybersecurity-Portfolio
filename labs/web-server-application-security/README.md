@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project documents hands-on web server and web application security testing performed in an authorized virtual lab environment.
+I assessed a training web server and its applications through service enumeration, vulnerability scanning, and controlled exploitation.
 
 The exercises followed a structured penetration testing workflow that included reconnaissance, service enumeration, attack surface mapping, vulnerability discovery, authentication testing, exploitation, and validation.
 
@@ -167,7 +167,7 @@ Generated commands and results were reviewed and validated rather than treated a
 
 ---
 
-## Key Takeaways
+## Lessons Learned
 
 This project demonstrated how reconnaissance, enumeration, vulnerability discovery, exploitation, and validation fit together within a structured penetration testing workflow.
 
