@@ -58,6 +58,17 @@ Azure reconnaissance, Docker image vulnerability scanning and cryptographic oper
 
 See the [AWS cloud architecture project](../projects/cloud/aws-secure-scalable-web-architecture/).
 
+### [AWS CloudFormation: Debugging & Version Control](aws-cloudformation-iac/)
+Corrected S3 and EC2 YAML templates, validated imports, reviewed VPC and RDS definitions, and pushed Git revisions.
+
+### [Azure ARM & Bicep Deployments](azure-arm-bicep-iac/)
+Deployed Azure App Service resources using ARM and provisioned a storage account with Bicep and Azure CLI.
+
+### [Google Cloud Deployment Manager](google-cloud-deployment-manager/)
+Created a VPC and Cloud Storage bucket from Jinja templates and validated the deployment.
+
+See the [multi-cloud Infrastructure as Code project](../projects/cloud/multicloud-infrastructure-as-code/).
+
 ## Mobile, IoT & OT Security
 
 ### [Mobile, IoT & OT Security Assessment Lab](mobile-iot-ot-security/)
