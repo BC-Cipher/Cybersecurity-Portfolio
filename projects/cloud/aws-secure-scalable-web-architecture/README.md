@@ -1,18 +1,16 @@
 # AWS Secure & Scalable Web Architecture
 
-## Project Overview
+## Overview
 
-This project is a portfolio synthesis of five completed AWS labs covering identity and access management, EC2 operations, VPC networking, relational database deployment, load balancing, Auto Scaling, and CloudWatch monitoring.
+I built and tested AWS infrastructure across several cloud labs, including VPC networking, EC2 web servers, RDS for MySQL, load balancing, Auto Scaling, and CloudWatch monitoring. I also configured IAM permissions and tested what different users could and could not access.
 
-The work was completed across separate AWS training lab sessions. This documentation connects those hands-on exercises into a single cloud architecture story while clearly separating completed implementation from production hardening recommendations.
+These were separate training environments. The architecture diagram below brings the work together to show how I would connect the services in a single web application.
 
-**Cloud platform:** Amazon Web Services  
-**Primary services:** IAM, Amazon VPC, EC2, EBS, RDS for MySQL, Elastic Load Balancing, EC2 Auto Scaling, CloudWatch  
-**Architecture themes:** least privilege, network segmentation, high availability, elasticity, service-to-service access control, monitoring
+**AWS services:** IAM, VPC, EC2, EBS, RDS for MySQL, Elastic Load Balancing, EC2 Auto Scaling, CloudWatch
 
 ## Architecture
 
-The reference architecture below is an original synthesis of the components I configured across the completed labs.
+This diagram shows how the services from the separate labs fit into a web application architecture. It is a reference design, not a screenshot of one running deployment.
 
 ```mermaid
 flowchart TB
@@ -63,7 +61,7 @@ flowchart TB
 
 I reviewed IAM users, groups, AWS managed policies, and an inline policy, then assigned users to groups based on job function. I validated both allowed and denied actions across Amazon S3 and EC2.
 
-This exercise reinforced least privilege, role-based access patterns, and the importance of testing effective permissions rather than assuming that a policy attachment works as intended.
+Testing both allowed and denied actions helped me confirm how the policies worked for each role.
 
 ### 2. Multi-AZ VPC Networking
 
@@ -80,7 +78,7 @@ The network included:
 - Public and private route tables
 - Security groups controlling application traffic
 
-This design demonstrated how route tables, gateways, subnet placement, and security groups work together to control reachability.
+I used route tables and gateways to separate internet-facing resources from private subnets, with security groups controlling inbound traffic.
 
 ### 3. EC2 Deployment and Operations
 
@@ -98,11 +96,11 @@ I also worked with:
 - Service quotas
 - AMI creation for repeatable instance deployment
 
-The operational portion of the lab went beyond simply launching a virtual machine and included monitoring, troubleshooting, lifecycle protection, and scaling preparation.
+I also used the instance status checks and logs while troubleshooting.
 
 ### 4. RDS Database Architecture
 
-I created an Amazon RDS for MySQL deployment and connected it to a web application.
+I configured an RDS for MySQL database, its subnet group, and network permissions. I also tested database connectivity with MySQL Workbench in a separate exercise.
 
 The database configuration included:
 
@@ -110,8 +108,7 @@ The database configuration included:
 - Multi-AZ deployment for database availability
 - A dedicated database security group
 - MySQL traffic on TCP 3306 permitted from the web security group
-- Application connection through the RDS endpoint
-- Create, edit, and delete operations to confirm data persistence
+- RDS endpoint and connection settings
 
 Using a security group as the source for the database rule demonstrated service-to-service access control without opening the database to arbitrary internet addresses.
 
@@ -129,7 +126,7 @@ The Auto Scaling configuration used:
 - 60% CPU target
 - CloudWatch group metrics and alarms
 
-I verified that the load balancer routed traffic only to healthy targets and used a load test to trigger CPU growth, CloudWatch alarm activity, and automatic instance scale-out.
+I checked target health and used the training application's load-test function to observe CloudWatch alarms and additional instances launched by Auto Scaling.
 
 ## Security Engineering Decisions
 
@@ -152,8 +149,7 @@ I verified the environment through functional and security-focused tests:
 - Confirmed the web server was inaccessible before HTTP was allowed by the security group
 - Verified successful HTTP access after the rule was added
 - Confirmed EC2 system and instance reachability checks passed
-- Confirmed the web application connected to the RDS endpoint
-- Added, modified, and removed application records to validate database persistence
+- Configured an RDS endpoint and tested MySQL client connectivity in a separate lab
 - Confirmed load balancer targets became healthy
 - Accessed the application through the load balancer DNS name
 - Generated load and observed Auto Scaling launch additional instances after the CloudWatch threshold was reached
@@ -178,7 +174,7 @@ Some settings in the training labs were intentionally simplified for speed. For 
 
 AWS IAM, Amazon VPC, CIDR planning, public and private subnets, route tables, Internet Gateway, NAT Gateway, security groups, Amazon EC2, Amazon Linux, user data, EBS, AMIs, launch templates, Amazon RDS for MySQL, Multi-AZ, DB subnet groups, Application Load Balancer, target groups, health checks, EC2 Auto Scaling, CloudWatch metrics, CloudWatch alarms, least privilege, network segmentation, high availability, elasticity, cloud troubleshooting
 
-## Completed Lab Areas Incorporated
+## AWS Labs Covered
 
 - AWS IAM access control and policy testing
 - EC2 deployment, monitoring, protection, storage, and resizing
@@ -193,25 +189,28 @@ AWS IAM, Amazon VPC, CIDR planning, public and private subnets, route tables, In
 
 > This project documents work completed in AWS training environments. It does not include account identifiers, passwords, access keys, or restricted course lab instructions.
 
-## Screenshots
+## Configuration and Test Evidence
 
-### Vpc Resource Map
+### VPC Resource Map
 
-![Vpc Resource Map](screenshots/vpc-resource-map.png)
+![VPC resource map](screenshots/vpc-resource-map.png)
 
-### Ec2 Status Checks
+### EC2 Status Checks
 
-![Ec2 Status Checks](screenshots/ec2-status-checks.png)
+![EC2 status checks](screenshots/ec2-status-checks.png)
 
-### Alb Routing
+### Application Load Balancer
 
-![Alb Routing](screenshots/alb-routing.png)
+![Application Load Balancer configuration](screenshots/alb-routing.png)
 
-### Autoscaling Capacity
+### Auto Scaling Capacity
 
-![Autoscaling Capacity](screenshots/autoscaling-capacity.png)
+![Auto Scaling capacity](screenshots/autoscaling-capacity.png)
 
-### Autoscaling Ec2 Instances
+### Auto Scaling EC2 Instances
 
-![Autoscaling Ec2 Instances](screenshots/autoscaling-ec2-instances.png)
+![Auto Scaling EC2 instances](screenshots/autoscaling-ec2-instances.png)
 
+### Auto Scaling Configuration from the Final Practical
+
+![Auto Scaling group configuration](screenshots/final-auto-scaling-group.png)
