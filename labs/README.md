@@ -37,7 +37,22 @@ Network-flow monitoring, resource-impact analysis, DDoS detection, and defensive
 ### [AWS IAM Access Control & Policy Validation Lab](aws-iam-access-control/)
 AWS IAM users, groups, managed and inline policies, job-function access assignment, least-privilege validation, and positive and negative authorization testing across Amazon S3 and EC2.
 
-### [Amazon S3 Object Storage, Permissions & Versioning](aws-s3-object-storage-versioning/)\nBucket policies, upload and access validation, S3 Versioning and object history.\n\n### [Amazon EBS Storage, Snapshots & Volume Recovery](aws-ebs-snapshot-recovery/)\nBlock volumes, snapshots, restored volumes and recovery validation.\n\n### [AWS Lambda & EventBridge EC2 Automation](aws-lambda-eventbridge-automation/)\nPython/Boto3 EC2 stop logic and scheduled EventBridge triggers.\n\n### [AWS Elastic Beanstalk Deployment & Monitoring](aws-elastic-beanstalk-monitoring/)\nSample application environment, CPU monitoring and EC2 instance status.\n\n### [Amazon RDS MySQL Provisioning & Connectivity](aws-rds-mysql-connectivity/)\nMulti-AZ subnet groups, security settings, MySQL Workbench connectivity and documented troubleshooting.\n\n### [Cloud, Container & Cryptographic Security Lab](cloud-container-cryptographic-security/)
+### [Amazon S3 Object Storage, Permissions & Versioning](aws-s3-object-storage-versioning/)
+Bucket policies, upload and access validation, S3 Versioning and object history.
+
+### [Amazon EBS Storage, Snapshots & Volume Recovery](aws-ebs-snapshot-recovery/)
+Block volumes, snapshots, restored volumes and recovery validation.
+
+### [AWS Lambda & EventBridge EC2 Automation](aws-lambda-eventbridge-automation/)
+Python/Boto3 EC2 stop logic and scheduled EventBridge triggers.
+
+### [AWS Elastic Beanstalk Deployment & Monitoring](aws-elastic-beanstalk-monitoring/)
+Sample application environment, CPU monitoring and EC2 instance status.
+
+### [Amazon RDS MySQL Provisioning & Connectivity](aws-rds-mysql-connectivity/)
+Multi-AZ subnet groups, security settings, MySQL Workbench connectivity and documented troubleshooting.
+
+### [Cloud, Container & Cryptographic Security Lab](cloud-container-cryptographic-security/)
 Azure tenant reconnaissance, Docker image vulnerability scanning, layered hashing, HTTPS certificate deployment, AES disk encryption, and AI-assisted cryptographic operations.
 
 For the larger AWS architecture project, see [AWS Secure & Scalable Web Architecture](../projects/cloud/aws-secure-scalable-web-architecture/).
