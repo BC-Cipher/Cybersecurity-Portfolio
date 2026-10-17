@@ -18,3 +18,10 @@ A managed deployment service reduces some orchestration burden but does not remo
 
 ## Key Takeaway
 This exercise showed how a managed application platform exposes both deployment status and infrastructure performance for operational review.
+
+## Screenshots
+
+### Beanstalk Monitoring
+
+![Beanstalk Monitoring](screenshots/beanstalk-monitoring.png)
+
