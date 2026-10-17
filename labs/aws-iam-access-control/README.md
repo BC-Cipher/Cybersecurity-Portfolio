@@ -2,7 +2,7 @@
 
 ## Overview
 
-This hands-on AWS lab focused on identity and access management, permission design, and authorization testing. I worked with IAM users, groups, AWS managed policies, and an inline policy to assign access based on job function and verify that each identity could perform only the intended actions.
+I assigned AWS permissions by job function and tested which S3 and EC2 actions each user could perform. I reviewed IAM groups, AWS managed policies, and an inline policy.
 
 **Environment:** AWS Identity and Access Management, Amazon S3, Amazon EC2  
 **Focus:** least privilege, group-based permissions, policy analysis, access validation
@@ -73,4 +73,4 @@ AWS IAM, users and groups, managed policies, inline policies, least privilege, a
 
 See [AWS Secure & Scalable Web Architecture](../../projects/cloud/aws-secure-scalable-web-architecture/) for the broader cloud infrastructure project.
 
-> This lab was completed in an AWS training environment. Credentials, account identifiers, and restricted course materials are not included in this public portfolio.
+> Completed in an AWS training environment.
