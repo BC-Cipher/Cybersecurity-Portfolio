@@ -27,3 +27,14 @@ The report screenshots show the configured EventBridge trigger, the Boto3 functi
 
 ## Skills Demonstrated
 Serverless event-driven automation, Lambda function configuration, Python, Boto3, EventBridge schedules, EC2 API operations, least-privilege planning.
+
+## Screenshots
+
+### Lambda Eventbridge Trigger
+
+![Lambda Eventbridge Trigger](screenshots/lambda-eventbridge-trigger.png)
+
+### Lambda Boto3 Code
+
+![Lambda Boto3 Code](screenshots/lambda-boto3-code.png)
+
