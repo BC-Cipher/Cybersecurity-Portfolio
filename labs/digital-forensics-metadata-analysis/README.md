@@ -8,7 +8,7 @@
 
 During cybersecurity competition preparation, I practiced examining digital video evidence to identify metadata, analyze timestamps, interpret geographic coordinates, and inspect individual video frames.
 
-This exercise strengthened my understanding of how digital evidence can support forensic investigations and why metadata must be carefully validated before drawing conclusions.
+I compared metadata and timestamps before drawing conclusions from the video evidence.
 
 ## 1. File Metadata Examination
 
@@ -81,7 +81,7 @@ strings -a filename.mov
 
 This technique can reveal useful textual information, although results must be interpreted carefully.
 
-## Key Takeaways
+## Lessons Learned
 
 - Metadata can provide valuable information about digital evidence.
 - Different timestamps may reflect different events in a file's history.
