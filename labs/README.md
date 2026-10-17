@@ -32,30 +32,33 @@ Static malware analysis with Hybrid Analysis, Detect It Easy, and OllyDbg combin
 ### [DoS/DDoS Detection & Mitigation Lab](dos-ddos-detection-mitigation/)
 Network-flow monitoring, resource-impact analysis, DDoS detection, and defensive source blocking in an isolated training environment.
 
-## Cloud, Identity, Container & Cryptographic Security
+## Cloud Infrastructure & Security
 
-### [AWS IAM Access Control & Policy Validation Lab](aws-iam-access-control/)
-AWS IAM users, groups, managed and inline policies, job-function access assignment, least-privilege validation, and positive and negative authorization testing across Amazon S3 and EC2.
+### [AWS IAM Access Control and Policy Validation](aws-iam-access-control/)
+Role-specific IAM policies, permission testing and least-privilege analysis.
 
-### [Amazon S3 Object Storage, Permissions & Versioning](aws-s3-object-storage-versioning/)
-Bucket policies, upload and access validation, S3 Versioning and object history.
+### [AWS VPC and EC2 Web Infrastructure](aws-vpc-ec2-infrastructure/)
+Multi-AZ public and private subnet design, gateways, route tables and EC2 deployment.
 
-### [Amazon EBS Storage, Snapshots & Volume Recovery](aws-ebs-snapshot-recovery/)
-Block volumes, snapshots, restored volumes and recovery validation.
+### [Amazon S3 Object Storage and Versioning](aws-s3-object-storage-versioning/)
+Bucket policies, access testing, object versions and recovery.
 
-### [AWS Lambda & EventBridge EC2 Automation](aws-lambda-eventbridge-automation/)
-Python/Boto3 EC2 stop logic and scheduled EventBridge triggers.
+### [Amazon EBS Snapshots and Volume Recovery](aws-ebs-snapshot-recovery/)
+Persistent block storage, snapshots, restored volumes and Linux verification.
 
-### [AWS Elastic Beanstalk Deployment & Monitoring](aws-elastic-beanstalk-monitoring/)
-Sample application environment, CPU monitoring and EC2 instance status.
+### [AWS Lambda and EventBridge Automation](aws-lambda-eventbridge-automation/)
+Python/Boto3 EC2 automation with scheduled event triggers.
 
-### [Amazon RDS MySQL Provisioning & Connectivity](aws-rds-mysql-connectivity/)
-Multi-AZ subnet groups, security settings, MySQL Workbench connectivity and documented troubleshooting.
+### [Amazon RDS MySQL Connectivity](aws-rds-mysql-connectivity/)
+Private database networking, subnet groups, MySQL connectivity and troubleshooting.
 
-### [Cloud, Container & Cryptographic Security Lab](cloud-container-cryptographic-security/)
-Azure tenant reconnaissance, Docker image vulnerability scanning, layered hashing, HTTPS certificate deployment, AES disk encryption, and AI-assisted cryptographic operations.
+### [AWS Elastic Beanstalk Monitoring](aws-elastic-beanstalk-monitoring/)
+Managed web application deployment and infrastructure monitoring.
 
-For the larger AWS architecture project, see [AWS Secure & Scalable Web Architecture](../projects/cloud/aws-secure-scalable-web-architecture/).
+### [Cloud, Container and Cryptographic Security](cloud-container-cryptographic-security/)
+Azure reconnaissance, Docker image vulnerability scanning and cryptographic operations.
+
+See the [AWS cloud architecture project](../projects/cloud/aws-secure-scalable-web-architecture/).
 
 ## Mobile, IoT & OT Security
 
