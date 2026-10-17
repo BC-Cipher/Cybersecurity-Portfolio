@@ -32,10 +32,15 @@ Static malware analysis with Hybrid Analysis, Detect It Easy, and OllyDbg combin
 ### [DoS/DDoS Detection & Mitigation Lab](dos-ddos-detection-mitigation/)
 Network-flow monitoring, resource-impact analysis, DDoS detection, and defensive source blocking in an isolated training environment.
 
-## Cloud, Container & Cryptographic Security
+## Cloud, Identity, Container & Cryptographic Security
+
+### [AWS IAM Access Control & Policy Validation Lab](aws-iam-access-control/)
+AWS IAM users, groups, managed and inline policies, job-function access assignment, least-privilege validation, and positive and negative authorization testing across Amazon S3 and EC2.
 
 ### [Cloud, Container & Cryptographic Security Lab](cloud-container-cryptographic-security/)
 Azure tenant reconnaissance, Docker image vulnerability scanning, layered hashing, HTTPS certificate deployment, AES disk encryption, and AI-assisted cryptographic operations.
+
+For the larger AWS architecture project, see [AWS Secure & Scalable Web Architecture](../projects/cloud/aws-secure-scalable-web-architecture/).
 
 ## Mobile, IoT & OT Security
 
@@ -64,6 +69,4 @@ Controlled credential-harvesting simulation, phishing detection, browser-based d
 
 ## Repository Growth
 
-Future coursework will be added to the appropriate domain instead of creating a new top-level folder for every class. Larger multi-week projects that combine several technologies will be documented separately under `projects/`.
-
-Likely future project areas include Windows and identity administration, Linux systems and automation, network engineering and segmentation, cloud infrastructure and DevOps, data engineering, and AI/ML security analytics.
+Future coursework will be added to the appropriate domain instead of creating a new top-level folder for every class. Larger multi-week projects that combine several technologies are documented separately under `projects/`.

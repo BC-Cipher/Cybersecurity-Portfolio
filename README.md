@@ -10,12 +10,12 @@ My background spans offensive security, vulnerability assessment, Windows and Li
 |---|---|---|
 | Offensive Security | [Windows System Exploitation & Privilege Escalation](labs/windows-system-exploitation-privilege-escalation/) | NTLMv2 credential auditing, Meterpreter validation, buffer-overflow analysis, Windows privilege escalation |
 | Web Application Security | [Web Server & Application Penetration Testing](labs/web-server-application-security/) | Reconnaissance, service enumeration, vulnerability assessment, WordPress testing, controlled RCE validation |
+| Cloud Infrastructure & Security | [AWS Secure & Scalable Web Architecture](projects/cloud/aws-secure-scalable-web-architecture/) | IAM, multi-AZ VPC design, EC2, RDS, Application Load Balancing, Auto Scaling, CloudWatch |
 | Threat Analysis | [Malware Analysis & Network Threat Detection](labs/malware-analysis-network-threat-detection/) | Static malware analysis, executable inspection, ARP anomaly detection, sniffer detection, HTTP traffic analysis |
 | Vulnerability Management | [Vulnerability Research & Assessment](labs/vulnerability-research-assessment/) | MITRE CWE research, OpenVAS/Greenbone scanning, Nikto assessment, severity analysis, remediation |
-| Cloud & Infrastructure Security | [Cloud, Container & Cryptographic Security](labs/cloud-container-cryptographic-security/) | Azure tenant reconnaissance, Trivy container scanning, TLS, AES encryption, hashing and HMAC |
 | Mobile, IoT & OT Security | [Mobile, IoT & OT Security Assessment](labs/mobile-iot-ot-security/) | Android ADB testing, mobile malware detection, MQTT analysis, CAN replay testing |
 
-[Browse the complete Technical Lab Index](labs/)
+[Browse the complete Technical Lab Index](labs/) | [Browse Larger Projects](projects/) | [View the Cloud Portfolio](projects/cloud/)
 
 ## Technical Domains
 
@@ -25,7 +25,7 @@ My background spans offensive security, vulnerability assessment, Windows and Li
 
 **Systems & Identity:** Windows 10/11, Windows Server, Linux, Active Directory, Group Policy, Microsoft Entra ID, Intune, MFA, RBAC
 
-**Cloud & Virtualization:** Microsoft Azure, Microsoft 365, AWS fundamentals, Proxmox, virtual machines, container security
+**Cloud & Virtualization:** AWS IAM, Amazon VPC, EC2, EBS, RDS, Elastic Load Balancing, Auto Scaling, CloudWatch, Microsoft Azure, Microsoft 365, Proxmox, virtual machines, container security
 
 **Networking:** TCP/IP, DNS, DHCP, VLANs, routing, switching, Wireshark, pfSense, OPNsense, UniFi
 
@@ -46,19 +46,20 @@ My background spans offensive security, vulnerability assessment, Windows and Li
 
 ## Portfolio Organization
 
-This repository separates focused technical labs from larger multi-week projects.
+This repository separates focused technical labs from larger projects.
 
 - **[Technical Labs](labs/):** hands-on exercises organized by security domain
-- **[Projects](projects/):** larger infrastructure, cloud, networking, DevOps, data, AI, and systems projects will be added here as they are documented
+- **[Projects](projects/):** larger infrastructure, cloud, networking, DevOps, data, AI, and systems projects
+- **[Cloud Portfolio](projects/cloud/):** AWS architecture, cloud security, identity, networking, compute, database, availability, and monitoring work
 
-The homepage intentionally features only a small selection of the strongest work. The complete lab index contains additional evidence of technical breadth.
+The homepage intentionally features only a small selection of the strongest work. The complete lab and project indexes contain additional evidence of technical breadth.
 
 ## Professional Interests
 
 - Penetration Testing & Ethical Hacking
 - Vulnerability Management
+- Cloud Security & Cloud Infrastructure
 - Security Operations & Incident Response
-- Cloud Security
 - Digital Forensics
 - Infrastructure & Identity Security
 
@@ -66,4 +67,4 @@ The homepage intentionally features only a small selection of the strongest work
 
 [LinkedIn](https://www.linkedin.com/in/brittanyclayton-cybersecurity)
 
-This portfolio is maintained for professional development and demonstration of cybersecurity skills. Competition materials, confidential information, and sensitive credentials are not publicly disclosed.
+This portfolio is maintained for professional development and demonstration of cybersecurity skills. Competition materials, confidential information, sensitive credentials, and restricted course materials are not publicly disclosed.
