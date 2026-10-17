@@ -2,7 +2,7 @@
 
 CompTIA Security+ certified cybersecurity graduate with a B.S. in Information & Cybersecurity Operations, a 4.0 GPA, and more than two years of enterprise IT support experience.
 
-My background spans offensive security, vulnerability assessment, Windows and Linux systems, networking, cloud and identity administration, technical troubleshooting, and security analysis. This portfolio highlights the strongest projects and labs from my academic work, cybersecurity training, externship experience, and continued technical development.
+I work across Windows and Linux systems, cloud infrastructure, identity management, networking, vulnerability assessment, and security testing. The projects below show the tools I've used, the problems I worked through, and the results I was able to verify.
 
 ## Featured Projects
 
@@ -49,10 +49,10 @@ My background spans offensive security, vulnerability assessment, Windows and Li
 This repository separates focused technical labs from larger projects.
 
 - **[Technical Labs](labs/):** hands-on exercises organized by security domain
-- **[Projects](projects/):** larger infrastructure, cloud, networking, DevOps, data, AI, and systems projects
+- **[Projects](projects/):** larger, multi-part technical projects
 - **[Cloud Portfolio](projects/cloud/):** AWS architecture, cloud security, identity, networking, compute, database, availability, and monitoring work
 
-The homepage intentionally features only a small selection of the strongest work. The complete lab and project indexes contain additional evidence of technical breadth.
+The featured work is a starting point. The lab index has the full collection of completed exercises.
 
 ## Professional Interests
 
@@ -67,4 +67,4 @@ The homepage intentionally features only a small selection of the strongest work
 
 [LinkedIn](https://www.linkedin.com/in/brittanyclayton-cybersecurity)
 
-This portfolio is maintained for professional development and demonstration of cybersecurity skills. Competition materials, confidential information, sensitive credentials, and restricted course materials are not publicly disclosed.
+All testing was performed in authorized environments. Sensitive information and restricted training materials are excluded.
