@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project documents hands-on network scanning and enumeration work completed in an authorized cybersecurity training environment.
+I used Nmap, SNMP tools, and automated enumeration utilities to investigate services and network exposure in a controlled lab.
 
 The broader coursework covered host discovery, port and service discovery, operating-system identification, defensive-control evasion testing, protocol enumeration, and automated network assessment. This portfolio entry focuses on three representative activities that demonstrate the strongest retained evidence: Nmap decoy scanning, SNMP enumeration with SnmpWalk, and automated network enumeration.
 
@@ -85,7 +85,7 @@ The associated scanning and enumeration modules also covered:
 - SMTP enumeration
 - Network inventory and service discovery
 
-The portfolio uses only representative screenshots to keep the project concise and focused.
+
 
 ---
 
@@ -106,7 +106,7 @@ The portfolio uses only representative screenshots to keep the project concise a
 
 ---
 
-## Key Takeaways
+## Lessons Learned
 
 This project reinforced the progression from basic host discovery to deeper service enumeration.
 
