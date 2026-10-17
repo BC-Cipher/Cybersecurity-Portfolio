@@ -6,7 +6,7 @@ I worked with Amazon Elastic Block Store (EBS) volumes attached to EC2 instances
 **Services:** Amazon EC2, EBS, EBS snapshots  
 **Focus:** Persistent block storage, disaster recovery, Linux storage operations
 
-## Work Completed
+## Work Performed
 - Reviewed EBS volume type, size, attachment, and availability-zone information.
 - Used Linux terminal commands to investigate mounted storage and files.
 - Created and verified an EBS snapshot.
@@ -16,20 +16,19 @@ I worked with Amazon Elastic Block Store (EBS) volumes attached to EC2 instances
 
 The related EC2 storage coursework also covered resizing a block volume and extending the Linux partition and filesystem. The documentation here focuses on snapshot and restore work supported by the completed lab report.
 
-
-## Security & Operational Considerations
+## Security Considerations
 Snapshots are useful for recovery but require appropriate IAM permissions, encryption, retention controls, and documented restoration tests. Recovery planning should also account for whether data is application-consistent, not just whether a volume was successfully recreated.
 
-## Key Takeaway
-Creating a snapshot is only one part of recovery. Recreating storage and verifying accessible content are equally important.
+## What I Learned
+The important test was whether the restored volume could be accessed and the expected files were present.
 
 ## Screenshots
 
-### Ebs Snapshot
+### EBS Snapshot
 
-![Ebs Snapshot](screenshots/ebs-snapshot.png)
+![EBS Snapshot](screenshots/ebs-snapshot.png)
 
-### Ebs Restored Volumes
+### Restored EBS Volumes
 
-![Ebs Restored Volumes](screenshots/ebs-restored-volumes.png)
+![EBS Restored Volumes](screenshots/ebs-restored-volumes.png)
 
