@@ -36,3 +36,14 @@ Configured job-function access through IAM groups and policies, then validated a
 ## Portfolio Approach
 
 The public documentation is written as original project documentation rather than a copy of course lab guides. Account identifiers, credentials, restricted training materials, and other sensitive information are intentionally excluded.
+
+## Additional Cloud Labs and Practical
+
+- [S3 Object Storage, Permissions & Versioning](../../labs/aws-s3-object-storage-versioning/)
+- [EBS Snapshots & Volume Recovery](../../labs/aws-ebs-snapshot-recovery/)
+- [Lambda & EventBridge EC2 Automation](../../labs/aws-lambda-eventbridge-automation/)
+- [Elastic Beanstalk Deployment & Monitoring](../../labs/aws-elastic-beanstalk-monitoring/)
+- [RDS MySQL Provisioning & Connectivity](../../labs/aws-rds-mysql-connectivity/)
+- [Cloud Foundations Practical Assessment](aws-cloud-foundations-practical/)
+
+[View the screenshot placement guide](SCREENSHOT_PLACEMENT.md)
