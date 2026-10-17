@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project documents a series of hands-on cybersecurity exercises completed in an authorized virtual lab environment. The activities explored network attacks and defensive monitoring from both offensive and defensive perspectives.
+I practiced web-session interception, network traffic inspection, intrusion detection, and honeypot monitoring in an isolated lab. The activities explored network attacks and defensive monitoring from both offensive and defensive perspectives.
 
 I used web interception proxies, packet analysis tools, intrusion detection systems, honeypots, and Windows administration utilities to examine how suspicious network activity can be generated, observed, detected, and investigated.
 
@@ -147,7 +147,7 @@ This reinforced the importance of monitoring trusted operating-system utilities 
 
 ---
 
-## Key Takeaways
+## Lessons Learned
 
 These exercises demonstrated the value of examining security activity from both attacker and defender perspectives.
 
