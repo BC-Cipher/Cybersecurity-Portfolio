@@ -20,11 +20,6 @@ In two AWS Cloud Foundations lab exercises, I created Amazon S3 buckets, uploade
 - Bucket versioning preserves previous object versions, helping recover from accidental overwrites or deletions, but increases retained storage.
 - Versioning is not equivalent to a complete backup and recovery strategy. Production controls can include default Block Public Access, IAM policy review, encryption, appropriate lifecycle rules, access logging, and recovery testing.
 
-## Evidence to Add
-Save these exact filenames under [screenshots/](screenshots/):
-- `s3-uploaded-object.png`: object metadata following upload.
-- `s3-versioning-enabled.png`: bucket Properties page showing versioning enabled.
-- `s3-object-versions.png`: comparison of first and second object versions.
 
 ## Key Takeaway
 The exercise connected object availability with policy enforcement and showed how versioning protects prior content while requiring deliberate storage governance.
