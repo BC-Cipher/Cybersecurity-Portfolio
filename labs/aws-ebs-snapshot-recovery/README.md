@@ -14,12 +14,8 @@ I worked with Amazon Elastic Block Store (EBS) volumes attached to EC2 instances
 - Verified the restored volume appeared in the EC2 storage inventory.
 - Checked file visibility in Linux as part of the recovery procedure.
 
-A separate EBS resize exercise covered extending volume capacity and Linux partition/filesystem resizing. The uploaded file for that exercise contains the lab **instructions**, not a completed student report, so I have not represented its screenshots as verified execution evidence here.
+The related EC2 storage coursework also covered resizing a block volume and extending the Linux partition and filesystem. The documentation here focuses on snapshot and restore work supported by the completed lab report.
 
-## Evidence to Add
-Save under [screenshots/](screenshots/):
-- `ebs-snapshot.png`: snapshot entry marked completed.
-- `ebs-restored-volumes.png`: restored volumes shown in the AWS console.
 
 ## Security & Operational Considerations
 Snapshots are useful for recovery but require appropriate IAM permissions, encryption, retention controls, and documented restoration tests. Recovery planning should also account for whether data is application-consistent, not just whether a volume was successfully recreated.
