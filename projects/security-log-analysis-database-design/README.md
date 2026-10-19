@@ -20,6 +20,25 @@ The source files contained misspelled categories, missing values, inconsistent s
 
 The missing references were particularly important. A log entry is harder to investigate when its user, system, or message ID cannot be resolved reliably.
 
+### Excel data preparation
+
+The log import contained inconsistent labels and formats. I standardized the relevant fields before building the analytical summaries.
+
+![Sample records from the original log import](screenshots/raw-log-import.png)
+
+*Sample from the incoming log data.*
+
+![Standardized log records prepared for analysis](screenshots/standardized-log-data.png)
+
+*Log records using standardized categories.*
+
+I also kept a reference table for status values that arrived under different names or abbreviations.
+
+![Excel reference table mapping incoming log-status values to consistent labels](screenshots/log-status-lookup.png)
+
+*Lookup table used to align inconsistent status labels.*
+
+
 ## Building the Access database
 
 As more data was introduced, I migrated the workbook data into an Access relational database. I used staging tables so imported records could be checked before being appended to the main tables.
@@ -34,6 +53,17 @@ The database work included:
 
 I also worked with password-based database encryption, backup copies, a read-only copy, and a front-end/back-end split. User positions were modeled in the database, but the position lookup table itself is not an Access permissions system.
 
+### Access queries and table structure
+
+![Microsoft Access update query for standardizing system data](screenshots/access-staging-update-query.png)
+
+*Saved update query used to standardize imported system-type values.*
+
+![Access log table showing record identifiers and lookup key fields](screenshots/normalized-access-log-table.png)
+
+*Access log table with ID fields for normalized reference values. Original text fields remain visible for review.*
+
+
 ## Reporting and findings
 
 I created crosstab queries and Access reports to make the data useful beyond the import process. The analysis focused on log severity, missing source information, system update status, and inactive user accounts.
@@ -41,6 +71,21 @@ I created crosstab queries and Access reports to make the data useful beyond the
 In one user-status report, **140 accounts were marked Delete, 127 Suspend, and 22 OK**. These are review flags from the dataset, not proof that those accounts were disabled or compromised.
 
 A critical-priority crosstab showed elevated counts in the HQ and Northeast divisions. Other reports exposed unknown departments, incomplete reference data, and systems flagged as overdue. I used those results to recommend better validation at import, regular account reviews, and more consistent update tracking.
+
+### Selected results
+
+![Critical-priority log records grouped by division](screenshots/critical-priority-by-division.png)
+
+*Critical-priority log counts for the divisions returned by this crosstab. These are priority labels, not confirmed incidents.*
+
+![Access user-status report showing records marked Delete, Suspend, and OK](screenshots/user-status-report.png)
+
+*User-status counts generated in Access to support account review.*
+
+![Access systems-by-division report displaying counts for HQ, NE, and SW](screenshots/systems-by-division-report.png)
+
+*Systems-by-division report for the divisions returned by this query.*
+
 
 ## What I learned
 
