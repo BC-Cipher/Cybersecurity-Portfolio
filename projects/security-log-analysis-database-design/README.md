@@ -53,6 +53,63 @@ The database work included:
 
 I also worked with password-based database encryption, backup copies, a read-only copy, and a front-end/back-end split. User positions were modeled in the database, but the position lookup table itself is not an Access permissions system.
 
+### Database relationships
+
+The database structure uses the log table as the central record of activity, linking each event to the relevant user, system, message, and lookup values. Position and division tables reduce repeated text in user records.
+
+```mermaid
+erDiagram
+    UsersPosition ||--o{ UsersData : "PositionID"
+    DivisionData ||--o{ UsersData : "DivisionID"
+    UsersData ||--o{ LogData : "UserID"
+    SystemData ||--o{ LogData : "SystemID"
+    MsgData ||--o{ LogData : "MSGID"
+    DivisionData ||--o{ LogData : "DivisionID"
+    LogLevelData ||--o{ LogData : "LogLevelID"
+    SourceData ||--o{ LogData : "SourceID"
+
+    LogData {
+        string LogID PK
+        int UserID FK
+        int SystemID FK
+        int MSGID FK
+        int DivisionID FK
+        int LogLevelID FK
+        int SourceID FK
+    }
+    UsersData {
+        int UserID PK
+        int DivisionID FK
+        int PositionID FK
+    }
+    UsersPosition {
+        int PositionID PK
+        string PositionName
+    }
+    DivisionData {
+        int DivisionID PK
+        string Division
+    }
+    SystemData {
+        int SystemID PK
+        string SystemType
+    }
+    MsgData {
+        int MSGID PK
+        string MessageText
+    }
+    LogLevelData {
+        int LogLevelID PK
+        string LogLevel
+    }
+    SourceData {
+        int SourceID PK
+        string Source
+    }
+```
+
+*Simplified logical relationship diagram based on the project documentation. It is not an export of the original Access Relationships window.*
+
 ### Access queries and table structure
 
 ![Microsoft Access update query for standardizing system data](screenshots/access-staging-update-query.png)
