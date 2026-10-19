@@ -6,7 +6,7 @@
 
 I examined denial-of-service traffic in a controlled lab and used monitoring tools to investigate its impact on a Windows system.
 
-The lab examined how high-volume network traffic can affect system resources and how a defensive monitoring tool can identify suspicious flows. The portfolio version emphasizes detection, impact analysis, and mitigation rather than attack tooling.
+I used traffic monitoring and Windows Resource Monitor to investigate suspicious connections, resource usage, and the effects of high-volume traffic.
 
 ## Tools & Technologies
 
