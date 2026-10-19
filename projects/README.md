@@ -1,15 +1,15 @@
 # Project Portfolio
 
-Projects that bring several technologies together, from infrastructure design to configuration and testing.
+Larger projects that bring infrastructure, security, configuration, and testing together.
 
 Focused exercises remain under [Technical Labs](../labs/).
 
 ## Cloud Infrastructure & Security
 
 ### [AWS Secure & Scalable Web Architecture](cloud/aws-secure-scalable-web-architecture/)
-Configured AWS networking, compute, database services, load balancing, Auto Scaling, and monitoring across several training labs. The project connects that work in one reference architecture.
+Built AWS network, compute, and database components across training labs, then documented how they fit into a scalable web architecture.
 
 ### [Infrastructure as Code Across AWS, Azure & Google Cloud](cloud/multicloud-infrastructure-as-code/)
-Worked with cloud templates across three providers, debugged CloudFormation YAML, verified Azure ARM and Bicep deployments, and deployed Google Cloud network and storage resources. Includes an AWS high-availability architecture design.
+Used CloudFormation, ARM, Bicep, and Deployment Manager to work with cloud resources across AWS, Azure, and Google Cloud. Includes the final AWS architecture design and linked template files.
 
 [Browse the Cloud Portfolio](cloud/)
