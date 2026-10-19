@@ -1,71 +1,57 @@
-# Cybersecurity Portfolio | Brittany Clayton
+# Brittany Clayton | Cybersecurity & Cloud Infrastructure
 
-CompTIA Security+ certified cybersecurity graduate with a B.S. in Information & Cybersecurity Operations, a 4.0 GPA, and more than two years of enterprise IT support experience.
+I'm a CompTIA Security+ certified cybersecurity graduate with a B.S. in Information & Cybersecurity Operations (4.0 GPA), more than two years of enterprise IT support experience, and hands-on cybersecurity externship experience.
 
-I work across Windows and Linux systems, cloud infrastructure, identity management, networking, vulnerability assessment, and security testing. The projects below show the tools I've used, the problems I worked through, and the results I was able to verify.
+My work covers Windows and Linux systems, cloud infrastructure, identity management, networking, and security assessment. These projects show the tools I used, the testing I completed, and the results I could verify.
+
+**Explore:** [Featured Projects](#featured-projects) | [Technical Labs](labs/) | [Cloud Projects](projects/cloud/) | [Project Index](projects/)
 
 ## Featured Projects
 
-| Area | Project | Highlights |
+| Focus | Project | Work demonstrated |
 |---|---|---|
-| Offensive Security | [Windows System Exploitation & Privilege Escalation](labs/windows-system-exploitation-privilege-escalation/) | NTLMv2 credential auditing, Meterpreter validation, buffer-overflow analysis, Windows privilege escalation |
-| Web Application Security | [Web Server & Application Penetration Testing](labs/web-server-application-security/) | Reconnaissance, service enumeration, vulnerability assessment, WordPress testing, controlled RCE validation |
-| Cloud Infrastructure & Security | [AWS Secure & Scalable Web Architecture](projects/cloud/aws-secure-scalable-web-architecture/) | IAM, multi-AZ VPC design, EC2, RDS, Application Load Balancing, Auto Scaling, CloudWatch |
-| Cloud Engineering & IaC | [Multi-Cloud Infrastructure as Code](projects/cloud/multicloud-infrastructure-as-code/) | AWS CloudFormation, Azure ARM/Bicep, Google Cloud, Git versioning, deployment troubleshooting |
-| Threat Analysis | [Malware Analysis & Network Threat Detection](labs/malware-analysis-network-threat-detection/) | Static malware analysis, executable inspection, ARP anomaly detection, sniffer detection, HTTP traffic analysis |
-| Vulnerability Management | [Vulnerability Research & Assessment](labs/vulnerability-research-assessment/) | MITRE CWE research, OpenVAS/Greenbone scanning, Nikto assessment, severity analysis, remediation |
-| Mobile, IoT & OT Security | [Mobile, IoT & OT Security Assessment](labs/mobile-iot-ot-security/) | Android ADB testing, mobile malware detection, MQTT analysis, CAN replay testing |
+| Cloud Engineering | [Infrastructure as Code Across AWS, Azure & Google Cloud](projects/cloud/multicloud-infrastructure-as-code/) | CloudFormation debugging, ARM and Bicep deployments, Google Cloud resources, Git versioning |
+| Cloud Infrastructure | [AWS Secure & Scalable Web Architecture](projects/cloud/aws-secure-scalable-web-architecture/) | VPC segmentation, EC2, RDS, load balancing, Auto Scaling, and monitoring |
+| Offensive Security | [Windows Exploitation & Privilege Escalation](labs/windows-system-exploitation-privilege-escalation/) | NTLMv2 auditing, Meterpreter sessions, buffer-overflow analysis, and SYSTEM-level privilege testing |
+| Web Security | [Web Server & Application Penetration Testing](labs/web-server-application-security/) | Enumeration, vulnerability scanning, WordPress assessment, and controlled exploitation |
+| Vulnerability Management | [Vulnerability Research & Assessment](labs/vulnerability-research-assessment/) | CWE research, Greenbone/OpenVAS, Nikto, and remediation analysis |
+| Threat Detection | [Malware Analysis & Network Threat Detection](labs/malware-analysis-network-threat-detection/) | Static analysis, Wireshark traffic inspection, ARP anomalies, and credential exposure |
 
-[Browse the complete Technical Lab Index](labs/) | [Browse Larger Projects](projects/) | [View the Cloud Portfolio](projects/cloud/)
+[View all technical labs](labs/) | [Explore all cloud work](projects/cloud/)
 
-## Technical Domains
+## Professional Experience
 
-**Offensive Security:** Penetration testing, reconnaissance, enumeration, web application testing, exploitation validation, privilege escalation, post-exploitation analysis
+**Enterprise IT support:** More than two years troubleshooting Windows environments, supporting users, documenting technical issues, and working with Microsoft systems and cloud services.
 
-**Security Analysis & Defense:** Vulnerability assessment, packet analysis, malware analysis, intrusion detection, threat detection, security remediation
+**Cybersecurity externship:** Hands-on experience with Active Directory administration, MFA support, endpoint protection, laptop imaging, virtualization, and network troubleshooting.
 
-**Systems & Identity:** Windows 10/11, Windows Server, Linux, Active Directory, Group Policy, Microsoft Entra ID, Intune, MFA, RBAC
+## Technical Skills
 
-**Cloud & Virtualization:** AWS IAM, VPC, EC2, EBS, RDS, CloudWatch, Auto Scaling, CloudFormation, Azure ARM, Bicep, Google Cloud, Microsoft 365, Proxmox, virtual machines, container security
+**Systems & identity:** Windows 10/11, Windows Server, Linux, Active Directory, Group Policy, Microsoft Entra ID, Intune, Microsoft 365, MFA
 
-**Networking:** TCP/IP, DNS, DHCP, VLANs, routing, switching, Wireshark, pfSense, OPNsense, UniFi
+**Cloud & infrastructure:** AWS IAM, VPC, EC2, S3, EBS, RDS, CloudWatch, Application Load Balancers, Auto Scaling, CloudFormation, Azure ARM, Bicep, Google Cloud
 
-**Scripting & Data:** Python, PowerShell, SQL, pandas, Excel, Microsoft Access
+**Security:** Nmap, Wireshark, OWASP ZAP, Greenbone/OpenVAS, Nikto, Metasploit, vulnerability assessment, packet analysis, controlled penetration testing
+
+**Networking & virtualization:** TCP/IP, DNS, DHCP, VLANs, routing and switching, pfSense, OPNsense, UniFi, Proxmox
+
+**Scripting & data:** Python, PowerShell, SQL, pandas, Excel, Microsoft Access
 
 ## Education & Certifications
 
 **ECPI University**
 - B.S. in Information & Cybersecurity Operations, GPA 4.0, October 2026
 - A.A.S. in Computer Information Science and Information Security Technology, GPA 4.0, July 2025
-- Fellowship Award, Graduated Top of Class
-- Dean's List, All Semesters
+- Fellowship Award, graduated top of class
+- Dean's List, all semesters
 
 **Certifications & Training**
 - CompTIA Security+ (SY0-701)
 - AWS Academy Cloud Foundations
 - Microsoft Office Specialist, Word & Excel (Yellow Belt)
 
-## Portfolio Organization
-
-This repository separates focused technical labs from larger projects.
-
-- **[Technical Labs](labs/):** hands-on exercises organized by security domain
-- **[Projects](projects/):** larger, multi-part technical projects
-- **[Cloud Portfolio](projects/cloud/):** AWS architecture, cloud security, identity, networking, compute, database, availability, and monitoring work
-
-The featured work is a starting point. The lab index has the full collection of completed exercises.
-
-## Professional Interests
-
-- Penetration Testing & Ethical Hacking
-- Vulnerability Management
-- Cloud Security & Cloud Infrastructure
-- Security Operations & Incident Response
-- Digital Forensics
-- Infrastructure & Identity Security
-
 ## Connect
 
 [LinkedIn](https://www.linkedin.com/in/brittanyclayton-cybersecurity)
 
-All testing was performed in authorized environments. Sensitive information and restricted training materials are excluded.
+All active security testing was performed in authorized environments. Sensitive credentials and restricted course materials are not included.
