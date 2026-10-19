@@ -13,3 +13,8 @@ Built AWS network, compute, and database components across training labs, then d
 Used CloudFormation, ARM, Bicep, and Deployment Manager to work with cloud resources across AWS, Azure, and Google Cloud. Includes the final AWS architecture design and linked template files.
 
 [Browse the Cloud Portfolio](cloud/)
+
+## Security Data & Database Design
+
+### [Security Log Analysis & Relational Database Design](security-log-analysis-database-design/)
+Cleaned and analyzed security log data in Excel, then developed an Access relational database with staging tables, saved queries, lookup relationships, and management reports.
