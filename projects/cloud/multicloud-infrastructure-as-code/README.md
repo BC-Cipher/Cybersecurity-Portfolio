@@ -68,6 +68,19 @@ Before using the template in production I would:
 
 **Documented as a design:** the complete final AWS multi-tier architecture, including its Auto Scaling groups and Multi-AZ database. The final report includes configuration screenshots, but not a complete successful stack deployment or disaster-recovery test.
 
+## Selected Infrastructure Templates
+
+These files are based on my course templates. Example resource names were cleaned up for publication, and the AWS reference was revised to address issues in the original draft. Local format and reference checks do not replace cloud deployment tests.
+
+| Platform | Template | Scope |
+|---|---|---|
+| AWS | [Web and RDS reference](templates/aws-web-rds-reference.yaml) | Two-tier variation with ALB, EC2 Auto Scaling and a private RDS database |
+| AWS | [Three-AZ VPC](../../../labs/aws-cloudformation-iac/templates/vpc-three-az.yaml) | VPC, Internet Gateway, three public subnets, routes and outputs |
+| Azure | [Parameterized App Service ARM template](../../../labs/azure-arm-bicep-iac/templates/app-service-parameterized.json) | App Service plan and web app with configurable name and location |
+| Google Cloud | [Deployment configuration](../../../labs/google-cloud-deployment-manager/templates/deployment.yaml) | Jinja-based network and bucket definitions |
+
+The [AWS reference YAML](templates/aws-web-rds-reference.yaml) is a simplified two-tier revision of the coursework design. It is **not** the complete three-tier final architecture shown above, and I have not claimed it was deployed. It includes a basic web-server bootstrap for the load balancer's HTTP health checks; it does not contain a complete e-commerce application.
+
 ## Related Labs
 
 - [AWS CloudFormation Debugging & Version Control](../../../labs/aws-cloudformation-iac/)
