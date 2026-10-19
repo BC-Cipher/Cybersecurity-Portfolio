@@ -1,0 +1,8 @@
+{% set resource_name = 'iac-demo-vpc' -%}
+resources:
+- name: {{ resource_name }}
+  type: compute.v1.network
+  properties:
+    name: {{ resource_name }}
+    description: GCP VPC network
+    autoCreateSubnetworks: true

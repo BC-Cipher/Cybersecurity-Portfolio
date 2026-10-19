@@ -1,0 +1,9 @@
+imports:
+- path: vpc.jinja
+- path: bucket.jinja
+
+resources:
+- name: calab-vpc
+  type: vpc.jinja
+- name: calab-bucket
+  type: bucket.jinja

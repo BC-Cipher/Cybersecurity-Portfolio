@@ -1,0 +1,7 @@
+{% set bucket_location = 'us-central1' -%}
+resources:
+- name: {{ env['project'] }}-iac-demo-bucket
+  type: storage.v1.bucket
+  properties:
+    location: {{ bucket_location }}
+    kind: storage#bucket
