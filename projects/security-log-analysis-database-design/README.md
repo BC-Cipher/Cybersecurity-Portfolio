@@ -74,6 +74,12 @@ A critical-priority crosstab showed elevated counts in the HQ and Northeast divi
 
 ### Selected results
 
+The saved Access crosstab query groups log records by division and pivots them by source. These counts support comparisons between divisions, but do not confirm individual security incidents.
+
+![Microsoft Access SQL view of the critical-priority crosstab query](screenshots/critical-priority-sql-query.png)
+
+*SQL View of the saved `qryCT_CriticalPriority_BySource` query.*
+
 ![Critical-priority log records grouped by division](screenshots/critical-priority-by-division.png)
 
 *Critical-priority log counts for the divisions returned by this crosstab. These are priority labels, not confirmed incidents.*
