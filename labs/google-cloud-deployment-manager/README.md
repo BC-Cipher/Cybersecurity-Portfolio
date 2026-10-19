@@ -24,7 +24,7 @@ The VPC appeared with automatically created subnets. The bucket was visible in `
 
 These files preserve the resource types and structure from the completed lab. Training-only names were replaced with neutral examples, and the bucket name is derived from the Google Cloud project ID. I checked that the Jinja templates render to YAML and that the configuration references the supplied files.
 
-**Platform status:** Google Cloud discontinued standard support for Deployment Manager in April 2026. This is historical coursework rather than a recommended approach for a new deployment. For current infrastructure projects, I would evaluate [Google Cloud Infrastructure Manager](https://cloud.google.com/infrastructure-manager/docs) and Terraform.
+**Platform status:** Google Cloud ended standard support for Deployment Manager on April 1, 2026. This is historical coursework rather than a recommended approach for a new deployment. For current infrastructure projects, I would evaluate [Google Cloud Infrastructure Manager](https://cloud.google.com/infrastructure-manager/docs) and Terraform.
 
 ## Validation
 
