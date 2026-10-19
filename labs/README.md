@@ -1,6 +1,8 @@
 # Technical Lab Index
 
-Hands-on labs from cybersecurity coursework and technical practice, organized by the kind of work performed. Open a lab to see the tools, methods, results, and screenshots.
+Hands-on labs from coursework and technical practice, organized by subject. Each lab covers the tools used, the work performed, and the available results.
+
+**Browse:** [Offensive Security](#offensive-security--penetration-testing) | [Vulnerability Management](#vulnerability-management--threat-analysis) | [Cloud](#cloud-infrastructure--security) | [Mobile & IoT](#mobile-iot--ot-security) | [Networking](#networking--reconnaissance) | [Forensics](#digital-forensics) | [Security Awareness](#security-awareness--social-engineering)
 
 ## Offensive Security & Penetration Testing
 
@@ -32,6 +34,10 @@ Network-flow monitoring, resource-impact analysis, DDoS detection, and defensive
 
 ## Cloud Infrastructure & Security
 
+**Featured projects:** [AWS Web Architecture](../projects/cloud/aws-secure-scalable-web-architecture/) | [Multi-Cloud Infrastructure as Code](../projects/cloud/multicloud-infrastructure-as-code/)
+
+**AWS services and operations**
+
 ### [AWS IAM Access Control and Policy Validation](aws-iam-access-control/)
 Role-specific IAM policies, permission testing and least-privilege analysis.
 
@@ -56,7 +62,7 @@ Managed web application deployment and infrastructure monitoring.
 ### [Cloud, Container and Cryptographic Security](cloud-container-cryptographic-security/)
 Azure reconnaissance, Docker image vulnerability scanning and cryptographic operations.
 
-See the [AWS cloud architecture project](../projects/cloud/aws-secure-scalable-web-architecture/).
+**Infrastructure as Code**
 
 ### [AWS CloudFormation: Debugging & Version Control](aws-cloudformation-iac/)
 Corrected S3 and EC2 YAML templates, validated imports, reviewed VPC and RDS definitions, and pushed Git revisions.
@@ -66,8 +72,6 @@ Deployed Azure App Service resources using ARM and provisioned a storage account
 
 ### [Google Cloud Deployment Manager](google-cloud-deployment-manager/)
 Created a VPC and Cloud Storage bucket from Jinja templates and validated the deployment.
-
-See the [multi-cloud Infrastructure as Code project](../projects/cloud/multicloud-infrastructure-as-code/).
 
 ## Mobile, IoT & OT Security
 
