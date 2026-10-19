@@ -14,6 +14,11 @@ Used CloudFormation, ARM, Bicep, and Deployment Manager to work with cloud resou
 
 [Browse the Cloud Portfolio](cloud/)
 
+## Incident Investigation & Machine Learning
+
+### [Network Reconnaissance & Anomaly Detection](ai-assisted-incident-investigation/)
+Mapped a four-container VCASTLE network, reviewed HTTP log activity, and performed a separate Isolation Forest experiment with engineered IPv4 features from synthetic security logs. Includes documented findings and selected screenshots.
+
 ## Security Data & Database Design
 
 ### [Security Log Analysis & Relational Database Design](security-log-analysis-database-design/)
