@@ -13,7 +13,7 @@ The activity was part of a simulated incident. I confirmed what the script did a
 - Identified recurring requests to `/admin` and `/.git/config` on TCP port 8888.
 - Located `/workspace/system-check.sh` running as root under PID 7 in the **support** container.
 - Traced the script's startup to `launch.sh` and verified its network and logging behavior.
-- Examined **4,042 packets** collected from four containers in the final investigation.
+- Examined **4,042 captured packet records** across four observation points in the final investigation.
 - Used Isolation Forest to flag **203 unusual records** across the four captures, then checked selected packets with TShark.
 - Identified two benign IPv6 mDNS packets that the model flagged because its features did not properly represent that traffic.
 
@@ -75,7 +75,7 @@ Additional `lsof`, `tcpdump`, process, and controlled `strace` observations supp
 
 ## 5. Isolation Forest on fresh packet captures
 
-For the final stage, I collected approximately one minute of traffic from each container and exported packet fields to CSV. The model used five features: numeric IPv4 source and destination addresses, TCP source and destination ports, and frame length. I applied `StandardScaler` and configured Isolation Forest with **100 estimators**, **0.05 contamination**, and **`random_state=42`**.
+For the final stage, I collected approximately one minute of traffic from each container and exported packet fields to CSV. These are observations from separate capture points, so the combined record count does not represent 4,042 unique network packets. The model used five features: numeric IPv4 source and destination addresses, TCP source and destination ports, and frame length. I applied `StandardScaler` and configured Isolation Forest with **100 estimators**, **0.05 contamination**, and **`random_state=42`**.
 
 | Capture location | Records | Flagged | Not flagged |
 |---|---:|---:|---:|
