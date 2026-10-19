@@ -10,9 +10,9 @@ My work covers Windows and Linux systems, cloud infrastructure, identity managem
 
 | Focus | Project | Work demonstrated |
 |---|---|---|
+| Incident Response & ML | [Container Incident Investigation & Isolation Forest](projects/ai-assisted-incident-investigation/) | Network baseline, packet forensics, persistent scanning script analysis, anomaly detection and false-positive validation |
 | Cloud Engineering | [Infrastructure as Code Across AWS, Azure & Google Cloud](projects/cloud/multicloud-infrastructure-as-code/) | CloudFormation debugging, ARM and Bicep deployments, Google Cloud resources, Git versioning |
 | Cloud Infrastructure | [AWS Secure & Scalable Web Architecture](projects/cloud/aws-secure-scalable-web-architecture/) | VPC segmentation, EC2, RDS, load balancing, Auto Scaling, and monitoring |
-| Incident Response & ML | [Container Incident Investigation & Isolation Forest](projects/ai-assisted-incident-investigation/) | Network baseline, packet forensics, persistent scanning script analysis, anomaly detection and false-positive validation |
 | Security Data & Databases | [Security Log Analysis & Relational Database Design](projects/security-log-analysis-database-design/) | Excel log cleaning, data enrichment, Access staging, relational tables, SQL queries, and security reporting |
 | Offensive Security | [Windows Exploitation & Privilege Escalation](labs/windows-system-exploitation-privilege-escalation/) | NTLMv2 auditing, Meterpreter sessions, buffer-overflow analysis, and SYSTEM-level privilege testing |
 | Web Security | [Web Server & Application Penetration Testing](labs/web-server-application-security/) | Enumeration, vulnerability scanning, WordPress assessment, and controlled exploitation |
