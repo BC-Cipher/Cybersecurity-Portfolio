@@ -71,4 +71,4 @@ Using tools such as `ipcalc` helps validate manual calculations and reduce confi
 
 ## Learning Context
 
-This documentation describes general networking skills practiced during cybersecurity competition preparation. All examples are independently written and use standard networking concepts rather than competition-specific challenge data.
+These examples cover subnetting and routing concepts I practiced while preparing for cybersecurity competitions. They do not include restricted challenge data.
