@@ -31,6 +31,14 @@ I merged an existing VPC template with RDS resource definitions and imported the
 
 The training example included a literal database password in YAML. I excluded that value from the public portfolio. A production implementation should use managed secrets, private database networking and minimal permissions.
 
+## Template Files
+
+**[Three-AZ VPC CloudFormation template](templates/vpc-three-az.yaml):** Defines a VPC, three public subnets, Internet Gateway, routing, and resource outputs. The example VPC tags have been generalized for publication. Availability Zones depend on the Region selected when the stack is deployed.
+
+**[AWS web and RDS reference design](../../projects/cloud/multicloud-infrastructure-as-code/templates/aws-web-rds-reference.yaml):** Revised from an earlier AWS architecture draft. It adds target-group and listener connections, removes an unused application security group, avoids a fixed AMI, and removes open SSH access. The example is checked for YAML structure and internal references but has not been deployed in a live AWS account.
+
+I left out the older EC2 template with an invalid key-pair reference, the malformed final draft, and the RDS template containing a hard-coded password.
+
 ## What I Verified
 
 - Corrected S3 template imported into Infrastructure Composer.
