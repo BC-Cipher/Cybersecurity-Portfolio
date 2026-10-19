@@ -16,6 +16,16 @@ I used Google Cloud Deployment Manager and Jinja templates to define a VPC netwo
 
 The VPC appeared with automatically created subnets. The bucket was visible in `us-central1`. The lab's deployment check passed with no failed checks.
 
+## Configuration Files
+
+- [VPC Jinja template](templates/vpc.jinja)
+- [Cloud Storage bucket Jinja template](templates/bucket.jinja)
+- [Deployment Manager YAML configuration](templates/deployment.yaml)
+
+These files preserve the resource types and structure from the completed lab. Training-only names were replaced with neutral examples, and the bucket name is derived from the Google Cloud project ID. I checked that the Jinja templates render to YAML and that the configuration references the supplied files.
+
+**Platform status:** Google Cloud discontinued standard support for Deployment Manager in April 2026. This is historical coursework rather than a recommended approach for a new deployment. For current infrastructure projects, I would evaluate [Google Cloud Infrastructure Manager](https://cloud.google.com/infrastructure-manager/docs) and Terraform.
+
 ## Validation
 
 | Check | Result |
