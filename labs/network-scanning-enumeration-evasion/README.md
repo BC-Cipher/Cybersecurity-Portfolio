@@ -6,7 +6,7 @@
 
 I used Nmap, SNMP tools, and automated enumeration utilities to investigate services and network exposure in a controlled lab.
 
-The broader coursework covered host discovery, port and service discovery, operating-system identification, defensive-control evasion testing, protocol enumeration, and automated network assessment. This portfolio entry focuses on three representative activities that demonstrate the strongest retained evidence: Nmap decoy scanning, SNMP enumeration with SnmpWalk, and automated network enumeration.
+I practiced service discovery, operating-system identification, SNMP enumeration, and firewall/IDS evasion testing. The screenshots cover Nmap decoy scanning, SnmpWalk, and automated enumeration.
 
 ## Tools & Technologies
 
