@@ -1,18 +1,18 @@
 # Cloud Infrastructure and Security
 
-I worked with AWS, Azure and Google Cloud training environments to provision infrastructure, troubleshoot templates, manage access, and test storage, compute, networking and monitoring.
+I worked with AWS, Azure, and Google Cloud to provision resources, troubleshoot templates, manage access, and investigate infrastructure, automation, and monitoring in training environments.
 
 ## Multi-Cloud Infrastructure as Code
 
 ### [Infrastructure as Code Across AWS, Azure & Google Cloud](multicloud-infrastructure-as-code/)
-Configured and validated cloud resources using AWS CloudFormation, Azure ARM and Bicep, and Google Cloud Deployment Manager. Includes template debugging, Git versioning and a separate high-availability AWS design.
+Revised and tested cloud templates, tracked changes in Git, and verified resource deployment results. The project also contains a separate high-availability AWS design.
 
 **Technical labs:** [CloudFormation](../../labs/aws-cloudformation-iac/) | [Azure ARM & Bicep](../../labs/azure-arm-bicep-iac/) | [Google Cloud Deployment Manager](../../labs/google-cloud-deployment-manager/)
 
 ## Featured Architecture Project
 
 ### [AWS Secure and Scalable Web Architecture](aws-secure-scalable-web-architecture/)
-Multi-AZ VPC design, EC2 operations, RDS MySQL connectivity, application load balancing, CPU-based Auto Scaling, and CloudWatch monitoring. The diagram shows how these components fit together; the labs were completed separately.
+VPC networking, EC2 operations, RDS connectivity, load balancing, Auto Scaling, and CloudWatch. The architecture diagram connects work completed in separate labs.
 
 ## Hands-On AWS Labs
 
@@ -36,4 +36,4 @@ Multi-AZ VPC design, EC2 operations, RDS MySQL connectivity, application load ba
 
 **Operations:** Monitoring, instance protection, storage snapshots, database connections and autoscaling.
 
-Work completed in AWS training environments. Production security recommendations are identified separately.
+The projects distinguish completed lab work from proposed production improvements.
