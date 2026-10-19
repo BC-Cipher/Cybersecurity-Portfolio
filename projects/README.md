@@ -4,6 +4,11 @@ Larger projects that bring infrastructure, security, configuration, and testing 
 
 Focused exercises remain under [Technical Labs](../labs/).
 
+## Incident Investigation & Machine Learning
+
+### [Container Incident Investigation & Isolation Forest](ai-assisted-incident-investigation/)
+Investigated persistent HTTP probing across a four-container lab, traced it to a background Bash script, and checked Isolation Forest anomalies against packet and process evidence. Includes an analysis of benign mDNS outliers and a [separate synthetic MitM model comparison](ai-assisted-incident-investigation/mitm-model-comparison.md).
+
 ## Cloud Infrastructure & Security
 
 ### [AWS Secure & Scalable Web Architecture](cloud/aws-secure-scalable-web-architecture/)
@@ -13,11 +18,6 @@ Built AWS network, compute, and database components across training labs, then d
 Used CloudFormation, ARM, Bicep, and Deployment Manager to work with cloud resources across AWS, Azure, and Google Cloud. Includes the final AWS architecture design and linked template files.
 
 [Browse the Cloud Portfolio](cloud/)
-
-## Incident Investigation & Machine Learning
-
-### [Container Incident Investigation & Isolation Forest](ai-assisted-incident-investigation/)
-Investigated persistent HTTP probing across a four-container lab, traced it to a background Bash script, and checked Isolation Forest anomalies against packet and process evidence. Includes an analysis of benign mDNS outliers and a [separate synthetic MitM model comparison](ai-assisted-incident-investigation/mitm-model-comparison.md).
 
 ## Security Data & Database Design
 
