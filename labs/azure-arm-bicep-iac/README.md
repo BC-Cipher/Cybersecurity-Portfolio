@@ -12,6 +12,14 @@ I worked with two ARM template versions, saved as `vm1-azure.json` and `vm2-azur
 
 The browser displayed Azure's default message that the web app was running and waiting for content. That confirmed the App Service endpoint was available, not that a finished custom site had been deployed. The submitted ARM lab report shows two passed checks and zero failed checks.
 
+## ARM Template
+
+[Parameterized Azure App Service template](templates/app-service-parameterized.json)
+
+The published JSON defines an App Service plan and web app with configurable resource names and location. It is the parameterized revision from the ARM lab; the example still uses the API versions and S1 plan size from that exercise.
+
+The Bicep storage account deployment is documented through its training results. I did not have the original Bicep source file to publish alongside the ARM JSON.
+
 ## Bicep: Deploying Storage
 
 I edited a Bicep storage resource using `Microsoft.Storage/storageAccounts@2021-02-01`.
