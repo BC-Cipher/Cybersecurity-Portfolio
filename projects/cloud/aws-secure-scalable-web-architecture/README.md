@@ -8,6 +8,8 @@ These were separate training environments. The architecture diagram below brings
 
 **AWS services:** IAM, VPC, EC2, EBS, RDS for MySQL, Elastic Load Balancing, EC2 Auto Scaling, CloudWatch
 
+[View configuration and test screenshots](#configuration-and-test-evidence)
+
 ## Architecture
 
 This diagram shows how the services from the separate labs fit into a web application architecture. It is a reference design, not a screenshot of one running deployment.
@@ -55,13 +57,11 @@ flowchart TB
     end
 ```
 
-## What I Implemented
+## Work Completed
 
 ### 1. Identity and Access Management
 
 I reviewed IAM users, groups, AWS managed policies, and an inline policy, then assigned users to groups based on job function. I validated both allowed and denied actions across Amazon S3 and EC2.
-
-Testing both allowed and denied actions helped me confirm how the policies worked for each role.
 
 ### 2. Multi-AZ VPC Networking
 
@@ -95,8 +95,6 @@ I also worked with:
 - EBS volume expansion
 - Service quotas
 - AMI creation for repeatable instance deployment
-
-I also used the instance status checks and logs while troubleshooting.
 
 ### 4. RDS Database Architecture
 
@@ -141,7 +139,7 @@ I checked target health and used the training application's load-test function t
 | Elasticity | Auto Scaling with CPU target tracking | Adds and removes compute capacity based on demand |
 | Operations | EC2 protections, status checks, CloudWatch | Improves resilience and visibility |
 
-## Validation Performed
+## Testing and Results
 
 I verified the environment through functional and security-focused tests:
 
@@ -154,7 +152,7 @@ I verified the environment through functional and security-focused tests:
 - Accessed the application through the load balancer DNS name
 - Generated load and observed Auto Scaling launch additional instances after the CloudWatch threshold was reached
 
-## Production Hardening I Would Apply
+## Production Security Improvements
 
 Some settings in the training labs were intentionally simplified for speed. For a production deployment, I would strengthen the architecture in the following areas:
 
@@ -170,24 +168,15 @@ Some settings in the training labs were intentionally simplified for speed. For 
 - Evaluate AWS WAF for internet-facing application protection
 - Add alarms for availability, error rates, latency, database health, and capacity in addition to CPU
 
-## Skills Demonstrated
+## Related Labs
 
-AWS IAM, Amazon VPC, CIDR planning, public and private subnets, route tables, Internet Gateway, NAT Gateway, security groups, Amazon EC2, Amazon Linux, user data, EBS, AMIs, launch templates, Amazon RDS for MySQL, Multi-AZ, DB subnet groups, Application Load Balancer, target groups, health checks, EC2 Auto Scaling, CloudWatch metrics, CloudWatch alarms, least privilege, network segmentation, high availability, elasticity, cloud troubleshooting
+- [AWS IAM Policy Testing](../../../labs/aws-iam-access-control/)
+- [VPC and EC2 Networking](../../../labs/aws-vpc-ec2-infrastructure/)
+- [RDS MySQL Connectivity](../../../labs/aws-rds-mysql-connectivity/)
+- [EBS Snapshot Recovery](../../../labs/aws-ebs-snapshot-recovery/)
+- [Cloud Infrastructure Portfolio](../)
 
-## AWS Labs Covered
-
-- AWS IAM access control and policy testing
-- EC2 deployment, monitoring, protection, storage, and resizing
-- VPC creation with public/private subnet architecture
-- RDS Multi-AZ database deployment and application integration
-- Elastic Load Balancing, Auto Scaling, and CloudWatch-driven scaling
-
-## Related Work
-
-- [Cloud Infrastructure & Security Portfolio](../)
-- [AWS IAM Access Control & Policy Validation Lab](../../../labs/aws-iam-access-control/)
-
-> This project documents work completed in AWS training environments. It does not include account identifiers, passwords, access keys, or restricted course lab instructions.
+*Completed across separate AWS training environments. The architecture diagram is a reference design.*
 
 ## Configuration and Test Evidence
 
