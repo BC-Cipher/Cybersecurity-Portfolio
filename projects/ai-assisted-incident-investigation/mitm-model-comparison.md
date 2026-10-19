@@ -38,7 +38,7 @@ K-Means (`k=3`) assigned every record to one of three groups containing **1,507*
 
 ![K-Means clustering visualized with PCA](screenshots/mitm-kmeans-pca-clusters.png)
 
-Using DBSCAN, the completed lab report described a large primary cluster and **86 records labeled as noise**. The report also listed a three-record secondary cluster under a configuration specifying `min_samples=5`. Because that cluster size is inconsistent with a standard unweighted DBSCAN run at that setting, I have not treated the exact cluster breakdown as independently verified. The original 3,500-record dataset was not retained for a rerun.
+The completed assessment reported **86 DBSCAN noise records**. I reviewed the resulting visualization and investigated the unusual entries, but the original 3,500-record CSV is no longer available, so I cannot independently reproduce the cluster counts or use them as a model-performance benchmark.
 
 ![DBSCAN clusters and noise shown using PCA](screenshots/mitm-dbscan-pca-noise.png)
 
