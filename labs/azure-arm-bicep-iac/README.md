@@ -33,6 +33,20 @@ I edited a Bicep storage resource using `Microsoft.Storage/storageAccounts@2021-
 
 I deployed it using Azure CLI, checked that the deployment output reported `provisioningState: Succeeded`, and queried the account to confirm its name, Region, resource group and SKU. The lab validation passed.
 
+## Deployment Evidence
+
+**ARM resource validation**
+
+![Azure ARM lab validation results](screenshots/azure-arm-deployment-validation.png)
+
+**Bicep storage account template**
+
+![Azure Bicep storage account resource definition](screenshots/azure-bicep-storage-template.png)
+
+**Bicep deployment result**
+
+![Azure CLI output showing successful Bicep resource deployment](screenshots/azure-bicep-deployment-succeeded.png)
+
 ## What I Learned
 
 - ARM and Bicep both describe Azure infrastructure declaratively, while Bicep offers more concise syntax for many resources.

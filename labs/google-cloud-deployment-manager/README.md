@@ -34,8 +34,18 @@ These files preserve the resource types and structure from the completed lab. Tr
 | Network | Created VPC visible in the project |
 | Storage | Bucket visible with its Region |
 
+## Deployment Evidence
+
+**VPC network created in Google Cloud**
+
+![Google Cloud console displaying the deployed VPC network](screenshots/gcp-vpc-deployment.png)
+
+**Cloud Storage bucket**
+
+![Google Cloud console displaying the created Cloud Storage bucket](screenshots/gcp-storage-bucket.png)
+
 ## Security Considerations
 
-For production use, I would consider custom rather than automatic subnet configuration where segmentation is needed, restrict bucket access, apply least-privilege IAM, retain audit logs, and select an actively supported infrastructure management tool. This lab used Deployment Manager as provided by the training environment.
+For a new production deployment, I would use custom subnet configuration where segmentation is required, restrict bucket access, apply least-privilege IAM, and retain audit logs. This exercise used Deployment Manager in the training environment.
 
 [Infrastructure as Code project](../../projects/cloud/multicloud-infrastructure-as-code/)

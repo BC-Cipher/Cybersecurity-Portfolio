@@ -4,9 +4,9 @@
 
 ## Overview
 
-I worked with infrastructure templates across AWS, Microsoft Azure, and Google Cloud to configure resources, fix deployment errors, and check the results. Most of the labs started with existing templates that I modified, tested, and tracked with Git.
+I worked with infrastructure templates across AWS, Microsoft Azure, and Google Cloud to configure resources, fix deployment errors, and check the results. I worked from existing templates, changed their resource settings, resolved configuration problems, and used Git to keep track of revisions.
 
-For my final AWS assignment, I designed a multi-tier web application in CloudFormation with network separation, load balancing, Auto Scaling, and an RDS database. The template design is documented here, but the submitted records do not establish that the entire final stack passed end-to-end deployment and failover testing.
+For my final AWS assignment, I designed a multi-tier web application in CloudFormation with network separation, load balancing, Auto Scaling, and an RDS database. The final assignment includes a detailed infrastructure design. I have not included deployment or failover results that weren't recorded in the lab.
 
 | Platform | Tools | What I worked on |
 |---|---|---|
@@ -37,7 +37,7 @@ flowchart TB
   CPU -.-> App
 ```
 
-This is a diagram of the template design, not a screenshot of one fully deployed environment.
+This diagram represents the planned architecture. The report documents the template configuration rather than a completed deployment of the entire application.
 
 | Area | Template configuration |
 |---|---|
@@ -64,13 +64,13 @@ Before using the template in production I would:
 
 ## Verified Work Versus Design
 
-**Verified in the lab records:** successful CloudFormation template imports in Infrastructure Composer, Git pushes containing revised templates, Azure ARM deployment checks, an Azure Bicep deployment returning `Succeeded`, and deployed Google Cloud VPC and bucket resources with a passing validation.
+**Lab results:** Infrastructure Composer accepted the revised CloudFormation templates, Git pushes completed, the Azure ARM checks passed, the Bicep deployment returned `Succeeded`, and Google Cloud displayed the deployed VPC and bucket.
 
-**Documented as a design:** the complete final AWS multi-tier architecture, including its Auto Scaling groups and Multi-AZ database. The final report includes configuration screenshots, but not a complete successful stack deployment or disaster-recovery test.
+**AWS architecture design:** The final report shows Auto Scaling and RDS configuration in the template. It does not contain a complete deployment, failover, or recovery test.
 
 ## Selected Infrastructure Templates
 
-These files are based on my course templates. Example resource names were cleaned up for publication, and the AWS reference was revised to address issues in the original draft. Local format and reference checks do not replace cloud deployment tests.
+The linked templates include the configurations I worked with during the labs and a revised AWS reference example. Local syntax checks are not substitutes for deploying and testing the resources.
 
 | Platform | Template | Scope |
 |---|---|---|
@@ -80,6 +80,18 @@ These files are based on my course templates. Example resource names were cleane
 | Google Cloud | [Deployment configuration](../../../labs/google-cloud-deployment-manager/templates/deployment.yaml) | Jinja-based network and bucket definitions |
 
 The [AWS reference YAML](templates/aws-web-rds-reference.yaml) is a simplified two-tier revision of the coursework design. It is **not** the complete three-tier final architecture shown above, and I have not claimed it was deployed. It includes a basic web-server bootstrap for the load balancer's HTTP health checks; it does not contain a complete e-commerce application.
+
+## AWS Template Evidence
+
+The screenshots below show configuration from the final CloudFormation assignment. They document the design, not the result of a full stack deployment.
+
+**Web Auto Scaling configuration**
+
+![CloudFormation Auto Scaling group and CPU scaling policy](screenshots/aws-final-autoscaling-template.png)
+
+**RDS network and database configuration**
+
+![CloudFormation RDS security and Multi-AZ database settings](screenshots/aws-final-rds-security-configuration.png)
 
 ## Related Labs
 

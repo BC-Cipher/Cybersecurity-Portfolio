@@ -29,15 +29,19 @@ I compared a VPC template against the requirements for AWS `us-west-2`, three Av
 
 I merged an existing VPC template with RDS resource definitions and imported the combined template into Infrastructure Composer. A successful import confirms the template was accepted in that workflow, not that a database was successfully provisioned.
 
-The training example included a literal database password in YAML. I excluded that value from the public portfolio. A production implementation should use managed secrets, private database networking and minimal permissions.
+The original RDS lab used a plaintext credential in its template. That approach is not suitable for production, where I would use a managed secret, private database networking, and narrowly scoped permissions.
 
 ## Template Files
 
-**[Three-AZ VPC CloudFormation template](templates/vpc-three-az.yaml):** Defines a VPC, three public subnets, Internet Gateway, routing, and resource outputs. The example VPC tags have been generalized for publication. Availability Zones depend on the Region selected when the stack is deployed.
+**[Three-AZ VPC CloudFormation template](templates/vpc-three-az.yaml):** Defines a VPC, three public subnets, Internet Gateway, routing, and resource outputs. It selects three Availability Zones available in the deployment Region.
 
 **[AWS web and RDS reference design](../../projects/cloud/multicloud-infrastructure-as-code/templates/aws-web-rds-reference.yaml):** Revised from an earlier AWS architecture draft. It adds target-group and listener connections, removes an unused application security group, avoids a fixed AMI, and removes open SSH access. The example is checked for YAML structure and internal references but has not been deployed in a live AWS account.
 
-I left out the older EC2 template with an invalid key-pair reference, the malformed final draft, and the RDS template containing a hard-coded password.
+## Template Validation Evidence
+
+AWS Infrastructure Composer accepted the revised CloudFormation template.
+
+![AWS Infrastructure Composer confirming a successful S3 template import](screenshots/aws-cloudformation-s3-template-import.png)
 
 ## What I Verified
 
