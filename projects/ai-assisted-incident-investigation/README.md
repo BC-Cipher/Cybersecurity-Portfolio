@@ -1,62 +1,130 @@
-# Network Reconnaissance & Machine Learning Anomaly Detection
+# Container Incident Investigation: Network Forensics & Isolation Forest
 
-**CST440 | AI/Machine Learning for Cybersecurity | August 2026**
+**CST440 | AI/Machine Learning | August 2026**  
+**Environment:** Four Ubuntu Docker containers in the VCASTLE training lab  
+**Tools:** Nmap, TShark, tcpdump, Docker, Linux, `ps`, `ss`, `lsof`, `strace`, Python, pandas, scikit-learn, PCA
 
-This work began with two separate Week 1 exercises: establishing a baseline for a containerized network and testing anomaly detection against a synthetic cybersecurity log dataset. The network findings and machine learning results came from different environments; the model was not used to classify the network traffic described below.
+I investigated repeated internal HTTP requests in a four-container lab network, traced them to a background Bash script, and used Isolation Forest to examine new packet captures. The most useful part of the exercise was comparing what the model flagged with what I could verify through logs, packet analysis, and host evidence.
 
-**Tools:** Nmap, Linux, Docker, JupyterLab, Python, pandas, scikit-learn, `ipaddress`, Matplotlib
+The activity was part of a simulated incident. I confirmed what the script did and how it was started, but the available evidence did not establish an external intrusion or a successful compromise of the three systems it contacted.
 
-## Container network baseline
+## Key results
 
-I examined the VCASTLE training network using interface information, Docker inspection, host discovery, and service-version scans. The analysis container had address `172.18.0.3` on a `172.18.0.0/16` Docker network. I limited discovery scans to `172.18.0.0/24`, where the project containers were located.
+- Identified recurring requests to `/admin` and `/.git/config` on TCP port 8888.
+- Located `/workspace/system-check.sh` running as root under PID 7 in the **support** container.
+- Traced the script's startup to `launch.sh` and verified its network and logging behavior.
+- Examined **4,042 packets** collected from four containers in the final investigation.
+- Used Isolation Forest to flag **203 unusual records** across the four captures, then checked selected packets with TShark.
+- Identified two benign IPv6 mDNS packets that the model flagged because its features did not properly represent that traffic.
 
-The scan identified five live addresses, including the Docker gateway. Four project containers were running Ubuntu 22.04.5 LTS.
+## Investigation timeline
 
-| Container | Lab IP address | Observed service |
+| Phase | Work performed | Evidence |
 |---|---|---|
-| notebook-b | `172.18.0.2` | TCP 8888, HTTP |
-| analysis | `172.18.0.3` | TCP 8888, HTTP |
-| notebook-a | `172.18.0.4` | TCP 8888, HTTP |
-| support | `172.18.0.5` | TCP 8888, HTTP |
+| Aug 1: Baseline | Mapped containers, verified operating systems and HTTP services, reviewed initial logs | Nmap, Docker inspection, application logs |
+| Aug 5: Traffic | Captured five minutes of network traffic and inspected HTTP exchanges | TShark, packet capture |
+| Aug 16: Host forensics | Examined processes, files, connections, and repeated log activity | `ps`, `/proc`, `ss`, `lsof`, `scan.log` |
+| Aug 21: Script analysis | Inspected the scanning loop, startup behavior, hashes, and live traffic | `strings`, hashes, `strace`, `tcpdump` |
+| Aug 29: ML review | Collected new captures, scored packets with Isolation Forest, and validated model findings | Python, scikit-learn, TShark, PCA |
 
-Nmap identified **Tornado httpd 6.5.1** on TCP port 8888 for all four containers. The targeted service scan found the other 999 scanned TCP ports closed on each container. I verified the operating-system release separately inside the containers rather than relying on OS fingerprinting alone.
+The containers were assigned different Docker IP addresses during different sessions. I used the container names to correlate findings rather than treating any one `172.18.0.x` address as a permanent identifier.
 
-![Nmap host discovery on the Docker subnet](screenshots/network-host-discovery.png)
+## 1. Network discovery and initial alert
 
-![Service and version enumeration across four containers](screenshots/network-service-enumeration.png)
+Network discovery found four Ubuntu 22.04.5 LTS containers. Nmap identified **Tornado httpd 6.5.1** listening on **TCP 8888**, the normal Jupyter service in this environment. A scan of the active lab subnet also identified the Docker gateway.
 
-![Ubuntu release verification for the project containers](screenshots/container-os-verification.png)
+![Nmap service discovery in the container network](screenshots/network-service-discovery.png)
 
-### HTTP log finding
+While reviewing the analysis container's HTTP logs, I noticed repeated requests from support for `/admin` and `/.git/config`. The requests returned **404 Not Found**. These paths were worth investigating, but a 404 response did not indicate successful access.
 
-While reviewing the analysis-container logs, I found repeated requests originating from `172.18.0.5` for `/admin` and `/.git/config`. The server returned HTTP 404 responses. The repeated requests were worth investigating because they resemble directory probing, but the available logs did **not** establish successful access or a system compromise. The activity could also have been generated by the lab's support or testing functions.
+![Initial HTTP requests for administrative and Git configuration paths](screenshots/initial-http-probing-logs.png)
 
-![HTTP requests to administrative and Git configuration paths](screenshots/http-directory-probing-logs.png)
+## 2. Packet-level confirmation
 
-**Follow-up focus:** Review the timing and frequency of these requests, HTTP user agents, and communications between the support and analysis containers during packet analysis.
+A five-minute TShark capture contained **3,600 TCP packets**, including **720 HTTP packets**. The packet trace confirmed internal HTTP traffic on port 8888, including a `GET /admin` request followed by a 404 response.
 
-## Isolation Forest with IP feature engineering
+![HTTP request and 404 response in a TShark packet trace](screenshots/http-request-response-packet-trace.png)
 
-In a separate exercise, I worked with a **50,000-record synthetic cybersecurity log dataset**. The goal was to make source and destination IP information usable by an Isolation Forest model instead of dropping the address columns entirely.
+This connected the application-log entries to actual network requests. It still did not explain which process generated them.
 
-I used Python's `ipaddress` module to extract six features from each IPv4 address: its integer representation, four octets, and private-address status. This added 12 features across the source and destination columns. The expanded dataframe contained **50,000 rows and 25 columns** before the original text-based addresses were removed.
+## 3. Host forensics and source identification
 
-![IPv4 address feature extraction function](screenshots/ipv4-feature-extraction.png)
+Process inspection on the support container identified **PID 7**, running `bash /workspace/system-check.sh` as root. Connection and file inspection tied this process to the repeated network activity. The `scan.log` file contained **3,351 entries** during the Week 3 review.
 
-![Dataframe dimensions after adding IP-derived features](screenshots/engineered-dataframe-shape.png)
+![Root-owned scanning process observed on the support container](screenshots/support-root-process-evidence.png)
 
-The exercise used an 80/20 training-test split, with **40,000 training records** and **10,000 test records**. Isolation Forest was configured with 100 estimators, a contamination setting of 0.05, and a random state of 42.
+Those log entries show repeated execution of the script's logging command. They should not be counted as 3,351 individually verified HTTP requests.
 
-The model flagged **484 of 10,000 test records** as anomalies. In the introductory Isolation Forest exercise without the IP-derived features, the reported count was 508. These counts describe what the models flagged; they do not show which approach was more accurate.
+## 4. Static and dynamic script analysis
 
-![Isolation Forest anomaly predictions for the test dataset](screenshots/isolation-forest-test-predictions.png)
+The script contained a continuous loop targeting `analysis`, `notebook-a`, and `notebook-b`. For each target, it requested `/`, `/admin`, and `/.git/config`, then made an additional `/admin` request with a `Mozilla/5.0` user agent. It wrote to `scan.log`, slept for a random one to five seconds, and repeated.
 
-### What the results mean
+![Commands and targets in the system-check.sh scanning loop](screenshots/system-check-scanning-loop.png)
 
-Isolation Forest is an unsupervised method. A flagged record is a candidate for review, not proof of malicious activity. The synthetic dataset did not provide verified incident labels for calculating precision or recall, and several categorical fields had limited variation. A stronger evaluation would use known ground truth, review flagged events in their original context, and check whether the model produces a manageable number of false positives.
+The container's `launch.sh` script started `system-check.sh` in the background with `nohup` before launching JupyterLab. This explained why the process returned when the lab container started.
 
-## Outcome
+![Startup script launching the background scanner](screenshots/launch-script-background-startup.png)
 
-The network work established a reference point for later traffic and forensic analysis. The machine learning exercise showed how feature engineering changes the information available to an anomaly-detection model. Both reinforced the same lesson: unusual observations are leads to investigate, not conclusions on their own.
+I collected MD5, SHA-1, and SHA-256 hashes. The **SHA-256** matched the value collected in Week 3, confirming that the examined script's contents were unchanged between those checks:
 
-*All testing was performed in authorized training environments. The displayed addresses belong to the lab network.*
+```text
+d68d1863682d2bd59947f5ea62164a5442986146818e9bb09fa7682e48cdf49e
+```
+
+Additional `lsof`, `tcpdump`, process, and controlled `strace` observations supported the same activity. By Week 4, `scan.log` had grown to **5,608 entries**. I could document automated internal reconnaissance, but I found no evidence of self-propagation, encryption, data theft, or successful exploitation of a peer container.
+
+## 5. Isolation Forest on fresh packet captures
+
+For the final stage, I collected approximately one minute of traffic from each container and exported packet fields to CSV. The model used five features: numeric IPv4 source and destination addresses, TCP source and destination ports, and frame length. I applied `StandardScaler` and configured Isolation Forest with **100 estimators**, **0.05 contamination**, and **`random_state=42`**.
+
+| Capture location | Records | Flagged | Not flagged |
+|---|---:|---:|---:|
+| analysis | 720 | 36 | 684 |
+| support | 1,920 | 96 | 1,824 |
+| notebook-a | 722 | 37 | 685 |
+| notebook-b | 680 | 34 | 646 |
+| **Total** | **4,042** | **203** | **3,839** |
+
+**These are anomaly counts, not confirmed attack detections.** The contamination setting was chosen in advance to flag roughly 5% of each capture, and the data did not have verified attack labels for calculating precision or recall.
+
+### Correlating model results with HTTP traffic
+
+In the support capture, TShark counted **48 requests for `/`**, **48 for `/.git/config`**, and **96 for `/admin`**. That 1:1:2 pattern matched the four requests in the Bash loop and showed the activity was still occurring during the final collection.
+
+![HTTP path counts from the support packet capture](screenshots/support-http-request-counts.png)
+
+The support model's lowest anomaly scores included large HTTP responses from its peers, making those packets useful candidates for manual inspection.
+
+![Isolation Forest anomaly score distribution for the support capture](screenshots/support-anomaly-score-distribution.png)
+
+The notebook-b capture offered a clearer example. The model flagged **34 of 680 records**. Examination of flagged **frame 16** identified a **3,363-byte HTTP 404 response**. TShark linked it to **frame 14**, a `GET /admin` request sent by support.
+
+![Notebook-b anomaly score distribution](screenshots/notebook-b-anomaly-score-distribution.png)
+
+![TShark verification of the flagged response and its HTTP request](screenshots/notebook-b-http-response-validation.png)
+
+### Investigating a false positive
+
+The two lowest-scoring records in the notebook-a capture were **frames 561 and 562**, with anomaly scores of **-0.118856**. They were benign **IPv6 mDNS** packets, not requests from the scanning script.
+
+![Flagged mDNS frames with missing IPv4 and TCP fields](screenshots/mdns-false-positive-frames.png)
+
+The preprocessing converted missing IPv4 and TCP fields to zero. Those zero-filled records became extreme outliers in the feature space, as the PCA projection also showed.
+
+![PCA projection showing an isolated mDNS outlier](screenshots/mdns-pca-outlier.png)
+
+This exposed a weakness in the feature selection. The model had no understanding of HTTP request paths, protocol-specific fields, or whether a packet was benign. Packet inspection was necessary to interpret its results.
+
+## Assessment and next steps
+
+The strongest evidence was the agreement between the repeated HTTP requests, the running Bash process, the script contents, its startup configuration, and packet captures from several containers. Isolation Forest helped prioritize unusual packet records, but it did not identify the script, explain its root privileges, or determine whether a security incident had occurred.
+
+If this were an operational incident, I would preserve the script, startup file, logs, and packet captures first, then investigate whether the scanner was authorized. Subject to that determination, the recommended actions would be to disable unexpected startup behavior, restrict unnecessary container-to-container access, and alert on repeated requests for sensitive paths.
+
+For a more useful detection model, I would add HTTP methods, URIs, response codes, request rates, protocol-aware IPv6/UDP handling, and flow-level timing. I would also separate protocol families instead of converting missing fields to zero and validate results against labeled or independently reviewed examples.
+
+The response considerations align with the **Detect, Respond, Recover, and continuous-improvement** emphasis in [NIST SP 800-61 Rev. 3](https://doi.org/10.6028/NIST.SP.800-61r3). Response actions above are recommendations, not actions claimed to have been completed.
+
+**Related coursework:** [Supervised and unsupervised MitM traffic model comparison](mitm-model-comparison.md). These experiments used separate synthetic datasets and were not used to classify the VCASTLE packet captures.
+
+*All investigation activity was performed in an authorized training environment.*
