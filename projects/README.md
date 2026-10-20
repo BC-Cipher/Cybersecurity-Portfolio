@@ -4,7 +4,14 @@ Larger projects that bring infrastructure, security, configuration, and analysis
 
 Focused exercises are organized separately under [Technical Labs](../labs/).
 
-## Network Infrastructure and Security\n\n### [Routing, Device Administration, IPv6 Security and Site-to-Site VPNs](networking/)\nCisco Packet Tracer case studies covering OSPF/BGP routing, TACACS+/RADIUS, SSH administration, ASA firewall configuration, OSPFv3, IPv6 access controls, and IPsec VPN/QoS testing. Includes original console screenshots and clear verification limits.\n\n[Browse networking projects](networking/)\n\n## Windows Infrastructure and Identity
+## Network Infrastructure and Security
+
+### [Routing, Device Administration, IPv6 Security and Site-to-Site VPNs](networking/)
+Cisco Packet Tracer case studies covering OSPF/BGP routing, TACACS+/RADIUS, SSH administration, ASA firewall configuration, OSPFv3, IPv6 access controls, and IPsec VPN/QoS testing. Includes original console screenshots and clear verification limits.
+
+[Browse networking projects](networking/)
+
+## Windows Infrastructure and Identity
 
 ### [Enterprise Windows Infrastructure, Active Directory and Container Services](windows/rsi-enterprise-infrastructure-capstone/)
 Five-stage Windows infrastructure case study connecting Hyper-V deployment, a parent and child Active Directory domain, DHCP hot-standby failover, workstation policies, departmental file shares, and Docker-based IIS services. Includes original configuration screenshots and a security review.
