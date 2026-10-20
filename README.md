@@ -4,13 +4,13 @@ I'm a CompTIA Security+ certified cybersecurity graduate with a B.S. in Informat
 
 My work covers Windows and Linux systems, cloud infrastructure, identity management, networking, and security assessment. These projects show the tools I used, the testing I completed, and the results I could verify.
 
-**Explore:** [Featured Projects](#featured-projects) | [Technical Labs](labs/) | [Cloud Projects](projects/cloud/) | [Windows Infrastructure](projects/windows/) | [Project Index](projects/)
+**Explore:** [Featured Projects](#featured-projects) | [Technical Labs](labs/) | [Networking Projects](projects/networking/) | [Cloud Projects](projects/cloud/) | [Windows Infrastructure](projects/windows/) | [Project Index](projects/)
 
 ## Featured Projects
 
 | Focus | Project | Work demonstrated |
 |---|---|---|
-| Incident Response & ML | [Container Incident Investigation & Isolation Forest](projects/ai-assisted-incident-investigation/) | Network baseline, packet forensics, persistent scanning script analysis, anomaly detection and false-positive validation |
+| Network Infrastructure & Security | [Routing, Firewall, IPv6 and IPsec VPN Projects](projects/networking/) | OSPF/BGP, SSH, AAA, ASA firewall, OSPFv3, IPv6 policies, IPsec and QoS verification |\n| Incident Response & ML | [Container Incident Investigation & Isolation Forest](projects/ai-assisted-incident-investigation/) | Network baseline, packet forensics, persistent scanning script analysis, anomaly detection and false-positive validation |
 | Windows Infrastructure & Identity | [Enterprise Windows Infrastructure, Active Directory and Container Services](projects/windows/rsi-enterprise-infrastructure-capstone/) | Five-stage infrastructure build covering Hyper-V, a parent and child domain, DHCP failover, Group Policy, shared-folder permissions, Windows containers, and IIS |
 | Cloud Engineering | [Infrastructure as Code Across AWS, Azure & Google Cloud](projects/cloud/multicloud-infrastructure-as-code/) | CloudFormation debugging, ARM and Bicep deployments, Google Cloud resources, Git versioning |
 | Cloud Infrastructure | [AWS Secure & Scalable Web Architecture](projects/cloud/aws-secure-scalable-web-architecture/) | VPC segmentation, EC2, RDS, load balancing, Auto Scaling, and monitoring |
