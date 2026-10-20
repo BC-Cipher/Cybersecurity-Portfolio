@@ -19,6 +19,16 @@ Used CloudFormation, ARM, Bicep, and Deployment Manager to work with cloud resou
 
 [Browse the Cloud Portfolio](cloud/)
 
+## Windows Infrastructure & Identity
+
+### [Enterprise Windows Domain Infrastructure and Access Control](windows/enterprise-windows-domain-infrastructure/)
+Built and administered Windows Server virtual machines, AD DS, DNS, DHCP, organizational units, bulk account provisioning, NTFS permissions, Group Policy, and delegated administrative access across verified training labs.
+
+### [Windows Containers, Networking, Storage, and IIS](windows/windows-container-iis-deployment/)
+Worked with Windows Server Core containers, Docker networks, persistent storage, and an IIS image built and tested through Dockerfile-based deployment.
+
+[Browse the Windows infrastructure projects](windows/)
+
 ## Security Data & Database Design
 
 ### [Security Log Analysis & Relational Database Design](security-log-analysis-database-design/)
