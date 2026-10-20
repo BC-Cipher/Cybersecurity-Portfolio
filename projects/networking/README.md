@@ -6,6 +6,12 @@ These case studies cover multi-site network integration, dynamic routing and sec
 
 ## Projects
 
+### [Secure Network Design, VLAN Segmentation, IoT Integration & Routing](secure-network-design-vlan-iot-routing/)
+
+Expanded a small Packet Tracer LAN into a two-switch network with five active VLANs, router-based DHCP, managed IoT devices, simulated cable-to-fiber Internet connectivity, switch port-security testing, and RIPv2/OSPF routing comparisons.
+
+**Focus:** IPv4 subnetting, 802.1Q trunks, DHCP, IoT registration, static and dynamic routing, MAC-based port security, security review.
+
 ### [Enterprise Network Integration, Segmentation & Security](enterprise-network-integration-segmentation-security/)
 
 Designed and configured the primary site of a multi-location corporate Packet Tracer network. Documented IP addressing, VLANs, inter-VLAN routing, DHCP, TACACS+ authentication, ASA perimeter controls, and a security risk assessment. Separates recorded tests from proposed improvements.
