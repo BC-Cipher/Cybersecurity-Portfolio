@@ -4,13 +4,14 @@ I'm a CompTIA Security+ certified cybersecurity graduate with a B.S. in Informat
 
 My work covers Windows and Linux systems, cloud infrastructure, identity management, networking, and security assessment. These projects show the tools I used, the testing I completed, and the results I could verify.
 
-**Explore:** [Featured Projects](#featured-projects) | [Technical Labs](labs/) | [Networking Projects](projects/networking/) | [Cloud Projects](projects/cloud/) | [Windows Infrastructure](projects/windows/) | [Project Index](projects/)
+**Explore:** [Featured Projects](#featured-projects) | [Technical Labs](labs/) | [Networking Projects](projects/networking/) | [Cloud Projects](projects/cloud/) | [Windows Infrastructure](projects/windows/) | [Linux Projects](projects/linux/) | [Project Index](projects/)
 
 ## Featured Projects
 
 | Focus | Project | Work demonstrated |
 |---|---|---|
 | Network Infrastructure & Security | [Enterprise Network Integration, Segmentation & Security](projects/networking/enterprise-network-integration-segmentation-security/) | Multi-site Packet Tracer design, VLANs, DHCP, TACACS+ authentication, ASA firewall, access controls, and risk review |
+| Linux Infrastructure & Security | [Linux Infrastructure, Service Deployment & Security Operations](projects/linux/linux-infrastructure-services-security/) | Linux virtualization, Samba/Rsync, Nginx/Redis, LAMP/HTTPS, firewall policies, remote logging, monitoring, and systemd automation |
 | Incident Response & ML | [Container Incident Investigation & Isolation Forest](projects/ai-assisted-incident-investigation/) | Network baseline, packet forensics, persistent scanning script analysis, anomaly detection and false-positive validation |
 | Windows Infrastructure & Identity | [Enterprise Windows Infrastructure, Active Directory and Container Services](projects/windows/rsi-enterprise-infrastructure-capstone/) | Five-stage infrastructure build covering Hyper-V, a parent and child domain, DHCP failover, Group Policy, shared-folder permissions, Windows containers, and IIS |
 | Cloud Engineering | [Infrastructure as Code Across AWS, Azure & Google Cloud](projects/cloud/multicloud-infrastructure-as-code/) | CloudFormation debugging, ARM and Bicep deployments, Google Cloud resources, Git versioning |
