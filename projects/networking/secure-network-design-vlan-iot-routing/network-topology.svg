@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="610" viewBox="0 0 1120 610" role="img" aria-labelledby="title desc">
+<title id="title">Segmented network with five VLANs, IoT devices, and simulated Internet access</title>
+<desc id="desc">Cisco Packet Tracer architecture: a simulated Internet server is reached through an ISP router and fiber connection to local router R1. Router R1 connects to switch S1. S1 connects to S2 by an 802.1Q trunk. S1 serves VLANs 10, 20, and 50, including a wireless IoT access point. S2 serves VLANs 30 and 40.</desc>
+<rect width="1120" height="610" fill="#f5f8fc"/>
+<rect x="24" y="20" width="1072" height="570" rx="20" fill="#ffffff" stroke="#d8e1eb" stroke-width="2"/>
+<text x="52" y="60" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#14283f">Segmented Network Architecture</text>
+<text x="52" y="83" font-family="Arial,sans-serif" font-size="13" fill="#556879">Cisco Packet Tracer simulation | Five active VLANs | Fiber ISP connection</text>
+<g font-family="Arial,sans-serif" text-anchor="middle">
+<path d="M340 156 H470" stroke="#687c90" stroke-width="4" fill="none"/>
+<path d="M638 156 H764" stroke="#0a9987" stroke-width="5" fill="none"/>
+<path d="M848 188 V240 H553 V270" stroke="#0a9987" stroke-width="5" fill="none"/>
+<text x="699" y="145" font-size="12" font-weight="700" fill="#007a6d">Fiber uplink</text>
+<rect x="80" y="122" width="260" height="68" rx="12" fill="#eaf1fc" stroke="#aac1de" stroke-width="2"/>
+<text x="210" y="148" font-size="17" font-weight="700" fill="#1a3f71">Simulated Internet</text>
+<text x="210" y="170" font-size="13" fill="#385875">External web server</text>
+<rect x="470" y="122" width="168" height="68" rx="12" fill="#eaf1fc" stroke="#aac1de" stroke-width="2"/>
+<text x="554" y="149" font-size="17" font-weight="700" fill="#1a3f71">ISP Network</text>
+<text x="554" y="170" font-size="13" fill="#385875">Internet router</text>
+<rect x="764" y="122" width="168" height="68" rx="12" fill="#dcf5ef" stroke="#84c7b7" stroke-width="2"/>
+<text x="848" y="148" font-size="17" font-weight="700" fill="#0e5e57">R1 Router</text>
+<text x="848" y="170" font-size="13" fill="#216d64">Inter-VLAN routing</text>
+<path d="M553 337 V359 H355 V379" stroke="#6c8095" stroke-width="4" fill="none"/>
+<path d="M553 337 V359 H762 V379" stroke="#6c8095" stroke-width="4" fill="none"/>
+<text x="558" y="370" font-size="12" fill="#445b73">802.1Q VLAN trunks</text>
+<rect x="465" y="270" width="176" height="67" rx="12" fill="#173e64"/>
+<text x="553" y="294" font-size="17" font-weight="700" fill="#ffffff">R1 LAN</text>
+<text x="553" y="316" font-size="13" fill="#c7e7f9">VLAN gateways / DHCP</text>
+<rect x="278" y="380" width="154" height="61" rx="12" fill="#173e64"/>
+<text x="355" y="404" font-size="18" font-weight="700" fill="#ffffff">Switch S1</text>
+<text x="355" y="425" font-size="13" fill="#d8e9fa">Access &amp; IoT</text>
+<rect x="685" y="380" width="154" height="61" rx="12" fill="#173e64"/>
+<text x="762" y="404" font-size="18" font-weight="700" fill="#ffffff">Switch S2</text>
+<text x="762" y="425" font-size="13" fill="#d8e9fa">Users &amp; server</text>
+<path d="M355 441 V464 H155 V477" stroke="#0a9987" stroke-width="3" fill="none"/>
+<path d="M355 441 V477" stroke="#0a9987" stroke-width="3" fill="none"/>
+<path d="M355 464 H542 V477" stroke="#0a9987" stroke-width="3" fill="none"/>
+<path d="M762 441 V464 H695 V477" stroke="#0a9987" stroke-width="3" fill="none"/>
+<path d="M762 464 H922 V477" stroke="#0a9987" stroke-width="3" fill="none"/>
+<rect x="66" y="477" width="178" height="73" rx="11" fill="#eaf6f4" stroke="#a7d9cf"/>
+<text x="155" y="499" font-size="15" font-weight="700" fill="#0e5e57">VLAN 10</text>
+<text x="155" y="518" font-size="12" fill="#355f5b">IoT management server</text>
+<text x="155" y="534" font-size="11" fill="#506e69">172.16.94.0/27</text>
+<rect x="266" y="477" width="178" height="73" rx="11" fill="#eaf6f4" stroke="#a7d9cf"/>
+<text x="355" y="499" font-size="15" font-weight="700" fill="#0e5e57">VLAN 20</text>
+<text x="355" y="518" font-size="12" fill="#355f5b">PC and laptop</text>
+<text x="355" y="534" font-size="11" fill="#506e69">172.16.94.32/27</text>
+<rect x="456" y="477" width="173" height="73" rx="11" fill="#eaf6f4" stroke="#a7d9cf"/>
+<text x="542" y="499" font-size="15" font-weight="700" fill="#0e5e57">VLAN 50</text>
+<text x="542" y="518" font-size="12" fill="#355f5b">Wi-Fi AP and IoT devices</text>
+<text x="542" y="534" font-size="11" fill="#506e69">172.16.94.128/27</text>
+<rect x="640" y="477" width="118" height="73" rx="11" fill="#eaf1fc" stroke="#aac1de"/>
+<text x="699" y="499" font-size="15" font-weight="700" fill="#1a3f71">VLAN 30</text>
+<text x="699" y="518" font-size="12" fill="#385875">PC</text>
+<text x="699" y="534" font-size="10" fill="#506a83">.64/27</text>
+<rect x="779" y="477" width="246" height="73" rx="11" fill="#eaf1fc" stroke="#aac1de"/>
+<text x="902" y="499" font-size="15" font-weight="700" fill="#1a3f71">VLAN 40</text>
+<text x="902" y="518" font-size="12" fill="#385875">Server and laptop</text>
+<text x="902" y="534" font-size="11" fill="#506a83">172.16.94.96/27</text>
+<text x="560" y="576" font-size="12" fill="#62778c">Conceptual topology based on the completed Packet Tracer configuration</text>
+</g></svg>
