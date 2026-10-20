@@ -6,6 +6,10 @@ Focused exercises are organized separately under [Technical Labs](../labs/).
 
 ## Network Infrastructure and Security
 
+### [Enterprise Network Integration, Segmentation & Security](networking/enterprise-network-integration-segmentation-security/)
+Integrated primary-office, branch-office, and data-center networks in Cisco Packet Tracer. Configured VLANs, DHCP, centralized authentication, and perimeter controls, then assessed risks including single points of failure and remote-site exposure.
+
+
 ### [Routing, Device Administration, IPv6 Security and Site-to-Site VPNs](networking/)
 Cisco Packet Tracer case studies covering OSPF/BGP routing, TACACS+/RADIUS, SSH administration, ASA firewall configuration, OSPFv3, IPv6 access controls, and IPsec VPN/QoS testing. Includes original console screenshots and clear verification limits.
 

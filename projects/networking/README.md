@@ -6,6 +6,13 @@ These case studies cover dynamic routing and secure device administration, IPv6 
 
 ## Projects
 
+### [Enterprise Network Integration, Segmentation & Security](enterprise-network-integration-segmentation-security/)
+
+Designed and configured the primary site of a multi-location corporate Packet Tracer network. Documented IP addressing, VLANs, inter-VLAN routing, DHCP, TACACS+ authentication, ASA perimeter controls, and a security risk assessment. Separates recorded tests from proposed improvements.
+
+**Focus:** Multi-site architecture, VLANs, DHCP, TACACS+, Cisco ASA, ACLs, security risk review.
+
+
 ### [Enterprise Network Routing and Secure Device Administration](enterprise-routing-secure-administration/)
 
 Configured a multi-router network with OSPF, BGP route redistribution, TACACS+ and RADIUS services, SSH administration, and a Cisco ASA firewall in a later phase.

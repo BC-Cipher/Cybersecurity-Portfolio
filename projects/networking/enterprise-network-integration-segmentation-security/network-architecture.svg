@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-labelledby="title desc">
+<title id="title">Simplified network integration architecture</title>
+<desc id="desc">The primary office has an ASA firewall, routers R1, R2, and R3, segmented switches, and a routed connection to the external network. Orlando and the data center connect separately to the same simulated external router, representing the risk identified in the security review.</desc>
+<rect width="1200" height="570" rx="14" fill="#f8fafc"/>
+<rect x="22" y="22" width="665" height="526" rx="15" fill="#edf4f8" stroke="#b9cdda" stroke-width="2"/>
+<rect x="722" y="22" width="455" height="526" rx="15" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+<text x="46" y="60" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#123047">PRIMARY OFFICE</text>
+<text x="744" y="60" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#123047">SIMULATED WAN &amp; REMOTE SITES</text>
+<g stroke="#64748b" stroke-width="4" fill="none" stroke-linejoin="round">
+<path d="M 345 182 L 345 228"/>
+<path d="M 345 274 L 175 338"/>
+<path d="M 345 274 L 515 338"/>
+<path d="M 195 352 L 495 352" stroke-dasharray="8 7"/>
+<path d="M 175 383 L 175 428"/>
+<path d="M 515 383 L 515 428"/>
+<path d="M 444 159 L 736 159"/>
+<path d="M 943 198 L 943 284"/>
+<path d="M 858 330 L 810 383"/>
+<path d="M 1025 330 L 1080 383"/>
+</g>
+<g font-family="Arial,sans-serif" font-size="18" text-anchor="middle" fill="#123047">
+<rect x="268" y="115" width="154" height="67" rx="10" fill="#fff" stroke="#3b7c93" stroke-width="2"/>
+<text x="345" y="143" font-weight="bold">Cisco ASA</text><text x="345" y="166" font-size="15">Perimeter firewall</text>
+<rect x="278" y="228" width="134" height="58" rx="10" fill="#fff" stroke="#3b7c93" stroke-width="2"/>
+<text x="345" y="262" font-weight="bold">Router R1</text>
+<rect x="108" y="337" width="134" height="58" rx="10" fill="#fff" stroke="#3b7c93" stroke-width="2"/>
+<text x="175" y="371" font-weight="bold">Router R2</text>
+<rect x="448" y="337" width="134" height="58" rx="10" fill="#fff" stroke="#3b7c93" stroke-width="2"/>
+<text x="515" y="371" font-weight="bold">Router R3</text>
+<rect x="73" y="428" width="204" height="77" rx="10" fill="#d7ede7" stroke="#499786" stroke-width="2"/>
+<text x="175" y="454" font-weight="bold">Switches / LANs</text><text x="175" y="480" font-size="15">VLANs 10, 20, 30</text>
+<rect x="413" y="428" width="204" height="77" rx="10" fill="#d7ede7" stroke="#499786" stroke-width="2"/>
+<text x="515" y="454" font-weight="bold">Switches / LANs</text><text x="515" y="480" font-size="15">VLANs 10, 20, 30, 40</text>
+<rect x="736" y="119" width="208" height="79" rx="10" fill="#fff" stroke="#ac7550" stroke-width="2"/>
+<text x="840" y="150" font-weight="bold">External router</text><text x="840" y="176" font-size="15">Simulated network</text>
+<rect x="849" y="284" width="188" height="57" rx="10" fill="#fff" stroke="#ac7550" stroke-width="2"/>
+<text x="943" y="319" font-weight="bold">WAN segment</text>
+<rect x="738" y="384" width="159" height="85" rx="10" fill="#fff2da" stroke="#ba8a35" stroke-width="2"/>
+<text x="817" y="416" font-weight="bold">Orlando</text><text x="817" y="440" font-size="15">Office VLANs</text>
+<rect x="982" y="384" width="169" height="85" rx="10" fill="#fff2da" stroke="#ba8a35" stroke-width="2"/>
+<text x="1066" y="416" font-weight="bold">Data center</text><text x="1066" y="440" font-size="15">Server networks</text>
+</g>
+<path d="M 944 159 L 1048 159 L 1048 284" fill="none" stroke="#b45309" stroke-width="3" stroke-dasharray="8 7"/>
+<text x="1034" y="144" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#92400e">Sites reviewed for</text>
+<text x="1034" y="161" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#92400e">perimeter exposure</text>
+<text x="44" y="535" font-family="Arial,sans-serif" font-size="14" fill="#475569">Simplified from the original Packet Tracer project, not a verified packet-flow diagram.</text>
+</svg>
