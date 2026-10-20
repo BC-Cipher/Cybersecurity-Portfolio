@@ -61,11 +61,11 @@ Those were **recommendations**, not changes I am claiming were deployed or verif
 
 ## Design review and next steps
 
-The final report describes a functioning lab, but the archived addressing plan includes a subnet conflict: the documented R3 interfaces use `10.30.2.1/27` and `10.30.2.33/26`, which belong to overlapping address ranges. I would correct the conflicting subnet allocation and verify the DHCP scopes and router configurations before treating this design as deployable.
+The final report describes a functioning lab, but the archived addressing plan includes a subnet conflict: the documented R3 interfaces use `10.30.2.1/27` and `10.30.2.33/26`, which belong to overlapping address ranges. The data center addressing also differs between the project overview and submitted tables. I would reconcile the addressing plan, confirm that each subnet supports its intended client count, and validate the router interfaces and DHCP scopes before treating this design as deployable.
 
 My next validation steps would be to:
 
-1. Resolve overlapping subnets and verify DHCP leases, gateways, and inter-VLAN routes.
+1. Resolve overlapping subnets, reconcile the data center addressing, and verify DHCP leases, gateways, and inter-VLAN routes.
 2. Capture explicit permitted and denied traffic tests for the ASA and router ACLs.
 3. Verify TACACS+ authentication, logging, and recovery when the AAA server is unavailable.
 4. Test remote-site connectivity, redundancy, and routing convergence after a link failure.
