@@ -69,7 +69,7 @@ The practical value of this design is that devices no longer share one broadcast
 
 Every subnet needed an appropriate gateway and DHCP scope. As the network changed from `/25` to `/26` and then `/27`, I updated the router configuration and renewed addresses on the desktops, laptops, servers, and wireless devices.
 
-The device screenshots show successful DHCP assignments with the expected subnet masks and gateway addresses. I used the router's `show ip interface brief` and `show running-config` output to check the configured interfaces and DHCP pools.
+The device screenshots show successful DHCP leases with the expected subnet masks and gateway addresses. I used the router's `show ip interface brief` and `show running-config` output to check the configured interfaces and DHCP pools.
 
 I kept the IoT management server at the fixed address `172.16.94.10` in the final Internet-connected configuration. Giving a management service a stable address matters because other devices need to find it reliably.
 
@@ -134,7 +134,7 @@ This comparison made the routing table much more meaningful. Instead of just ent
 
 I configured local management access on the router and both switches, including console, auxiliary, and virtual terminal lines, user authentication, and privileged-mode passwords. I also saved running configurations to startup configuration so they would survive a device restart.
 
-The security settings in this phase followed the Packet Tracer exercise environment. They included legacy password handling and Telnet as an allowed management protocol. **I would not carry those settings into a production build.** Telnet transmits data without encryption, and Cisco IOS `service password-encryption` is not a substitute for strong secret storage.
+The device-access settings were configured in a controlled Packet Tracer environment. They included legacy password handling and Telnet as an allowed management protocol. **I would not carry those settings into a production build.** Telnet transmits data without encryption, and Cisco IOS `service password-encryption` is not a substitute for strong secret storage.
 
 A production configuration should use SSH-only administration, unique strong credentials or centralized authentication, restricted management source networks, appropriate password hashing, and logging.
 
@@ -154,7 +154,7 @@ The biggest lesson was that network changes have dependencies. VLAN membership, 
 The simulation established connectivity and demonstrated selected controls. It was not a comprehensive security audit. For a production version of this design, I would:
 
 1. Apply inter-VLAN ACLs or firewall rules based on the services each segment actually needs, especially the IoT VLAN.
-2. Secure wireless access and replace any shared classroom credentials with unique, properly protected credentials.
+2. Secure wireless access and replace shared or default credentials with unique, properly protected credentials.
 3. Limit device administration to SSH from a dedicated management network and enable centralized logging and time synchronization.
 4. Add DHCP snooping, Dynamic ARP Inspection, and 802.1X where the switches and operational requirements support them.
 5. Keep infrastructure and management servers on fixed addresses or DHCP reservations with exclusions to avoid conflicts.
