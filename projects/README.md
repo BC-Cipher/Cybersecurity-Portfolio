@@ -6,6 +6,10 @@ Focused exercises are organized separately under [Technical Labs](../labs/).
 
 ## Network Infrastructure and Security
 
+### [Secure Network Design, VLAN Segmentation, IoT Integration & Routing](networking/secure-network-design-vlan-iot-routing/)
+
+A five-VLAN Cisco Packet Tracer network with DHCP, four managed IoT devices, simulated ISP connectivity, cable-to-fiber transition, MAC port-security testing, and RIPv2/OSPF routing.
+
 ### [Enterprise Network Integration, Segmentation & Security](networking/enterprise-network-integration-segmentation-security/)
 Designed a simulated multi-location network in Cisco Packet Tracer. Configured routing, VLANs, DHCP, centralized authentication, and perimeter controls at the primary site, then reviewed remote-site exposure and single points of failure.
 
