@@ -10,7 +10,7 @@
 
 I built a small network in Cisco Packet Tracer and expanded it in stages until it supported separate user and server networks, wireless smart devices, simulated Internet access, and switch-level security controls.
 
-The starting point was straightforward: one router, one switch, a desktop, a laptop, and a server. From there, I introduced a second switch, redesigned the IP addressing, divided the network into VLANs, connected an IoT access point and four smart devices, and added an external connection. I finished by testing how the network behaved when an unauthorized computer was connected and by comparing static routing, RIPv2, and OSPF.
+The starting point was straightforward: one router, one switch, a desktop, a laptop, and an IoT server. From there, I introduced a second switch, redesigned the IP addressing, divided the network into VLANs, connected an IoT access point and four smart devices, and added an external connection. I finished by testing how the network behaved when an unauthorized computer was connected and by comparing static routing, RIPv2, and OSPF.
 
 The main challenge was keeping the network working while its design changed. Each phase required updating more than one piece of the configuration. A new subnet affected gateway addresses and DHCP pools; a new VLAN required the correct switch port, trunk, and router subinterface; and changing the Internet connection meant checking routing and reachability again.
 
@@ -27,7 +27,7 @@ This was a **simulated network**, not a production installation. The topology, c
 | Wireless IoT | Access point, motion detector, thermostat, and two cameras |
 | External access | Simulated ISP and web server; cable connection later changed to fiber |
 | Routing | Router subinterfaces, static/default routes, RIPv2, and multi-area OSPF |
-| Network controls | Console and remote-access configuration, static MAC restrictions, sticky MAC learning, and shutdown-on-violation testing |
+| Network controls | Device-access configuration, static and sticky MAC restrictions, and port-violation testing |
 
 ![Conceptual diagram of the Packet Tracer network, with the main router, two switches, five VLANs, and simulated ISP access](network-topology.svg)
 
@@ -42,6 +42,14 @@ I then added a second Catalyst switch with another desktop, laptop, and server. 
 Instead of keeping the original `/24` network as one large address space, I split it into two `/25` networks. I configured the router interfaces as the default gateways, created DHCP pools, checked the assigned addresses on the endpoints, and tested connectivity between the segments.
 
 This was the first point where I had to think beyond whether an Ethernet cable was connected. A host could have a working link and still be unreachable because of an incorrect address, subnet mask, gateway, or DHCP configuration.
+
+![Single-switch Packet Tracer LAN with a router desktop laptop and IoT server](screenshots/01-initial-lan.png)
+
+*Original LAN before the network was expanded.*
+
+![Two switches connected to a router with separate IPv4 subnets](screenshots/02-expanded-two-subnet-network.png)
+
+*Expanded network with two switches and separate gateway addresses.*
 
 ## 2. Moving from subnets to VLANs
 
@@ -65,6 +73,10 @@ VLANs 10, 20, and 50 were served from S1. VLANs 30 and 40 were served from S2. T
 
 The practical value of this design is that devices no longer share one broadcast domain. Users, servers, and smart devices have separate logical networks even when they connect through shared infrastructure.
 
+![Packet Tracer topology with multiple VLANs and an IoT access point](screenshots/03-vlan-iot-network.png)
+
+*Network after introducing VLANs and wireless smart devices.*
+
 **Important security distinction:** VLAN separation does not automatically mean that traffic between VLANs is blocked. The router can still forward between them. Filtering would require appropriate access control lists or firewall rules, which were not established as part of the captured tests.
 
 ## 3. DHCP and address management
@@ -85,6 +97,10 @@ I enabled the IoT registration service on the management server, registered the 
 
 I also used the management interface to interact with the thermostat, demonstrating that the server could communicate with a device across the segmented network.
 
+![IoT management server showing registered motion detector thermostat and two webcams](screenshots/06-iot-device-registration.png)
+
+*All four IoT devices listed in the server's management interface.*
+
 For a nontechnical reader, this is similar to a small office where computers and smart-building devices use different networks but can still be managed through a designated system.
 
 The screenshots of the wireless settings do **not** establish secure Wi-Fi authentication. In a real deployment I would use authenticated wireless access, dedicated IoT policies, restricted management access, and firewall rules that allow only the traffic those devices actually need.
@@ -95,7 +111,19 @@ The internal network was connected to a simulated ISP environment with a modem, 
 
 I checked the routing table, tested reachability from internal devices to the external server, and loaded the simulated server's web page from a desktop browser.
 
+![Packet Tracer network with cable modem and simulated external network](screenshots/04-internet-connected-network.png)
+
+*Internal network connected to the simulated ISP and external server.*
+
+![Internal Packet Tracer computer displaying the simulated Internet server web page](screenshots/05-internet-server-browser-test.png)
+
+*Browser access to the simulated Internet server from an internal PC.*
+
 Later, I replaced the cable Internet connection with a fiber-based link through the simulated fiber repeater. I ran another reachability test from an internal computer after the change.
+
+![Final Packet Tracer topology using a fiber connection to the simulated ISP](screenshots/07-fiber-internet-topology.png)
+
+*Final topology after the connection was moved from cable to fiber.*
 
 These tests showed the difference between **having a physical connection** and having a complete working route. The internal client needs an outbound path, and the external network needs a route back to the internal address space.
 
@@ -105,18 +133,26 @@ The ISP and server were Packet Tracer devices. These results demonstrate routing
 
 This was one of the most useful security portions of the project because I could see what happened when a device violated the access policy.
 
-On S1, I configured an access port to accept the MAC address of the original desktop. I disconnected that desktop, connected an unfamiliar computer to the same port, and tried to obtain an address through DHCP. The new computer did not obtain a valid lease, and the switch port entered a disabled state after the violation.
+On S1, I configured an access port to accept the MAC address of the original desktop. I disconnected that desktop, connected an unfamiliar computer to the same port, and tried to obtain an address through DHCP. The new computer did not obtain a valid lease, and the test recorded the expected port-security shutdown behavior.
 
-On S2, I configured sticky MAC address learning, limited the permitted MAC addresses to one per access port, and selected shutdown as the violation action. I repeated the device-swap test and recorded the DHCP failure. Returning the original computer to the port was not enough by itself: the affected switch interface needed to be brought down and back up before connectivity was restored.
+![Packet Tracer PC IP settings displaying a failed DHCP request after an unauthorized device swap](screenshots/08-unauthorized-device-dhcp-failure.png)
+
+*The replacement computer could not obtain an IP address through the protected port.*
+
+On S2, I worked with sticky MAC address learning and a one-device-per-port limit. The captured CLI configuration shows the violation action set to `restrict`, although the planned test called for `shutdown`. These modes behave differently: `restrict` drops unauthorized traffic but keeps the port operational, while `shutdown` disables the port. The recorded test notes also describe a device-swap failure and manual interface recovery. I have kept those observations separate rather than treating the S2 configuration image as proof of shutdown-on-violation.
+
+![Cisco CLI output showing sticky MAC learning one permitted address and restrict violation mode](screenshots/09-sticky-mac-port-security.png)
+
+*S2 configuration evidence. The displayed violation action is **restrict**, not shutdown.*
 
 ### What the tests established
 
 | Test | Observed behavior | Security significance |
 | --- | --- | --- |
 | Original authorized computer connected | Normal access before the swap | Establishes the expected endpoint |
-| Different computer connected to a restricted port | DHCP request failed and the port was disabled | MAC-based port security rejected the changed endpoint |
-| Original computer reconnected | Connectivity did not immediately return | Shutdown-on-violation left the port disabled |
-| Affected port reset administratively | Original host could request an address again | Demonstrates recovery after the access violation |
+| Different computer connected to the restricted S1 port | DHCP failed and the test recorded a disabled port | MAC-based port security rejected the replacement endpoint |
+| Original computer reconnected after the shutdown test | Connectivity did not immediately return | A disabled port requires administrative recovery |
+| Affected port reset administratively | Recorded test notes reported restored access | Demonstrates recovery after a port-security violation |
 
 A MAC restriction is a useful Layer 2 control, but it is not the same as authenticating a person or device. MAC addresses can be spoofed. For a production network I would also consider IEEE 802.1X, endpoint identity checks, logging, and an incident procedure before re-enabling a port.
 
@@ -126,7 +162,19 @@ After using static routes to establish external connectivity, I tested two dynam
 
 With RIPv2 configured, the routing table showed the external `11.1.1.0/24` network as a RIP-learned route. I tested connectivity to the simulated Internet server after removing the original static default route.
 
+![Router CLI showing routes learned through RIPv2](screenshots/10-ripv2-routing-table.png)
+
+*Routing table showing the external route learned through RIP.*
+
 I then configured OSPF with multiple areas and inspected the routing table again. The external network appeared as an `O IA` route, meaning OSPF had learned it from another area. I repeated the ping test using the OSPF route.
+
+![Router routing table showing an OSPF inter-area route](screenshots/11-ospf-interarea-route.png)
+
+*External network learned through OSPF as an inter-area route.*
+
+![Packet Tracer command prompt showing successful ICMP responses after OSPF configuration](screenshots/12-ospf-connectivity-test.png)
+
+*Successful ICMP connectivity tests after the routing change.*
 
 An important detail is **why the routing table selected the OSPF route**. When the same destination is offered by both protocols under standard Cisco IOS defaults, OSPF's administrative distance of 110 takes precedence over RIP's 120. Seeing an OSPF route in the table does not, by itself, prove that RIP was disabled everywhere.
 
@@ -146,7 +194,7 @@ A production configuration should use SSH-only administration, unique strong cre
 - **Addressing and gateway changes were tested.** DHCP results and endpoint configurations were checked after the subnet changes.
 - **Four smart devices were registered with a management service.** Their presence in the IoT console and thermostat control were recorded.
 - **External connectivity was tested twice.** The simulated server was reachable with the original Internet connection and after the switch to fiber.
-- **An unauthorized device was rejected.** The port-security tests showed a failed DHCP attempt, a disabled switch interface, and the recovery process.
+- **An unauthorized device was rejected.** The tests recorded a failed DHCP attempt and a port recovery procedure; the S2 configuration screenshot separately documents sticky MAC learning with `restrict` mode.
 - **RIPv2 and OSPF routes were inspected and tested.** The recorded tables showed the learned route and the later OSPF inter-area route.
 
 The biggest lesson was that network changes have dependencies. VLAN membership, DHCP scopes, gateways, routing, and access rules all need to agree. A link light alone does not tell you that the design is correct.
