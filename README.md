@@ -11,8 +11,8 @@ My work covers Windows and Linux systems, cloud infrastructure, identity managem
 | Focus | Project | Work demonstrated |
 |---|---|---|
 | Incident Response & ML | [Container Incident Investigation & Isolation Forest](projects/ai-assisted-incident-investigation/) | Network baseline, packet forensics, persistent scanning script analysis, anomaly detection and false-positive validation |
-| Windows Infrastructure & Identity | [Enterprise Windows Domain Infrastructure](projects/windows/enterprise-windows-domain-infrastructure/) | Hyper-V, AD DS, DNS, DHCP, bulk user provisioning, security groups, Group Policy, and delegated administration |
-| Windows Containers | [Docker and IIS Infrastructure](projects/windows/windows-container-iis-deployment/) | Windows Server Core containers, persistent storage, NAT networking, and Dockerfile-based IIS image deployment |
+| Windows Infrastructure & Identity | [Windows Server Infrastructure and Active Directory](projects/windows/enterprise-windows-domain-infrastructure/) | Hyper-V, AD DS, DNS, DHCP, bulk user provisioning, security groups, Group Policy, and delegated administration |
+| Windows Containers | [Windows Containers, Networking and IIS](projects/windows/windows-container-iis-deployment/) | Windows Server Core containers, persistent storage, NAT networking, and Dockerfile-based IIS image deployment |
 | Cloud Engineering | [Infrastructure as Code Across AWS, Azure & Google Cloud](projects/cloud/multicloud-infrastructure-as-code/) | CloudFormation debugging, ARM and Bicep deployments, Google Cloud resources, Git versioning |
 | Cloud Infrastructure | [AWS Secure & Scalable Web Architecture](projects/cloud/aws-secure-scalable-web-architecture/) | VPC segmentation, EC2, RDS, load balancing, Auto Scaling, and monitoring |
 | Security Data & Databases | [Security Log Analysis & Relational Database Design](projects/security-log-analysis-database-design/) | Excel log cleaning, data enrichment, Access staging, relational tables, SQL queries, and security reporting |
