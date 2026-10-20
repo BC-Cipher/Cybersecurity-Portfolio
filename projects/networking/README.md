@@ -2,7 +2,7 @@
 
 Practical network engineering and security work in Cisco Packet Tracer, with configuration and verification screenshots from the original exercises.
 
-These case studies cover dynamic routing and secure device administration, IPv6 routing and traffic restrictions, and encrypted connectivity between sites. Each overview separates observed results from settings that still need testing.
+These case studies cover multi-site network integration, dynamic routing and secure device administration, IPv6 routing and traffic restrictions, and encrypted connectivity between sites. Each overview separates observed results from settings that still need testing.
 
 ## Projects
 
@@ -11,7 +11,6 @@ These case studies cover dynamic routing and secure device administration, IPv6 
 Designed and configured the primary site of a multi-location corporate Packet Tracer network. Documented IP addressing, VLANs, inter-VLAN routing, DHCP, TACACS+ authentication, ASA perimeter controls, and a security risk assessment. Separates recorded tests from proposed improvements.
 
 **Focus:** Multi-site architecture, VLANs, DHCP, TACACS+, Cisco ASA, ACLs, security risk review.
-
 
 ### [Enterprise Network Routing and Secure Device Administration](enterprise-routing-secure-administration/)
 

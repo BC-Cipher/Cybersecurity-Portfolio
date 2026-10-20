@@ -12,13 +12,17 @@ This was a Packet Tracer project, not a production deployment.
 
 ## Network layout
 
-![Simplified view of the simulated corporate network](screenshots/network-architecture.svg)
+![Original Cisco Packet Tracer topology of the primary office, Orlando office, and data center](screenshots/network-topology.webp)
 
-The diagram shows the major sites and routing relationships from the project. It is a simplified architecture view, not a record of tested firewall policy or traffic flows.
+The original Packet Tracer topology shows the primary network, Orlando office, data center, and simulated external connections. The direct external connections at the Orlando and data center sites informed the perimeter security recommendations below.
 
 ## Implementation
 
 **Addressing and switching.** I prepared the interface addressing table and worked with variable-length subnet masks to accommodate different department sizes. On the primary site I configured routers R1, R2, and R3 and switches SW1, SW2, and SW3. I created departmental VLANs, assigned switch ports, configured trunk links, and used router subinterfaces for inter-VLAN routing.
+
+![Cisco switch CLI showing VLAN 10, 20, and 30 and their assigned ports](screenshots/vlan-port-assignments.webp)
+
+*The switch output shows active VLANs and their access-port assignments.*
 
 **Network services.** I configured DHCP pools for several department networks on R2 and R3, including subnet, default gateway, and DNS settings. I also configured a TACACS+ service for centralized router authentication. The project documentation includes the AAA server's configured router clients and a router login prompt.
 
@@ -26,7 +30,7 @@ The diagram shows the major sites and routing relationships from the project. It
 
 ## Verification
 
-The original project captures show several useful checks:
+The project documentation records specific configuration and connectivity checks. The VLAN and ping results are shown below; additional settings are described from the original project records:
 
 | Area | Evidence recorded | What it establishes |
 |---|---|---|
@@ -35,6 +39,10 @@ The original project captures show several useful checks:
 | Connectivity | A workstation ping to simulated server `11.1.1.10` succeeded with four replies after an earlier failed attempt | Basic reachability succeeded in that test |
 | DHCP | Router configuration screens show pools, networks, and default gateways | DHCP settings were entered, but lease allocation is not independently demonstrated |
 | AAA | TACACS+ server client entries and a router login prompt | Centralized authentication was configured, but the screenshots do not isolate a complete server-side authentication test |
+
+![Cisco Packet Tracer command prompt showing an initial failed ping followed by four successful replies from 11.1.1.10](screenshots/connectivity-validation.webp)
+
+*The later ping received four replies with no packet loss. This verifies reachability in that attempt, not full end-to-end coverage or security policy enforcement.*
 
 These results support specific configuration and connectivity checks. They do not establish complete site-to-site coverage, deny-rule enforcement, failover, or production readiness.
 
@@ -53,7 +61,7 @@ Those were **recommendations**, not changes I am claiming were deployed or verif
 
 ## Design review and next steps
 
-The final report describes a functioning lab, but the documentation also contains inconsistent addressing entries, including overlapping proposed subnet ranges. I would reconcile the addressing plan against each router's running configuration before treating this design as deployable.
+The final report describes a functioning lab, but the archived addressing plan includes a subnet conflict: the documented R3 interfaces use `10.30.2.1/27` and `10.30.2.33/26`, which belong to overlapping address ranges. I would correct the conflicting subnet allocation and verify the DHCP scopes and router configurations before treating this design as deployable.
 
 My next validation steps would be to:
 
