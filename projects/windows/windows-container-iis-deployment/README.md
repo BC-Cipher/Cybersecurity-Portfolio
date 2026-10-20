@@ -25,6 +25,8 @@ I installed Docker and verified that the container engine could access and run W
 
 Creating and inspecting containers helped me distinguish an **image**, which is the starting template, from a **container**, which is a running or stopped instance of that image. I also used Docker's image history and container listings to inspect what had been created.
 
+![Running IIS container and Docker image history shown in PowerShell](screenshots/iis-container-running-and-image-history.png)
+
 ## Persistent storage
 
 I worked with both host bind mounts and Docker named volumes.
@@ -37,11 +39,15 @@ This mattered because files written only to a container's writable layer are not
 
 I examined the default Docker NAT network, reviewed container addressing, and created an additional NAT network with a defined subnet. I attached containers to networks, inspected their settings, and tested connections between them.
 
+![Docker NAT network configuration in PowerShell](screenshots/docker-nat-network-configuration.png)
+
 I also worked with **published ports**, where a host port is mapped to an application port inside a container. In the IIS build, host port **1234** was mapped to port **80** in the container.
 
 ## Building a custom IIS image
 
 I used a Dockerfile in Visual Studio Code to define an IIS-based Windows container image. The file started from a Windows Server Core image, installed the Web Server feature, and copied website content into IIS's document directory.
+
+![Dockerfile configuring the Windows Server Core IIS image in Visual Studio Code](screenshots/iis-dockerfile-configuration.png)
 
 After updating the site content, I rebuilt the image with the tag `iis-websvr:v2`. I used Docker image history to review the build layers and started a container named `V2-Test` from the updated image.
 
