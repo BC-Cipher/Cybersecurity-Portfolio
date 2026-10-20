@@ -6,6 +6,9 @@ Focused exercises are organized separately under [Technical Labs](../labs/).
 
 ## Windows Infrastructure and Identity
 
+### [Enterprise Windows Infrastructure, Active Directory and Container Services](windows/rsi-enterprise-infrastructure-capstone/)
+Five-stage Windows infrastructure case study connecting Hyper-V deployment, a parent and child Active Directory domain, DHCP hot-standby failover, workstation policies, departmental file shares, and Docker-based IIS services. Includes original configuration screenshots and a security review.
+
 ### [Windows Server Infrastructure and Active Directory Administration](windows/enterprise-windows-domain-infrastructure/)
 Hyper-V virtualization, Active Directory, DNS, DHCP, group permissions, CSV-based user provisioning, Group Policy, and delegated administration.
 
