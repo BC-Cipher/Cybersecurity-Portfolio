@@ -52,13 +52,13 @@ The diagram summarizes the two networks documented in the reports. It does not i
 
 I configured the Hyper-V host's storage locations and prepared reusable Windows base images. I used differencing disks for the working virtual machines so their changes could be stored separately from the parent images.
 
-The environment included three server VMs and two client VMs. I checked VM disk paths, parent-disk relationships, switch assignments, and guest IP information in PowerShell. The network diagram and adapter output place the servers on the `10.2.2.0/24` lab network.
+The environment included three server VMs and two client VMs. I checked VM disk paths, parent-disk relationships, virtual-switch connections, and guest IP information in PowerShell. The network diagram and adapter output place the servers on the `10.2.2.0/24` lab network.
 
 ![Original RSI Hyper-V network diagram showing three servers and two clients](screenshots/hyperv-virtual-network.png)
 
 ![PowerShell output showing virtual hard disk parent paths and differencing disks](screenshots/hyperv-differencing-disks.png)
 
-**Verification:** `Get-VMHardDiskDrive`, `Get-VHD`, and `Get-VMNetworkAdapter` exposed the virtual disk and adapter configurations. The captured output confirms disk relationships and address assignments, not a benchmark of virtual machine performance.
+**Verification:** `Get-VMHardDiskDrive`, `Get-VHD`, and `Get-VMNetworkAdapter` exposed the virtual disk and adapter configurations. The captured output confirms disk relationships and guest IP addressing, not a benchmark of virtual machine performance.
 
 ## 2. Active Directory, DNS and DHCP
 
@@ -130,7 +130,7 @@ The screenshots verify the saved port and storage configurations. They do not in
 This project showed me how much Windows infrastructure depends on consistent configuration across multiple services. I also identified several checks I would add before relying on a similar environment outside a lab:
 
 1. **Validate failover behavior.** The DHCP relationship reported `Normal`, but a controlled failover exercise would be needed to verify lease continuity.
-2. **Review permissions.** Audit broad NTFS `FullControl` assignments and remove unnecessary Remote Desktop access for general domain users.
+2. **Review permissions.** Audit broad NTFS `FullControl` permissions and remove unnecessary Remote Desktop access for general domain users.
 3. **Confirm policy application.** Use Group Policy Results or `gpresult` on client machines to verify that security and update settings actually apply.
 4. **Test container services.** Confirm HTTP reachability on the published host port, check live network membership, and verify that files survive container replacement.
 5. **Protect the environment.** Apply supported patches, restrict administrative access, and review host firewall rules and container bind-mount permissions.
