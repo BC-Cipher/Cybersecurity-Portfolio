@@ -1,73 +1,56 @@
-# Windows Containers, Networking, Storage, and IIS
+# Windows Containers, Docker Networking, and IIS Deployment
 
-**Windows Server 2019 | Docker | Windows Server Core | PowerShell | IIS**
+**Windows Server 2019 · Docker · Windows Server Core · IIS · PowerShell**
 
-## Overview
+## Project overview
 
-I worked through the Windows container lifecycle, beginning with Docker installation and image management and continuing into running containers, persistent storage, network configuration, and building an IIS web server image from a Dockerfile.
+I configured Docker in a Windows Server environment and used Windows containers to run and manage an IIS web server. The work covered the container lifecycle, from choosing a base image and starting a container to managing persistent files, networking, and rebuilding a custom image from a Dockerfile.
 
-The project combines related CYB360 labs in an isolated Windows Server environment. Individual assignments have their own validation results. It does not represent a production application deployment.
+The goal was to understand what changes when an application runs in a container instead of a full virtual machine, and how to keep the application connected and its files accessible across container restarts.
 
-## Implementation
+## Environment and tools
 
-| Stage | Work completed |
+| Technology | How I used it |
 |---|---|
-| Docker setup | Installed Docker on Windows Server and verified the locally available hello-world image |
-| Container management | Pulled Windows container images and practiced creating, starting, stopping, inspecting, and removing containers |
-| IIS application | Used a Windows Server Core-based image with IIS installed |
-| Persistent storage | Practiced bind mounts using a host folder and Docker-managed named volumes |
-| Networking | Inspected the NAT network, created additional networks, connected containers, and published ports |
-| Repeatable image builds | Created a Dockerfile that installed IIS and copied website content, then built a versioned image |
+| Windows Server 2019 | Host environment for Windows containers |
+| Docker | Pulled images, created and managed containers, and built custom images |
+| Windows Server Core | Base image for the containerized web server |
+| IIS | Web server role installed within the container image |
+| PowerShell | Managed containers, inspected configuration, and installed Windows features |
+| Visual Studio Code | Edited the Dockerfile used for the image build |
 
-## Container workflow
+## Container setup and management
 
-```mermaid
-flowchart LR
-    A[Windows Server host] --> B[Windows Server Core base image]
-    B --> C[Dockerfile with IIS and site files]
-    C --> D[Versioned IIS image]
-    D --> E[Running container]
-    F[NAT and published ports] --> E
-    G[Bind mounts and named volumes] --> E
-```
+I installed Docker and verified that the container engine could access and run Windows images. I then practiced pulling Windows Server Core and Nano Server images and managing their lifecycle using Docker commands.
 
-*Storage and networking were explored in separate exercises. The diagram does not imply every feature was used in the same running container.*
+Creating and inspecting containers helped me distinguish an **image**, which is the starting template, from a **container**, which is a running or stopped instance of that image. I also used Docker's image history and container listings to inspect what had been created.
 
-## Dockerfile image build
+## Persistent storage
 
-For assignment 5.7, I used Visual Studio Code to create a Dockerfile based on the Windows Server Core 1809 image. The file installed the IIS Web Server role and copied a default page and supporting site assets into the IIS document root.
+I worked with both host bind mounts and Docker named volumes.
 
-The subsequent build was tagged `iis-websvr:v2`. My submission showed `docker history` output and a running `V2-Test` container with host port **1234** mapped to container port **80**.
+With a **bind mount**, I mapped a Windows host directory into the container so the application could use files stored outside its writable layer. I also created a Docker-managed volume for website files and inspected where the volume was stored.
 
-The original Dockerfile and site asset files were not retained as separate files. I have preserved their configuration evidence in the submitted screenshots rather than presenting a newly reconstructed file as the original.
+This mattered because files written only to a container's writable layer are not a reliable way to retain application data after that container is deleted. Keeping data separate from the container makes replacement and redeployment more practical.
 
-## Storage and network administration
+## Container networking
 
-The storage assignments explored the difference between an ephemeral container filesystem, a **bind mount** into a host directory, and a **named volume** managed by Docker. My revised storage submission passed all nine automated checks.
+I examined the default Docker NAT network, reviewed container addressing, and created an additional NAT network with a defined subnet. I attached containers to networks, inspected their settings, and tested connections between them.
 
-The networking exercises covered Docker network inspection, NAT networks, connectivity testing, and published container ports. Eleven network-related checks passed.
+I also worked with **published ports**, where a host port is mapped to an application port inside a container. In the IIS build, host port **1234** was mapped to port **80** in the container.
 
-## Validation summary
+## Building a custom IIS image
 
-| Assignment | Submitted evidence |
-|---|---|
-| 5.3, Docker installation | 4 passed, 0 failed |
-| 5.4, using Windows containers | 9 passed, 0 failed |
-| 5.5, container storage, revised submission | 9 passed, 0 failed |
-| 5.6, container networking | 11 passed, 0 failed |
-| 5.7, Dockerfile build | Dockerfile screenshot, image history, and running-container output |
+I used a Dockerfile in Visual Studio Code to define an IIS-based Windows container image. The file started from a Windows Server Core image, installed the Web Server feature, and copied website content into IIS's document directory.
 
-The 5.7 material documents the image and running container. It does not independently establish a successful HTTP request or application health monitoring. The final performance assessment encountered a grading-script error and is not included as a passing validation claim.
+After updating the site content, I rebuilt the image with the tag `iis-websvr:v2`. I used Docker image history to review the build layers and started a container named `V2-Test` from the updated image.
 
-## Security perspective
+This gave me experience with a repeatable image build instead of manually configuring each new container.
 
-Windows Server 2019 and Server Core 1809 reflect the training environment, not a recommended modern production baseline. For a real deployment I would review supported images, restrict exposed ports and mounted host directories, avoid secrets in image layers, scan the final image, and add functional health checks and monitoring.
+## What I took away
 
-## Documentation and evidence
+Docker made it easier to rebuild the same application environment from a defined image. The storage and networking work was just as important as the build itself: an application needs access to its files and a clear path for traffic before it is useful.
 
-- [Implementation details](docs/implementation.md)
-- [Test results and evidence checklist](docs/validation.md)
-- [Container security considerations](docs/security-notes.md)
-- [Original screenshot upload folder](screenshots/)
+For a production environment, I would use supported, patched base images, limit host directory access and exposed ports, scan images for vulnerabilities, and add application health checks. This project reflects the Windows Server 2019 environment used for the work, not a modern production deployment.
 
-[Windows infrastructure projects](../) | [Portfolio home](../../../README.md)
+[Windows infrastructure projects](../) · [All portfolio projects](../../) · [Portfolio home](../../../README.md)

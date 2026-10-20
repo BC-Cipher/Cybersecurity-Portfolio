@@ -1,88 +1,72 @@
-# Enterprise Windows Domain Infrastructure and Access Control
+# Windows Server Infrastructure and Active Directory Administration
 
-**Windows Server 2019 | Hyper-V | Active Directory | DNS | DHCP | PowerShell | Group Policy**
+**Windows Server 2019 · Hyper-V · Active Directory · DNS · DHCP · PowerShell · Group Policy**
 
-## Overview
+## Project overview
 
-I built and administered a Windows Server training environment through a sequence of infrastructure labs. I started by provisioning server and client virtual machines in Hyper-V, then worked through domain services, organizational design, bulk account creation, security groups, shared-folder permissions, Group Policy, and delegated administration.
+I built a Windows Server environment to work through the services and administrative tasks that support a business network. The environment included virtualized Windows servers and clients, Active Directory, DNS, DHCP, shared resources, and centrally managed policies.
 
-The work focused on making a Windows domain manageable as an organization grows. Instead of assigning every setting or permission individually, I used organizational units (OUs), groups, and PowerShell to apply configurations at the right level.
+I worked with each component directly, from creating virtual machines to organizing user accounts and assigning permissions. Some configurations were completed in separate lab environments, so this page brings the related work together rather than describing a single production deployment.
 
-The labs were completed in an isolated classroom environment. Some configurations changed between assignments, so this project documents verified work across the course rather than claiming every component was operating simultaneously.
+## Environment
 
-## Infrastructure work
-
-| Area | Implementation |
+| Component | Configuration and purpose |
 |---|---|
-| Virtualization | Created Generation 2 Hyper-V virtual machines, configured memory and storage, prepared base images and differencing disks |
-| Virtual networking | Configured Hyper-V switches, NAT connectivity, IP addressing, and name-resolution tests |
-| Directory services | Installed AD DS, created a forest, and joined Windows clients to the domain |
-| DNS and DHCP | Configured DNS zones, forwarding and records, DHCP roles, authorization, and address scopes |
-| Directory organization | Organized OUs by location and department, then performed CSV-based user provisioning |
-| Access control | Created and nested global and domain-local groups, configured shared folders and NTFS access |
-| Group Policy | Created and linked GPOs and configured centrally managed software deployment |
-| Delegated administration | Assigned OU-scoped administration and password-reset tasks to designated groups |
+| Hyper-V | Windows Server and Windows client virtual machines, virtual switches, and virtual disks |
+| Active Directory Domain Services | Domain deployment, client domain membership, organizational units, users, and groups |
+| DNS and DHCP | Name resolution, DNS zones and forwarders, DHCP authorization, scopes, and address assignment |
+| Group Policy | Centralized user and computer settings, including software deployment |
+| File services and access control | Shared folders, security group nesting, and NTFS permissions |
+| PowerShell | Virtual machine administration, service configuration, and user provisioning |
 
-## Infrastructure workflow
+## Virtualization and network setup
 
-```mermaid
-flowchart TD
-    A[Windows Server Hyper-V host] --> B[Server and client virtual machines]
-    B --> C[Virtual networking]
-    C --> D[AD DS, DNS and DHCP labs]
-    D --> E[OUs and user provisioning]
-    E --> F[Security groups and file permissions]
-    F --> G[Group Policy and software deployment]
-    F --> H[Delegated administration]
-```
+I configured Hyper-V to host Windows Server 2019 and Windows client machines. This included creating Generation 2 VMs, assigning memory and virtual disks, and preparing reusable base images with differencing disks.
 
-*This is a sequence of course exercises, not a diagram of a single persistent production environment.*
+I also configured virtual switches and IP settings so the machines could communicate within the lab. Working with NAT and different virtual network types helped me understand how the network design affects connectivity between hosts, guests, and other services.
 
-## Bulk Active Directory provisioning
+![PowerShell output from the Hyper-V virtual networking configuration](screenshots/hyperv-virtual-networking.png)
 
-One exercise supplied a CSV dataset containing **449 employee records** with names, departments, locations, and account attributes. I used it to support account creation and placement into location- and department-specific OUs.
+## Active Directory, DNS, and DHCP
 
-The accompanying assessment returned **38 passed, 0 failed** for checks covering OU structure, account imports and placement, and related configuration. The result verifies the conditions tested by the course script. It is not a manual audit of every imported account.
+I installed Active Directory Domain Services, created a domain, and connected Windows client machines to it. From there I configured the directory structure and worked with the supporting network services.
 
-The original employee dataset is not included because individual account data is unnecessary to demonstrate the provisioning workflow.
+The DNS work included secondary zones, name server records, forwarding, and name resolution. For DHCP, I installed and authorized the server role, created address scopes, and configured address exclusions. These tasks showed how closely directory services depend on a working network and reliable DNS configuration.
 
-## Access control and delegation
+![Windows Server Active Directory configuration](screenshots/active-directory-domain-setup.png)
 
-For shared resources, I created security groups and applied an AGDLP-style structure: accounts in global groups, global groups nested into resource-specific domain-local groups, and permissions assigned to those resource groups. I also worked with NTFS access control lists (ACLs) and SMB shares.
+![DNS zone and forwarder configuration in PowerShell](screenshots/dns-configuration.png)
 
-A later exercise delegated specific administrative tasks to groups responsible for individual OUs, including password-reset rights. This connects directory organization to a practical administrative security model.
+## User provisioning and directory organization
 
-## Selected verified results
+I organized Active Directory using organizational units based on office locations and departments. I then worked with a CSV containing 449 training employee records to provision accounts and place users in the appropriate OUs.
 
-| Assignment | Course validation |
-|---|---:|
-| 2.3, virtual machines from base images | 24 passed, 0 failed |
-| 2.4, Hyper-V networking | 17 passed, 0 failed |
-| 2.7, Hyper-V performance assessment | 35 passed, 0 failed |
-| 3.5, advanced DNS | 6 passed, 0 failed |
-| 3.7, Active Directory forest | 12 passed, 0 failed |
-| 3.8, Windows DHCP | 13 passed, 0 failed |
-| 4.4, Active Directory logical design | 38 passed, 0 failed |
-| 4.5, directory objects and permissions | 33 passed, 0 failed |
-| 4.6, GPO creation and linking | 3 passed, 0 failed |
-| 4.8, Group Policy software deployment | 11 passed, 0 failed |
-| 4.9, delegated administrative control | 4 passed, 0 failed |
+This was one of the most useful parts of the project because it moved beyond creating users one at a time. Consistent naming and directory structure make accounts easier to locate, manage, and apply policies to as an environment grows. The original employee records are not included in this public repository.
 
-The figures represent separate automated checks taken at different stages of the course. Assignment 4.7 included a failed check, while performance assessment 4.11 encountered a validation error. I have not counted either as a passing result.
+![Active Directory organizational structure and user provisioning output](screenshots/active-directory-user-provisioning.png)
 
-## What I learned
+## Security groups and file permissions
 
-The relationship between these technologies became clearer as I worked through the labs. DNS supports domain functionality, OU design affects policy scope, group nesting makes permissions easier to maintain, and delegated administration limits the need to share domain-wide privileges. PowerShell and CSV input also make account provisioning more consistent than creating hundreds of accounts manually.
+I created security groups, nested memberships, and assigned permissions to shared resources. The access-control work followed the **AGDLP** model: accounts belong to global groups, global groups can be members of domain-local resource groups, and permissions are assigned to those resource groups.
 
-The classroom configurations are not a production security baseline. Shared demonstration passwords, broad Remote Desktop access, and permissive share-level permissions would require changes before use in an enterprise.
+I also configured SMB shares and NTFS permissions. This approach is more manageable than granting access separately to every user, and it supports more consistent control of departmental resources.
 
-## Documentation and evidence
+![PowerShell output from directory group and folder permission configuration](screenshots/active-directory-access-control.png)
 
-- [Implementation details](docs/implementation.md)
-- [Test results and evidence checklist](docs/validation.md)
-- [Security and production considerations](docs/security-notes.md)
-- [Original screenshot upload folder](screenshots/)
+## Group Policy and administrative delegation
 
-The screenshot folder contains a naming guide for the original lab images, which can be uploaded separately without changing project paths.
+I created and linked Group Policy objects to manage settings across domain-joined systems. I also configured software distribution through Group Policy, including software published to users and assigned to computers.
 
-[Windows infrastructure projects](../) | [Portfolio home](../../../README.md)
+For administrative delegation, I created location-specific groups and used Active Directory delegation to assign account management and password-reset responsibilities within designated OUs. That allowed the work to be divided by responsibility rather than relying entirely on domain-wide administrative privileges.
+
+![Group Policy software deployment configuration](screenshots/group-policy-software-deployment.png)
+
+![Delegated administration and OU permissions](screenshots/ad-delegated-administration.png)
+
+## Key takeaways
+
+The biggest lesson from this environment was how the pieces fit together. Virtualization made the infrastructure easier to build and reset, DNS and DHCP supported network connectivity, and Active Directory gave me a central place to manage users and computers. Group Policy and security groups made it possible to control settings and access without configuring every machine and user separately.
+
+The configurations reflect a controlled Windows Server 2019 training environment. In production, I would review delegated permissions, apply least-privilege access, protect provisioning credentials, restrict DNS transfers, and test Group Policy changes before applying them broadly.
+
+[Windows infrastructure projects](../) · [All portfolio projects](../../) · [Portfolio home](../../../README.md)

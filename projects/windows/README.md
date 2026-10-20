@@ -1,25 +1,15 @@
 # Windows Infrastructure and Administration
 
-Windows Server 2019 infrastructure labs covering Hyper-V, Active Directory Domain Services (AD DS), DNS, DHCP, Group Policy, PowerShell, and Windows containers.
-
-These are two connected collections of hands-on course work. Each project separates completed configuration work from what the surviving test results and screenshots can actually verify. They are not presented as production deployments.
+My Windows Server projects cover virtual machines, domain administration, access control, and containerized web services. The work was completed in controlled lab environments using Windows Server 2019, Windows clients, Hyper-V, PowerShell, and Docker.
 
 ## Projects
 
-### [Enterprise Windows Domain Infrastructure and Access Control](enterprise-windows-domain-infrastructure/)
+### [Windows Server Infrastructure and Active Directory Administration](enterprise-windows-domain-infrastructure/)
 
-Provisioned Windows Server and client virtual machines with Hyper-V, configured networking and core domain services, organized Active Directory accounts, applied resource permissions, managed Group Policy, and delegated administrative tasks. Includes bulk user provisioning from a 449-record training dataset.
+Built Windows Server and client virtual machines, configured virtual networking, and worked with Active Directory, DNS, DHCP, Group Policy, shared resources, and administrative delegation. Includes CSV-based account provisioning and security group design.
 
-**Skills:** Hyper-V, Windows Server, AD DS, DNS, DHCP, PowerShell, security groups, NTFS permissions, Group Policy.
+### [Windows Containers, Docker Networking, and IIS Deployment](windows-container-iis-deployment/)
 
-### [Windows Containers, Networking, Storage, and IIS](windows-container-iis-deployment/)
+Configured Docker on Windows Server, managed Windows containers and their storage and networks, and built a custom IIS container image using a Dockerfile.
 
-Installed Docker on Windows Server, worked with Windows Server Core containers, configured persistent storage and networking, and used a Dockerfile to build and run an IIS container image.
-
-**Skills:** Docker, Windows containers, IIS, image builds, bind mounts, named volumes, NAT, port publishing.
-
-## Evidence
-
-Both projects include implementation notes, validation results, and screenshot directories prepared for the original lab evidence. The screenshots will be added separately.
-
-[All projects](../README.md) | [Portfolio home](../../README.md)
+[All projects](../) · [Portfolio home](../../README.md)
