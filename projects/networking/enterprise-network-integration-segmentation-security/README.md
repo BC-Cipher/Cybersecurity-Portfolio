@@ -12,7 +12,7 @@ This was a Packet Tracer project, not a production deployment.
 
 ## Network layout
 
-![Simplified view of the simulated corporate network](network-architecture.svg)
+![Simplified view of the simulated corporate network](screenshots/network-architecture.svg)
 
 The diagram shows the major sites and routing relationships from the project. It is a simplified architecture view, not a record of tested firewall policy or traffic flows.
 
