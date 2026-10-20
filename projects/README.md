@@ -9,6 +9,9 @@ Focused exercises are organized separately under [Technical Labs](../labs/).
 ### [Enterprise Network Integration, Segmentation & Security](networking/enterprise-network-integration-segmentation-security/)
 Designed a simulated multi-location network in Cisco Packet Tracer. Configured routing, VLANs, DHCP, centralized authentication, and perimeter controls at the primary site, then reviewed remote-site exposure and single points of failure.
 
+### [Switch Port Security and Access Control Validation](networking/switch-port-security-validation/)
+Configured and tested MAC-based port restrictions in Packet Tracer, including shutdown and restrict actions, DHCP failure for unauthorized replacement devices, and recovery of an affected port.
+
 ### [Routing, Device Administration, IPv6 Security and Site-to-Site VPNs](networking/)
 Cisco Packet Tracer case studies covering OSPF/BGP routing, TACACS+/RADIUS, SSH administration, ASA firewall configuration, OSPFv3, IPv6 access controls, and IPsec VPN/QoS testing. Includes original console screenshots and clear verification limits.
 

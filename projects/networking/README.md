@@ -30,6 +30,12 @@ Configured a policy-based IPsec tunnel between two routed sites, inspected secur
 
 **Focus:** IPsec, IKEv1, crypto maps, QoS, troubleshooting.
 
+### [Switch Port Security and Access Control Validation](switch-port-security-validation/)
+
+Configured static and sticky MAC-based port security in Cisco Packet Tracer. Tested device replacement, recorded shutdown and restrict violations, recovered an affected interface, and disabled unused access ports.
+
+**Focus:** Cisco IOS, MAC address restrictions, port-security violation testing, DHCP, switch hardening.
+
 ## Scope
 
 These are separate controlled training scenarios, not one production network. The screenshots show original device output. Passwords, shared keys, and classroom instructions are excluded.
