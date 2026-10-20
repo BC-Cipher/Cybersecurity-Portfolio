@@ -34,6 +34,14 @@ Windows Server Core containers, persistent storage, NAT networking, and a custom
 
 [Browse Windows infrastructure projects](windows/)
 
+## Linux Infrastructure and Security
+
+### [Linux Infrastructure, Service Deployment & Security Operations](linux/linux-infrastructure-services-security/)
+
+Multi-phase Linux case study covering QEMU/KVM guests, shared storage and Samba/Rsync, Nginx and Redis containers, LAMP/HTTPS, firewall policies, centralized Rsyslog, monitoring, and Bash/systemd automation. Includes test evidence and a review of production security considerations.
+
+[Browse Linux projects](linux/)
+
 ## Incident Investigation and Machine Learning
 
 ### [Container Incident Investigation & Isolation Forest](ai-assisted-incident-investigation/)
