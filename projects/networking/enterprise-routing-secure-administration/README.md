@@ -17,6 +17,8 @@ The work took place in Packet Tracer, not a production network.
 
 After redistribution, the captured R3 routing table showed `11.1.1.0/24` as an `O E2` route. The lab also documented successful five-packet ICMP tests from R2 and R3 to the simulated Internet server after changes to BGP advertisements. These results show basic route learning and connectivity, not tested convergence under failure.
 
+![R3 OSPF external route to the simulated Internet network](screenshots/ospf-bgp-external-route.png)
+
 ## Administrative access and monitoring
 
 I configured a TACACS+ service on a dedicated VLAN for router login and worked with local fallback accounts. A separate wireless exercise used RADIUS with WPA2-Enterprise. I also configured syslog collection to observe network events.
