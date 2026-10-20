@@ -4,6 +4,8 @@
 
 [Portfolio home](../../../README.md) · [Networking projects](../) · [All projects](../../)
 
+**Jump to:** [Network design](#2-moving-from-subnets-to-vlans) · [IoT](#4-integrating-and-managing-iot-devices) · [Port security](#6-testing-switch-port-security) · [Routing](#7-comparing-static-routing-ripv2-and-ospf) · [Results](#results-and-lessons-from-the-build)
+
 ## Project overview
 
 I built a small network in Cisco Packet Tracer and expanded it in stages until it supported separate user and server networks, wireless smart devices, simulated Internet access, and switch-level security controls.
