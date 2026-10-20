@@ -20,8 +20,8 @@
 <text x="848" y="148" font-size="17" font-weight="700" fill="#0e5e57">R1 Router</text>
 <text x="848" y="170" font-size="13" fill="#216d64">Inter-VLAN routing</text>
 <path d="M553 337 V359 H355 V379" stroke="#6c8095" stroke-width="4" fill="none"/>
-<path d="M553 337 V359 H762 V379" stroke="#6c8095" stroke-width="4" fill="none"/>
-<text x="558" y="370" font-size="12" fill="#445b73">802.1Q VLAN trunks</text>
+<path d="M432 411 H685" stroke="#6c8095" stroke-width="4" fill="none"/>
+<text x="559" y="400" font-size="12" fill="#445b73">802.1Q trunk</text>
 <rect x="465" y="270" width="176" height="67" rx="12" fill="#173e64"/>
 <text x="553" y="294" font-size="17" font-weight="700" fill="#ffffff">R1 LAN</text>
 <text x="553" y="316" font-size="13" fill="#c7e7f9">VLAN gateways / DHCP</text>
