@@ -6,7 +6,7 @@
 
 I completed a series of security labs covering cloud identity, container vulnerability scanning, encryption, hashing, and HTTPS certificates.
 
-The work included Azure tenant reconnaissance with AADInternals, Docker image vulnerability assessment with Trivy, multi-layer hashing with CyberChef, self-signed HTTPS certificate deployment in IIS, AES-encrypted volume management with VeraCrypt..
+The work included Azure tenant reconnaissance with AADInternals, Docker image vulnerability assessment with Trivy, multi-layer hashing with CyberChef, self-signed HTTPS certificate deployment in IIS, AES-encrypted volume management with VeraCrypt.
 
 The goal was to connect security assessment with defensive controls by examining how cloud and container environments expose useful security information while also practicing data-integrity, transport-encryption, and data-at-rest protections.
 
