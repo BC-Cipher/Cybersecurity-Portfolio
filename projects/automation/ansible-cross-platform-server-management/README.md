@@ -229,7 +229,7 @@ The files linked below are **credential-free references adapted from the complet
 
 See [Security and Implementation Notes](SECURITY.md) for production considerations and the limitations of the original exercise configurations.
 
-## What I took from the project## Additional original evidence
+## Additional original evidence
 
 The following captures provide more detail for the results discussed above:
 
