@@ -6,7 +6,7 @@
 
 I worked with infrastructure templates across AWS, Microsoft Azure, and Google Cloud to configure resources, fix deployment errors, and check the results. I worked from existing templates, changed their resource settings, resolved configuration problems, and used Git to keep track of revisions.
 
-For my final AWS assignment, I designed a multi-tier web application in CloudFormation with network separation, load balancing, Auto Scaling, and an RDS database. The final assignment includes a detailed infrastructure design. I have not included deployment or failover results that weren't recorded in the lab.
+For my final AWS design, I designed a multi-tier web application in CloudFormation with network separation, load balancing, Auto Scaling, and an RDS database. The design report documents the proposed infrastructure. I have not included deployment or failover results that weren't recorded in the lab.
 
 | Platform | Tools | What I worked on |
 |---|---|---|
@@ -16,7 +16,7 @@ For my final AWS assignment, I designed a multi-tier web application in CloudFor
 
 ## Final AWS Architecture
 
-The final CloudFormation assignment focused on an e-commerce application with separate web, application, and database tiers.
+The final CloudFormation design focused on an e-commerce application with separate web, application, and database tiers.
 
 ```mermaid
 flowchart TB
@@ -79,11 +79,11 @@ The linked templates include the configurations I worked with during the labs an
 | Azure | [Parameterized App Service ARM template](../../../labs/azure-arm-bicep-iac/templates/app-service-parameterized.json) | App Service plan and web app with configurable name and location |
 | Google Cloud | [Deployment configuration](../../../labs/google-cloud-deployment-manager/templates/deployment.yaml) | Jinja-based network and bucket definitions |
 
-The [AWS reference YAML](templates/aws-web-rds-reference.yaml) is a simplified two-tier revision of the coursework design. It is **not** the complete three-tier final architecture shown above, and I have not claimed it was deployed. It includes a basic web-server bootstrap for the load balancer's HTTP health checks; it does not contain a complete e-commerce application.
+The [AWS reference YAML](templates/aws-web-rds-reference.yaml) is a simplified two-tier revision of the three-tier design. It is **not** the complete three-tier final architecture shown above, and I have not claimed it was deployed. It includes a basic web-server bootstrap for the load balancer's HTTP health checks; it does not contain a complete e-commerce application.
 
 ## AWS Template Evidence
 
-The screenshots below show configuration from the final CloudFormation assignment. They document the design, not the result of a full stack deployment.
+The screenshots below show configuration from the final CloudFormation design. They document the design, not the result of a full stack deployment.
 
 **Web Auto Scaling configuration**
 

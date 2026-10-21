@@ -125,6 +125,6 @@ For a more useful detection model, I would add HTTP methods, URIs, response code
 
 The response considerations align with the **Detect, Respond, Recover, and continuous-improvement** emphasis in [NIST SP 800-61 Rev. 3](https://doi.org/10.6028/NIST.SP.800-61r3). Response actions above are recommendations, not actions claimed to have been completed.
 
-**Related coursework:** [Supervised and unsupervised MitM traffic model comparison](mitm-model-comparison.md). These experiments used separate synthetic datasets and were not used to classify the VCASTLE packet captures.
+**Related analysis:** [Supervised and unsupervised MitM traffic model comparison](mitm-model-comparison.md). These experiments used separate synthetic datasets and were not used to classify the VCASTLE packet captures.
 
 *All investigation activity was performed in an authorized training environment.*

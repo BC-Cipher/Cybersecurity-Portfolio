@@ -16,44 +16,46 @@ This diagram shows how the services from the separate labs fit into a web applic
 
 ```mermaid
 flowchart TB
-    Users[Internet Users] --> ALB[Application Load Balancer]
+    Users["Internet users"] --> IGW["Internet Gateway"]
 
-    subgraph AWS[AWS Region]
-        IAM[IAM Users, Groups and Policies]
+    subgraph Region["AWS Region"]
+        IAM["IAM access controls"]
+        Metrics["CloudWatch metrics and alarms"]
 
-        subgraph VPC[VPC 10.0.0.0/16]
-            IGW[Internet Gateway]
-            NAT[NAT Gateway]
+        subgraph VPC["VPC 10.0.0.0/16"]
+            IGW
+            ALB["Internet-facing Application Load Balancer"]
+            NAT["NAT Gateway in a public subnet"]
 
-            subgraph AZA[Availability Zone A]
-                PubA[Public Subnet 10.0.0.0/24]
-                AppA[Private App Subnet 10.0.1.0/24]
-                DBPrimary[(RDS MySQL Primary)]
+            subgraph AZA["Availability Zone A"]
+                PublicA["Public subnet 10.0.0.0/24"]
+                AppA["EC2 application instance in private subnet 10.0.1.0/24"]
+                Primary[("RDS MySQL primary")]
             end
 
-            subgraph AZB[Availability Zone B]
-                PubB[Public Subnet 10.0.2.0/24]
-                AppB[Private App Subnet 10.0.3.0/24]
-                DBStandby[(RDS MySQL Standby)]
+            subgraph AZB["Availability Zone B"]
+                PublicB["Public subnet 10.0.2.0/24"]
+                AppB["EC2 application instance in private subnet 10.0.3.0/24"]
+                Standby[("RDS MySQL standby")]
             end
 
-            ALB --> PubA
-            ALB --> PubB
-            PubA --> AppA
-            PubB --> AppB
-            AppA --> DBPrimary
-            AppB --> DBPrimary
-            DBPrimary -. synchronous replication .-> DBStandby
-            AppA --> NAT
-            AppB --> NAT
+            IGW --> ALB
+            ALB --> AppA
+            ALB --> AppB
+            AppA --> Primary
+            AppB --> Primary
+            Primary -. "Multi-AZ replication" .-> Standby
+            AppA -. "Outbound traffic" .-> NAT
+            AppB -. "Outbound traffic" .-> NAT
             NAT --> IGW
+            ALB -. "Attached to" .-> PublicA
+            ALB -. "Attached to" .-> PublicB
         end
 
-        ASG[EC2 Auto Scaling Group
-2 minimum / 6 maximum] --> AppA
-        ASG --> AppB
-        CW[CloudWatch Metrics and Alarms] --> ASG
-        IAM -. governs access to AWS resources .-> VPC
+        ASG["Auto Scaling: minimum 2, maximum 6"] -. "Manages" .-> AppA
+        ASG -. "Manages" .-> AppB
+        Metrics -. "Scaling signals" .-> ASG
+        IAM -. "Governs AWS API access" .-> ASG
     end
 ```
 

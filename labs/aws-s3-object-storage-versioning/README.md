@@ -1,7 +1,7 @@
 # Amazon S3 Object Storage, Permissions & Versioning
 
 ## Overview
-In two AWS Cloud Foundations lab exercises, I created Amazon S3 buckets, uploaded objects, investigated how bucket permissions affect access, configured bucket policies in a controlled training environment, and enabled object versioning.
+In AWS Cloud Foundations training, I created Amazon S3 buckets, uploaded objects, investigated how bucket permissions affect access, configured bucket policies in a controlled training environment, and enabled object versioning.
 
 **Services:** Amazon S3  
 **Focus:** Object storage, access policies, version recovery, data protection
@@ -13,7 +13,6 @@ In two AWS Cloud Foundations lab exercises, I created Amazon S3 buckets, uploade
 - Examined S3 bucket policy configuration and temporary public-read behavior.
 - Enabled S3 Versioning and uploaded modified versions of an object.
 - Verified that new versions appeared and inspected version history.
-- Completed the versioning lab's validation checks.
 
 ## Security Findings
 - S3 permissions determine who can retrieve objects. Public-read access should be a deliberate, tightly scoped exception rather than a default.

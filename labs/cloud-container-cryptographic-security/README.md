@@ -1,12 +1,12 @@
 # Cloud, Container & Cryptographic Security Lab
 
-**Azure Reconnaissance | Container Vulnerability Scanning | Multi-Layer Hashing | HTTPS Certificates | Disk Encryption | AI-Assisted Cryptography**
+**Azure Reconnaissance | Container Vulnerability Scanning | Multi-Layer Hashing | HTTPS Certificates | Disk Encryption**
 
 ## Overview
 
 I completed a series of security labs covering cloud identity, container vulnerability scanning, encryption, hashing, and HTTPS certificates.
 
-The work included Azure tenant reconnaissance with AADInternals, Docker image vulnerability assessment with Trivy, multi-layer hashing with CyberChef, self-signed HTTPS certificate deployment in IIS, AES-encrypted volume management with VeraCrypt, and AI-assisted cryptographic command generation with ShellGPT.
+The work included Azure tenant reconnaissance with AADInternals, Docker image vulnerability assessment with Trivy, multi-layer hashing with CyberChef, self-signed HTTPS certificate deployment in IIS, AES-encrypted volume management with VeraCrypt..
 
 The goal was to connect security assessment with defensive controls by examining how cloud and container environments expose useful security information while also practicing data-integrity, transport-encryption, and data-at-rest protections.
 
@@ -22,7 +22,6 @@ The goal was to connect security assessment with defensive controls by examining
 - HTTPS / TLS
 - VeraCrypt
 - AES
-- ShellGPT
 - MD5
 - SHA-1
 - HMAC
@@ -114,22 +113,6 @@ Encryption at rest helps protect sensitive data if storage media or a device is 
 
 ---
 
-## 6. AI-Assisted Cryptographic Operations with ShellGPT
-
-ShellGPT was used to generate shell commands for several cryptographic and encoding tasks, including MD5 hashing, chained MD5 and SHA-1 hashing, CRC32 checksum calculation, and Base64 encoding.
-
-I reviewed generated shell commands before running them and checked their output.
-
-![ShellGPT cryptographic automation](screenshots/shellgpt-cryptographic-automation.png)
-
-*ShellGPT generating and executing lab commands for hashing, checksum, and Base64 operations.*
-
-### Defensive Takeaway
-
-AI can accelerate repetitive technical workflows, but generated commands and cryptographic recommendations still require human review. Security-sensitive operations should be validated against current standards before use in production.
-
----
-
 ## Security Concepts Demonstrated
 
 - Azure / Entra ID reconnaissance
@@ -144,19 +127,18 @@ AI can accelerate repetitive technical workflows, but generated commands and cry
 - Data-at-rest encryption
 - AES-encrypted volumes
 - Checksums and encoding
-- AI-assisted security automation
 - Defensive remediation planning
 
 ---
 
-## Lessons Learned
+## Findings and Lessons
 
-This project demonstrated how assessment and protection techniques apply across cloud, container, and cryptographic security.
+These exercises covered different parts of a defense strategy: assessing public cloud identity exposure, identifying vulnerable container packages, protecting traffic with TLS, and encrypting stored data. The Trivy results highlighted the risk of retaining unsupported image dependencies. The hashing exercise also showed why algorithm choice matters: MD5 and SHA-1 are unsuitable for modern collision-resistant security uses.
 
-The Azure reconnaissance exercise showed how publicly available identity metadata can assist attack-surface mapping. Trivy demonstrated the importance of continuously assessing container dependencies and supported operating-system versions. The cryptography exercises reinforced how hashing, HMAC, TLS certificates, and disk encryption protect data integrity, data in transit, and data at rest.
-
-The ShellGPT exercise also reinforced an important operational principle: automation can increase speed, but security results and generated commands still require analyst validation.
 
 ## Ethical Use
 
 All activities documented in this project were performed in an authorized cybersecurity training environment using designated lab systems, test domains, sample files, and intentionally configured targets. No unauthorized access or testing was performed.
+
+
+[Technical labs](../) | [Portfolio home](../../)

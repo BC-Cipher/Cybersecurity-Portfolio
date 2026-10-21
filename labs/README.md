@@ -1,6 +1,6 @@
 # Technical Lab Index
 
-Hands-on labs from coursework and technical practice, organized by subject. Each lab covers the tools used, the work performed, and the available results.
+Focused security and infrastructure labs, organized by subject. Each page explains the tools, observable results, and security implications, with screenshots where available.
 
 **Browse:** [Offensive Security](#offensive-security--penetration-testing) | [Vulnerability Management](#vulnerability-management--threat-analysis) | [Cloud](#cloud-infrastructure--security) | [Mobile & IoT](#mobile-iot--ot-security) | [Networking](#networking--reconnaissance) | [Forensics](#digital-forensics) | [Security Awareness](#security-awareness--social-engineering)
 

@@ -4,11 +4,7 @@
 
 ## Overview
 
-I assessed a training web server and its applications through service enumeration, vulnerability scanning, and controlled exploitation.
-
-The exercises followed a structured penetration testing workflow that included reconnaissance, service enumeration, attack surface mapping, vulnerability discovery, authentication testing, exploitation, and validation.
-
-I used multiple security tools to gather information about web infrastructure, identify exposed services and application weaknesses, investigate vulnerabilities, and validate selected findings in a controlled environment.
+I assessed deliberately vulnerable web servers and applications in an authorized lab. I moved from service discovery and attack-surface mapping to credential testing, vulnerability assessment, and controlled exploitation. I used server responses and command output to verify findings rather than relying on automated scan results alone.
 
 ## Tools & Technologies
 
@@ -22,8 +18,6 @@ I used multiple security tools to gather information about web infrastructure, i
 - Burp Suite
 - WPScan
 - Wapiti
-- ShellGPT
-- WAFW00F
 - Docker
 - Apache Tomcat
 - WordPress
@@ -131,20 +125,6 @@ Findings from the WordPress assessment were further investigated and selected vu
 
 ---
 
-## 8. AI-Assisted Security Testing
-
-ShellGPT was used during selected security-testing activities to examine how AI-generated commands can assist with reconnaissance and vulnerability assessment workflows.
-
-In this exercise, ShellGPT assisted with a web application firewall check that used WAFW00F to fingerprint the target's protection.
-
-![ShellGPT WAF detection](screenshots/shellgpt-waf-detection.png)
-
-*AI-assisted WAF fingerprinting with ShellGPT and WAFW00F.*
-
-Generated commands and results were reviewed and validated rather than treated as automatically trustworthy.
-
----
-
 ## Security Concepts Demonstrated
 
 - Web server reconnaissance
@@ -163,18 +143,16 @@ Generated commands and results were reviewed and validated rather than treated a
 - Log4j / CVE-2021-44228
 - Black-box web application testing
 - Vulnerability validation
-- AI-assisted security testing
 
 ---
 
-## Lessons Learned
+## Findings and Lessons
 
-This project demonstrated how reconnaissance, enumeration, vulnerability discovery, exploitation, and validation fit together within a structured penetration testing workflow.
-
-Using multiple tools reinforced the importance of validating findings instead of relying on automated scanner output alone. Reconnaissance identified the attack surface, vulnerability assessment tools highlighted potential weaknesses, and controlled validation demonstrated the possible impact of selected findings.
-
-The exercises strengthened my understanding of web server security, web application testing, vulnerability analysis, and the relationship between offensive testing and defensive remediation.
+The results ranged from missing HTTP security headers to successful remote command execution on an intentionally vulnerable Log4j application. The most important distinction was between a tool reporting a possible weakness and a test demonstrating its actual effect. I used that distinction to prioritize verification and connect findings to concrete defenses such as patching, stronger credentials, and safer web-server configuration.
 
 ## Ethical Use
 
 All activities documented in this project were performed in an authorized cybersecurity training environment using designated virtual systems and intentionally vulnerable applications. No testing was performed against external or unauthorized systems.
+
+
+[Technical labs](../) | [Portfolio home](../../)
