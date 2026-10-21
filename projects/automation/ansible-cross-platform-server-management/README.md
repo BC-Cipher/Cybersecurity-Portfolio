@@ -61,7 +61,7 @@ I checked communication using the appropriate Ansible modules:
 
 Both produced successful responses in the completed reports.
 
-![Successful Ansible Windows connectivity check](evidence/windows-ansible-win-ping.jpg)
+![Successful Ansible Windows connectivity check](evidence/01-ansible-windows-connectivity.jpg)
 
 *Ansible's Windows connectivity check returned a successful response from the managed server.*
 
@@ -77,9 +77,17 @@ I wrote an Ansible playbook to install the Apache web server and used another pl
 
 In the final practical exercise, I repeated the Apache setup and retrieved the HTML over the network with `curl`. That check provided client-side evidence of the server's response, beyond the successful Ansible recap.
 
+![Apache deployment playbook execution](evidence/11-apache-deployment-recap.jpg)
+
+*Ansible's Apache deployment result on Ubuntu.*
+
 ### MySQL on Ubuntu
 
 I used a separate inventory group and playbook to install MySQL and ensure the service was started and enabled. The documented `systemctl` output showed the MySQL service active.
+
+![MySQL service running on Ubuntu](evidence/09-mysql-service-status.jpg)
+
+*MySQL service status verified on the managed Linux host.*
 
 Because the application and database inventory groups referenced one Ubuntu machine, this was a combined lab host rather than a segmented production application architecture.
 
@@ -90,6 +98,10 @@ I created an `iisserver` target group and used a Windows-specific Ansible playbo
 I verified that the default IIS page could be reached from AlmaLinux. I then used a playbook to stop the default site, prepared an HTML page, transferred the content to the IIS document directory, and restarted the site.
 
 The captured browser displayed the custom IIS test page. The final exercise also showed an **HTTP 200 OK** response from the Windows web server, indicating a successful HTTP request.
+
+![Custom IIS test site served by Windows Server](evidence/06-iis-website-running.jpg)
+
+*Custom IIS content viewed from the AlmaLinux workstation.*
 
 **Outcome:** I deployed and tested application services on both operating systems using Ansible, service inspection, browsers, and command-line verification.
 
@@ -113,19 +125,35 @@ The recorded exercise granted **FullControl** to the test accounts. That accurat
 
 **Outcome:** Successful playbook output was supported by Windows user, group membership, folder security, and PowerShell verification.
 
+![Windows account and permission playbook results](evidence/03-automated-windows-access-controls.jpg)
+
+*The Windows access-control playbook completed successfully.*
+
+![Windows folder security properties](evidence/04-windows-folder-permissions.jpg)
+
+*Windows folder security properties confirmed the assigned access.*
+
 ## 4. Windows Firewall and DHCP management
 
 ### Windows Firewall
 
 I used Ansible playbooks to disable the Domain, Private, and Public Windows Firewall profiles in the controlled lab, inspected the changed status, and then ran a separate playbook to turn the firewall profiles back on.
 
-The exercise demonstrated that host firewall settings could be managed remotely. It was **not** a recommended permanent configuration. For a real system, I would keep the firewall enabled and define narrow rules for required traffic.
+The exercise demonstrated that host firewall settings could be managed remotely. It was **not** a recommended permanent configuration.
+
+![Windows Firewall restored to enabled state](evidence/10-firewall-reenabled.jpg)
+
+*Windows Defender Firewall was re-enabled after the controlled test.* For a real system, I would keep the firewall enabled and define narrow rules for required traffic.
 
 ### DHCP on Ubuntu
 
 I used Ansible to install and start the ISC DHCP service, transfer subnet information, and configure address assignment on Ubuntu. The configuration included a subnet, an address pool, default gateway, and DNS server.
 
 I inspected the `dhcpd.leases` file on Ubuntu. The captured lease record showed the Windows client receiving an address from the lab pool, connecting the server configuration to observable network behavior.
+
+![DHCP lease recorded for a Windows client](evidence/07-dhcp-lease-confirmation.jpg)
+
+*Ubuntu's lease record showed a client address assignment.*
 
 I also identified two limitations in the training playbook: it used permissive file permissions and appended subnet configuration using a shell command. A repeated append can duplicate entries, so a managed template with restricted permissions would be a safer and more repeatable production method.
 
@@ -158,6 +186,10 @@ The training scripts used plaintext and predictable passwords. I have **not** re
 I used Ansible Galaxy to create a standard Apache role directory. Instead of keeping every action in one large playbook, I separated package installation and service management into distinct task files and included them through the role's `main.yml`.
 
 The recorded role-based run completed with **no unnecessary changes** on an already configured Ubuntu host.
+
+![Ansible Apache role playbook recap](evidence/08-ansible-role-deployment.jpg)
+
+*The existing Apache configuration already met the role's desired state.*
 
 That illustrates **idempotency**, a central idea in configuration management: when a system already matches the desired configuration, reapplying the task should not change it.
 
@@ -196,6 +228,14 @@ The files linked below are **credential-free references adapted from the complet
 - [Reusable Apache role](examples/roles/apache/tasks/main.yml)
 
 See [Security and Implementation Notes](SECURITY.md) for production considerations and the limitations of the original exercise configurations.
+
+## What I took from the project## Additional original evidence
+
+The following captures provide more detail for the results discussed above:
+
+- [Windows group and user verification](evidence/02-windows-group-and-user-verification.jpg)
+- [PowerShell NTFS access-control output](evidence/05-windows-acl-validation.jpg)
+- [IIS deployment and website management results](evidence/12-iis-website-deployment-recap.jpg)
 
 ## What I took from the project
 
