@@ -4,6 +4,14 @@ Larger projects that bring infrastructure, security, configuration, and analysis
 
 Focused exercises are organized separately under [Technical Labs](../labs/).
 
+## Infrastructure Automation & Configuration Management
+
+### [Cross-Platform Infrastructure Automation & Configuration Management](automation/ansible-cross-platform-server-management/)
+
+Managed Ubuntu and Windows Server 2019 from AlmaLinux with Ansible. Documented service deployments, Windows accounts and ACLs, DHCP, Windows Firewall, custom Python/Bash workflows, and reusable roles, with original test evidence and sanitized code examples.
+
+[Browse automation projects](automation/)
+
 ## Network Infrastructure and Security
 
 ### [Secure Network Design, VLAN Segmentation, IoT Integration & Routing](networking/secure-network-design-vlan-iot-routing/)

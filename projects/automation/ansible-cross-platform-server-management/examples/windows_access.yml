@@ -1,0 +1,35 @@
+---
+# Example adapted from Windows group and NTFS permission exercises.
+# Supply vault_windows_user_password from a protected secret store.
+- name: Configure a Windows group and protected directory
+  hosts: win
+  gather_facts: false
+  tasks:
+    - name: Create the Development group
+      ansible.windows.win_group:
+        name: Development
+        description: Access to the Development folder
+        state: present
+
+    - name: Create a test user and assign group membership
+      ansible.windows.win_user:
+        name: ProjectUser
+        password: "{{ vault_windows_user_password }}"
+        groups:
+          - Development
+        groups_action: add
+        state: present
+      no_log: true
+
+    - name: Create the Development directory
+      ansible.windows.win_file:
+        path: 'C:\Development'
+        state: directory
+
+    - name: Allow Development members to modify files
+      ansible.windows.win_acl:
+        path: 'C:\Development'
+        user: Development
+        rights: Modify
+        type: allow
+        state: present

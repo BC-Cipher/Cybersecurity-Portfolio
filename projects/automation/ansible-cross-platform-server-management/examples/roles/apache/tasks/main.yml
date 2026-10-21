@@ -1,0 +1,6 @@
+---
+- name: Install the Apache package
+  ansible.builtin.import_tasks: install.yml
+
+- name: Manage the Apache service
+  ansible.builtin.import_tasks: service.yml

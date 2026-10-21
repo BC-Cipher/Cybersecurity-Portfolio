@@ -1,0 +1,15 @@
+---
+- name: Configure IIS on Windows Server
+  hosts: iisserver
+  gather_facts: false
+  tasks:
+    - name: Ensure the IIS Web Server role is installed
+      ansible.windows.win_feature:
+        name: Web-Server
+        state: present
+
+    - name: Ensure the web service starts automatically
+      ansible.windows.win_service:
+        name: W3SVC
+        state: started
+        start_mode: auto

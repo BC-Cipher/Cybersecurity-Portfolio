@@ -1,0 +1,12 @@
+---
+- name: Ensure Windows Firewall remains enabled
+  hosts: win
+  gather_facts: false
+  tasks:
+    - name: Enable all three firewall profiles
+      community.windows.win_firewall:
+        state: enabled
+        profiles:
+          - Domain
+          - Private
+          - Public

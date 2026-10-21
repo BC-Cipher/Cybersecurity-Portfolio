@@ -1,0 +1,6 @@
+---
+- name: Configure Ubuntu hosts using the reusable Apache role
+  hosts: ubuntu
+  become: true
+  roles:
+    - apache

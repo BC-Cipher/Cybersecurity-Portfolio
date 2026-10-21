@@ -1,0 +1,6 @@
+---
+- name: Ensure Apache is installed
+  ansible.builtin.apt:
+    name: apache2
+    state: present
+    update_cache: true

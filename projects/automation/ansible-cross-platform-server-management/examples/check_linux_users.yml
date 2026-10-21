@@ -1,0 +1,22 @@
+---
+- name: Inspect Linux accounts without changing them
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    accounts_to_check:
+      - root
+      - example_missing_account
+  tasks:
+    - name: Check each account
+      check_user:
+        username: "{{ item }}"
+      loop: "{{ accounts_to_check }}"
+      register: account_checks
+
+    - name: Report the account lookup results
+      ansible.builtin.debug:
+        msg: "{{ item.username }} exists={{ item.exists }}"
+      loop: "{{ account_checks.results }}"
+      loop_control:
+        label: "{{ item.username }}"
