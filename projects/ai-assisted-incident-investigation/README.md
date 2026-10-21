@@ -1,6 +1,6 @@
 # Container Incident Investigation: Network Forensics & Isolation Forest
 
-**CST440 | AI/Machine Learning | August 2026**  
+**Network forensics | Anomaly detection | August 2026**  
 **Environment:** Four Ubuntu Docker containers in the VCASTLE training lab  
 **Tools:** Nmap, TShark, tcpdump, Docker, Linux, `ps`, `ss`, `lsof`, `strace`, Python, pandas, scikit-learn, PCA
 
