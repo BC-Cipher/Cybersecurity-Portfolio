@@ -1,14 +1,14 @@
 # MitM Traffic: Comparing Machine Learning Approaches
 
-**CST440 | AI/Machine Learning | August 2026**
+**Network traffic analytics | August 2026**
 
-These were separate coursework experiments using **synthetic network traffic**, not captures from the [container incident investigation](README.md). I used the exercises to compare what can be learned from labeled traffic and what can be discovered when the dataset has no verified attack labels.
+I compared supervised classification and unsupervised clustering using **synthetic network traffic**, not captures from the [container incident investigation](README.md). The aim was to see what labeled examples can teach a model and what can be learned when attack labels are unavailable.
 
 ## Random Forest: Labeled network traffic
 
 The supervised exercise used **2,500 synthetic records**, including **2,000 labeled normal** and **500 labeled MitM**. Preprocessing converted response times to milliseconds, encoded categorical protocol and TLS-issuer fields, and prepared numeric network-traffic features.
 
-Using the assigned Random Forest configuration (100 estimators, random state 42, 70/30 split), I reproduced the following test results from the saved CSV:
+Using a Random Forest configuration (100 estimators, random state 42, 70/30 split), I reproduced the following test results from the saved CSV:
 
 | Metric | Result |
 |---|---:|
@@ -32,13 +32,13 @@ Response time accounted for approximately **55.6%** of the model's impurity-base
 
 ## K-Means and DBSCAN: Unlabeled traffic
 
-In a separate performance assessment, I analyzed **3,500 simulated traffic records** using five numeric features: bytes sent, bytes received, duration, packet count, and response time.
+For the unsupervised comparison, I analyzed **3,500 simulated traffic records** using five numeric features: bytes sent, bytes received, duration, packet count, and response time.
 
 K-Means (`k=3`) assigned every record to one of three groups containing **1,507**, **978**, and **1,015** records. The PCA plot showed where those groups overlapped.
 
 ![K-Means clustering visualized with PCA](screenshots/mitm-kmeans-pca-clusters.png)
 
-The completed assessment reported **86 DBSCAN noise records**. I reviewed the resulting visualization and investigated the unusual entries, but the original 3,500-record CSV is no longer available, so I cannot independently reproduce the cluster counts or use them as a model-performance benchmark.
+The recorded results showed **86 DBSCAN noise records**. I reviewed the resulting visualization and investigated the unusual entries, but the original 3,500-record CSV is no longer available, so I cannot independently reproduce the cluster counts or use them as a model-performance benchmark.
 
 ![DBSCAN clusters and noise shown using PCA](screenshots/mitm-dbscan-pca-noise.png)
 
@@ -50,4 +50,4 @@ The labeled Random Forest exercise measured how well a model recognized patterns
 
 The [container investigation](README.md) showed why those distinctions matter: its Isolation Forest results required packet-level validation, and some of the strongest anomalies were ordinary mDNS traffic that had been poorly represented by preprocessing. Machine learning can help prioritize investigation, but the surrounding security evidence determines what a flag means.
 
-*All datasets in this comparison were synthetic and used for authorized coursework.*
+*Both datasets were synthetic. These results are not measures of real-world attack-detection performance.*
