@@ -59,7 +59,13 @@ I checked communication using the appropriate Ansible modules:
 - **Linux `ping`** confirmed that Ansible could execute a module on Ubuntu.
 - **Windows `win_ping`** confirmed that Ansible could communicate with Windows Server.
 
-Both produced successful responses in the completed reports. These module checks are not simply ordinary network ICMP pings; they test Ansible's remote execution path.
+Both produced successful responses in the completed reports.
+
+![Successful Ansible Windows connectivity check](evidence/windows-ansible-win-ping.jpg)
+
+*Ansible's Windows connectivity check returned a successful response from the managed server.*
+
+These module checks are not simply ordinary network ICMP pings; they test Ansible's remote execution path.
 
 **Outcome:** I could target two different operating systems from one control workstation.
 
