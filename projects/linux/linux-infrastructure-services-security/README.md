@@ -29,6 +29,11 @@ The starting point was an Ubuntu host with **virt-manager and QEMU/KVM** for run
 
 Virtual machines were useful here because each system could have its own operating system, network settings, and services without requiring another physical computer. The lab also used VM clones to test configurations while preserving the original machines.
 
+![QEMU/KVM Virtual Machine Manager and Linux guest sessions](screenshots/screenshots/01-virtualization-linux-guests.png)
+
+*Ubuntu host with AlmaLinux and Linux Mint guests managed in virt-manager.*
+
+
 I used commands including:
 
 ```bash
@@ -40,6 +45,11 @@ sudo apt update && sudo apt upgrade
 
 I worked with both network-assigned addresses and manually configured IPv4 settings, then checked communication with `ping`. One completed test documented successful responses from two Linux systems, with **four replies from each and no packet loss** during those tests.
 
+![Linux terminal with successful ping tests to two virtual hosts](screenshots/screenshots/03-virtual-network-ping-validation.png)
+
+*Both network destinations returned four replies without packet loss in this test.*
+
+
 **Why it matters:** A web server or security tool is only useful if its underlying operating system, network interfaces, and addressing are working. Establishing a reliable baseline makes later troubleshooting much faster.
 
 ## 2. Storage management, file sharing, and backup
@@ -49,6 +59,16 @@ I worked with both network-assigned addresses and manually configured IPv4 setti
 Using **GParted**, I worked with a separate virtual disk instead of changing the operating system partition. The exercise involved identifying the correct device, unmounting its filesystem, resizing the partition, remounting it, and checking that the mounted storage remained accessible.
 
 The disk was approximately **20 GiB**. The partition view after resizing showed a partition of about **15.64 GiB** and roughly **4.36 GiB of unallocated space**. A subsequent command-line check showed the resized filesystem still mounted at `/home/NewDrive`.
+
+![GParted showing resized Linux data partition and free space](screenshots/screenshots/04-gparted-resized-storage.png)
+
+*GParted shows a roughly 15.64 GiB partition and 4.36 GiB unallocated on the second disk.*
+
+
+![Linux command output showing the resized filesystem mounted](screenshots/screenshots/05-storage-mounted-after-resize.png)
+
+*The resized filesystem remained mounted at /home/NewDrive.*
+
 
 ```bash
 df -h
@@ -63,6 +83,16 @@ In a separate Linux file-services exercise, I installed and configured **Samba**
 
 From a Linux Mint client, I used `smbclient` to enumerate the available shares. The client output displayed **Public** and **Private** shares, demonstrating that the server's SMB configuration was visible over the network.
 
+![Samba configuration showing public and private shares](screenshots/screenshots/06-samba-public-private-share-configuration.png)
+
+*Samba share definitions on the lab server. The guest-access configuration was for testing, not a recommended production setting.*
+
+
+![Linux Mint smbclient output showing Public and Private Samba shares](screenshots/screenshots/07-samba-client-share-discovery.png)
+
+*The Linux Mint client discovered the two shares on the server.*
+
+
 I then created approximately **100 test files** and synchronized the public-share contents to a backup directory with **Rsync**:
 
 ```bash
@@ -71,7 +101,12 @@ ls -l ~/public_backup/ | head -20
 ls -l ~/public_backup/ | wc -l
 ```
 
-The destination listing and count confirmed the test files were present. This was a local synchronization demonstration, not a complete off-site backup or disaster-recovery test.
+The destination listing and count confirmed the test files were present.
+
+![Terminal listing test files synchronized to the Rsync backup directory](screenshots/screenshots/08-rsync-backup-files.png)
+
+*Files are present in the synchronization destination. A separate [file-count check](screenshots/screenshots/09-rsync-file-count.png) provides additional verification.*
+ This was a local synchronization demonstration, not a complete off-site backup or disaster-recovery test.
 
 **Security consideration:** The public share in the exercise used permissive access settings to demonstrate guest connectivity. For a real organization, I would restrict write permissions, use authenticated access for sensitive files, and verify that backups are recoverable.
 
@@ -84,6 +119,11 @@ I worked with containers to run services independently of the host's normal pack
 I pulled an Nginx image, served static HTML content from a container, and mapped **container port 80 to host port 8080**. I checked the container and accessed its web page through a browser.
 
 The page was stored outside the container and mounted into it. This made it possible to change the site files without rebuilding the image.
+
+![Firefox showing Nginx default web page served from a Linux Docker host](screenshots/screenshots/10-container-nginx-web-page.png)
+
+*The Nginx container responded to a browser request over the mapped HTTP port.*
+
 
 ### Redis data service
 
@@ -99,6 +139,16 @@ docker exec -it my-redis redis-cli GET myKey
 
 The screenshots document the `PONG` response and the sample value being written and retrieved. These tests demonstrate service availability and basic data operations, not performance, persistence, or authentication testing.
 
+![Redis command-line PING request returning PONG](screenshots/screenshots/11-container-redis-ping-test.png)
+
+*Redis answered the basic health check.*
+
+
+![Redis command-line SET and GET operations returning a sample value](screenshots/screenshots/12-container-redis-read-write-test.png)
+
+*A sample key was written and retrieved through the Redis container.*
+
+
 ### LAMP in a container and on a Linux host
 
 I also worked with the **LAMP stack**, which combines Linux, Apache, MySQL, and PHP. In one exercise, I ran a LAMP container and viewed a custom web page from another virtual machine. In a separate exercise, I installed and configured the components directly on Linux.
@@ -109,11 +159,31 @@ Working with both approaches helped illustrate a practical difference: a contain
 
 ## 4. Apache, PHP, MySQL, and HTTPS
 
-In the direct-installation exercise, I configured an Apache web server, checked that it was running, and edited the site content. I then installed PHP and confirmed that a simple script returned **Hello World**.
+In the direct-installation exercise, I configured an Apache web server, checked that it was running, and edited the site content.
+
+![Firefox showing custom My LAMP Test Page served from Apache](screenshots/screenshots/13-lamp-apache-php-webpage.png)
+
+*The Apache server displayed the edited test page.*
+ I then installed PHP and confirmed that a simple script returned **Hello World**.
+
+![Linux terminal showing PHP script execution and Hello World output](screenshots/screenshots/14-lamp-php-cli-check.png)
+
+*PHP executed a short script successfully from the command line.*
+
 
 For MySQL, I installed the server, worked through its security setup, created an example database and user, and confirmed access from the MySQL command-line client. I also checked database listings.
 
+![MySQL command-line SHOW DATABASES query displaying test database](screenshots/screenshots/15-lamp-database-access.png)
+
+*MySQL accepted the SQL command and displayed the available databases.*
+
+
 For HTTPS, I generated a **self-signed certificate**, configured the Apache SSL site, and opened the site through HTTPS. The browser displayed a certificate warning, which is expected when a certificate is not trusted by the browser.
+
+![Firefox certificate viewer showing a self-signed localhost certificate](screenshots/screenshots/16-lamp-https-self-signed-certificate.png)
+
+*The HTTPS exercise used a self-signed certificate. It is not evidence of a publicly trusted certificate.*
+
 
 I then used UFW to allow the web service's HTTP and HTTPS ports and inspected the resulting rules.
 
@@ -125,7 +195,12 @@ I explored two Linux firewall interfaces in different exercises.
 
 ### UFW: controlling exposed services
 
-With **UFW**, I reviewed listening services, adjusted inbound rules, removed permissions no longer needed, and inspected the final rule set. I used `systemctl`, `ss` or `netstat`, and firewall status commands to understand which services could accept connections.
+With **UFW**, I reviewed listening services, adjusted inbound rules, removed permissions no longer needed, and inspected the final rule set.
+
+![UFW numbered rules showing allowed and denied network services](screenshots/screenshots/17-ufw-firewall-rules.png)
+
+*The rules show allowed web and Samba traffic alongside denied DNS ports. Broadly accessible services would need further restrictions in production.*
+ I used `systemctl`, `ss` or `netstat`, and firewall status commands to understand which services could accept connections.
 
 A firewall cannot repair a vulnerable application, but it can reduce the number of services exposed to other systems. This is an important part of a defense-in-depth approach.
 
@@ -134,6 +209,11 @@ A firewall cannot repair a vulnerable application, but it can reduce the number 
 With **firewalld**, I inspected available zones and configured interfaces associated with different levels of network trust. I reviewed `public`, `internal`, and `external` settings and tested connectivity after changes.
 
 The screenshots show interface-to-zone reassignment and a later **network-unreachable result** in a connectivity test. That result demonstrates that policy and interface changes affected the lab's connectivity. It is not, by itself, proof of a complete or correctly hardened network design.
+
+![Linux Mint connectivity output after firewalld zone changes](screenshots/screenshots/18-firewalld-zone-policy-change.png)
+
+*The connectivity result changed after network/firewall policy adjustments.*
+
 
 ```bash
 sudo firewall-cmd --get-active-zones
@@ -163,7 +243,12 @@ On AlmaLinux, I searched the collected logs:
 grep "Mint client" /var/log/messages
 ```
 
-The server output included the message generated on Mint. This was the clearest evidence of cross-host log delivery in the project.
+The server output included the message generated on Mint.
+
+![AlmaLinux log search result containing a test message from Linux Mint](screenshots/screenshots/19-rsyslog-cross-host-test-message.png)
+
+*The test event originating on Mint appeared in the AlmaLinux server log.*
+ This was the clearest evidence of cross-host log delivery in the project.
 
 Centralizing logs matters because administrators should not have to sign in to every device individually to look for errors, unexpected behavior, or events related to an incident.
 
@@ -183,6 +268,11 @@ I used Linux tools to inspect process activity, resource consumption, network tr
 
 I also reviewed unnecessary services and used service-management commands during the hardening work. These checks do not constitute a full security monitoring platform, but they are the basic skills needed to investigate a slow system, a failed service, or suspicious network behavior.
 
+![IPTraf network monitoring display showing UDP broadcast traffic](screenshots/screenshots/20-iptraf-network-monitoring.png)
+
+*IPTraf-ng provided interface-level traffic visibility during the lab.*
+
+
 ## 7. Automating a disk-usage check with systemd
 
 To move beyond manual commands, I created a Bash script that gathered disk utilization information and wrote it to a report under `/root`:
@@ -195,6 +285,16 @@ df -h > /root/df_report.txt
 
 The script printed the date separately and redirected the disk-usage table into the report file. I registered the script with a custom `df-check.service` unit in `/etc/systemd/system/`, set the requested file permissions, reloaded the service manager, enabled the unit, and started it.
 
+![Custom systemd service unit file for the disk utilization check](screenshots/screenshots/21-systemd-unit-definition.png)
+
+*The service unit points systemd to the Bash disk-check program.*
+
+
+![Bash script writing a df filesystem usage report](screenshots/screenshots/22-systemd-disk-check-script.png)
+
+*The script writes the filesystem utilization table into a text report.*
+
+
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable df-check
@@ -203,7 +303,17 @@ sudo systemctl status df-check
 sudo cat /root/df_report.txt
 ```
 
-The service status recorded **`status=0/SUCCESS`** and the report contained filesystem utilization data. The unit showed **`inactive (dead)` after the command completed**, which is consistent with a short task that exits. This was not a continuously running monitoring daemon.
+The service status recorded **`status=0/SUCCESS`** and the report contained filesystem utilization data. The unit showed **`inactive (dead)` after the command completed**, which is consistent with a short task that exits.
+
+![Systemd service status with successful exit code](screenshots/screenshots/23-systemd-successful-execution.png)
+
+*Systemd recorded a completed run with status 0/SUCCESS.*
+
+
+![Terminal displaying filesystem utilization report generated by the systemd task](screenshots/screenshots/24-systemd-disk-usage-output.png)
+
+*The text report contains filesystem usage information from the disk-check script.*
+ This was not a continuously running monitoring daemon.
 
 After testing, I stopped and disabled the unit.
 
